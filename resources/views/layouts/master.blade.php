@@ -77,5 +77,17 @@
 	<script type="text/javascript" src="js/script.js"></script>
 	<script src="https://use.fontawesome.com/c006854291.js"></script>
 	@yield('scripts')
+	@if (Session::has('success'))
+	<script type="text/javascript">
+		var $toastContent = $('<span>{{ Session::get('success') }}</span>');
+		Materialize.toast($toastContent, 5000, 'green');
+	</script>
+	@elseif (Session::has('error'))
+	<script type="text/javascript">
+		var $toastContent = $('<span>{{ Session::get('error') }}</span>');
+		Materialize.toast($toastContent, 5000, 'red');
+	</script>
+	@endif
+
 </body>
 </html>

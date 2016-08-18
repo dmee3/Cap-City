@@ -25,12 +25,14 @@ class ContactController extends Controller
      */
     public function sendContactInfo(ContactMeRequest $request)
     {
-        $this->validate($request, [
+/*
+		$this->validate($request, [
                 'name' => 'required',
                 'email' => 'required|email',
                 'message' => 'required',
         ]);
-		$data = $request->only('name', 'email', 'phone');
+*/
+		$data = $request->only('name', 'email', 'message');
 	    $data['messageLines'] = explode("\n", $request->get('message'));
 
 		Mail::send('emails.contact', $data, function ($message) use ($data) {
@@ -39,6 +41,12 @@ class ContactController extends Controller
 			->replyTo($data['email']);
 		});
 
-		return back()->withSuccess("Thank you for your message. It has been sent.");
+		if( count(Mail::failures()) > 0 ) {
+			$request->session()->flash('error', 'Something went wrong.  Please email dan.meehan17@gmail.com for help.  Sorry about that!');
+		} else {
+			$request->session()->flash('success', 'Message sent!');
+		}
+
+		return view('site.index');
     }
 }
