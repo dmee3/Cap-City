@@ -20,7 +20,7 @@ class ContactController extends Controller
     /**
      * Send message.
      *
-     * @param  Request  $request
+     * @param  ContactMeRequest  $request
      * @return Response
      */
     public function sendContactInfo(ContactMeRequest $request)

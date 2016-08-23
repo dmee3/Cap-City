@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('styles')
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+@endsection
+
 @section('content')
 
 	<div id="staff">

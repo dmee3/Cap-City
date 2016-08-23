@@ -23,6 +23,8 @@ Route::get('/news', function () { return view('site/news'); });
 Route::get('/store', function () { return view('site/store'); });
 Route::get('/contact', function () { return view('site/contact'); });
 Route::post('/contact', 'ContactController@sendContactInfo');
+Route::get('/auditions', function () { return view('site/auditions'); });
+Route::post('/auditions', 'AuditionController@signUp');
 
 
 /**

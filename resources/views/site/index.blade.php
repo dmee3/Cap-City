@@ -1,5 +1,10 @@
 @extends('layouts.contact')
 
+@section('styles')
+	<link type="text/css" rel="stylesheet" href="css/index.css"/>
+	<link type="text/css" rel="stylesheet" href="css/contact.css"/>
+@endsection
+
 @section('content2')
 
 	<div id="mobile-hero" class="center hide-on-large-only">
