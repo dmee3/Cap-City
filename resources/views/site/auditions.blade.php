@@ -101,6 +101,18 @@
 						<label for="audition-zip">Zip</label>
 					</div>
 				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea id="audition-why" placeholder="Why do you want to be a part of Cap City?" class="materialize-textarea" name="why"></textarea>
+						<label for="audition-why">Reason</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea id="audition-experience" placeholder="Where have you marched before?  Please be specific." class="materialize-textarea" name="why"></textarea>
+						<label for="audition-experience">Experience</label>
+					</div>
+				</div>
 			{!! Form::close() !!}
 		</div>
 	</div>
@@ -110,9 +122,3 @@
 @section('scripts')
 	<script src="/js/auditions.js"></script>
 @endsection
-
-<!--
-address
-phone
-why
-prior experience - placeholder text-->
