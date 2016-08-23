@@ -1,8 +1,12 @@
 @extends('layouts.master')
 
+@section('styles')
+	<link type="text/css" rel="stylesheet" href="css/auditions.css"/>
+@endsection
+
 @section('content')
 
-	<div class="section cap-white" style="min-height: 300px;">
+	<div class="section" id="auditions">
 		<div class="container row">
 			<h2 class="cap-blue-text">2017 Auditions</h2>
 			{!! Form::open(array('action' => 'AuditionController@signUp', 'method' => 'post', 'class' => 'col s12')) !!}
