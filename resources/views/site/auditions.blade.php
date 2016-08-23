@@ -41,6 +41,7 @@
 					</div>
 					<div class="input-field col s3">
 						<select id="audition-state" name="state">
+							<option value="" disabled selected>Choose your state</option>
 							<option value="AK">AK</option>
 							<option value="AL">AL</option>
 							<option value="AR">AR</option>
@@ -106,7 +107,12 @@
 
 @endsection
 
+@section('scripts')
+	<script src="/js/auditions.js"></script>
+@endsection
+
+<!--
 address
 phone
 why
-prior experience - placeholder text
+prior experience - placeholder text-->
