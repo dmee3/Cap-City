@@ -28,7 +28,7 @@ $(document).ready(function() {
 	$('.filled-in').click(updateTotals);
 });
 
-Stripe.setPublishableKey('pk_test_Jsmvc6lI1rcpBPT5bFk9pHJU');
+Stripe.setPublishableKey('pk_live_NaA3DEeypr9dPa8YzfN0nnaa');
 
 function stripeResponseHandler(status, response) {
 
@@ -40,7 +40,9 @@ function stripeResponseHandler(status, response) {
 
 		//Show the errors on the form and re-enable submission
 		$form.find('.payment-errors').text(response.error.message);
-		$form.find('.submit').prop('disabled', false);
+		$('#register').prop('disabled', false);
+		$('#register').removeClass('cap-black');
+		$('#register').addClass('cap-red');
 
 	//Handle success
 	} else {
@@ -61,7 +63,9 @@ $(function() {
 	$form.submit(function(event) {
 
 		//Disable the submit button to prevent repeated clicks:
-		$form.find('.submit').prop('disabled', true);
+		$('#register').prop('disabled', true);
+		$('#register').removeClass('cap-red');
+		$('#register').addClass('cap-black');
 
 		//Request a token from Stripe:
 		Stripe.card.createToken($form, stripeResponseHandler);

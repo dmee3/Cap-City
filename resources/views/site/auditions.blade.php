@@ -225,11 +225,11 @@
 							<label for="stripe-number">Card Number</label>
 						</div>
 						<div class="input-field col s5 m6">
-							<input type="text" size="2" data-stripe="exp_month" id="stripe-month">
+							<input type="text" placeholder="MM"  size="2" data-stripe="exp_month" id="stripe-month">
 							<label for="stripe-month">Expiration Month</label>
 						</div>
 						<div class="input-field col s5 m6">
-							<input type="text" size="2" data-stripe="exp_year" id="stripe-year">
+							<input type="text" placeholder="YY" size="2" data-stripe="exp_year" id="stripe-year">
 							<label for="stripe-year">Expiration Year</label>
 						</div>
 						<div class="input-field col s2 m4 offset-m4">
@@ -239,7 +239,7 @@
 					</div>
 				</div>
 				<div class="row center">
-					<input type="submit" class="btn-large cap-red" value="Submit">
+					<input id="register" type="submit" class="btn-large cap-red" value="Submit">
 				</div>
 			{!! Form::close() !!}
 		</div>

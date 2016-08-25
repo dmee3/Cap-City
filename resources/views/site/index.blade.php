@@ -20,7 +20,7 @@
 					<h1>Auditions</h1>
 					<br>
 					<h4>Auditions will be held on Sunday, 9/25 and Sunday, 10/2.</h4>
-					<h5>Registration available <a href="auditions" class="cap-red-text">here!</a></h5>
+					<h5>Registration available <a href="https://capcitypercussion.com/auditions" class="cap-red-text">here!</a></h5>
 				</div>
 			</li>
 		</ul>
@@ -29,7 +29,7 @@
 	<div id="cards" class="section cap-white">
 		<div class="container row">
 			<div class="col s12 m4">
-				<a href="auditions">
+				<a href="https://capcitypercussion.com/auditions">
 					<div class="card hoverable cap-blue news-card white-text">
 						<div class="card-image hide-on-small-and-down">
 							<img src="img/tenor_close.png">
