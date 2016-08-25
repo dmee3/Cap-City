@@ -62,11 +62,11 @@
 
 	<!-- Social Media -->
 	<div class="section cap-black center">
-		<a class="white-text" href="https://www.facebook.com/capitalcitypercussion/"><i class="fa fa-facebook fa-3x social-media" aria-hidden="true"></i></a>
-		<a class="white-text" href="https://twitter.com/CapCityPerc"><i class="fa fa-twitter fa-3x social-media" aria-hidden="true"></i></a>
-		<a class="white-text" href="https://www.youtube.com/channel/UCWjWCag6pALBDY5vmXMkTaw"><i class="fa fa-youtube-play fa-3x social-media" aria-hidden="true"></i></a>
-		<a class="white-text" href="https://www.instagram.com/capcitypercussion/"><i class="fa fa-instagram fa-3x social-media" aria-hidden="true"></i></a>
-		<a class="white-text" href="https://www.snapchat.com/add/snapcityperc"><i class="fa fa-snapchat fa-3x social-media" aria-hidden="true"></i></a>
+		<a class="white-text" target="_blank" href="https://www.facebook.com/capcitypercussion/"><i class="fa fa-facebook fa-3x social-media" aria-hidden="true"></i></a>
+		<a class="white-text" target="_blank" href="https://twitter.com/CapCityPerc"><i class="fa fa-twitter fa-3x social-media" aria-hidden="true"></i></a>
+		<a class="white-text" target="_blank" href="https://www.youtube.com/channel/UCWjWCag6pALBDY5vmXMkTaw"><i class="fa fa-youtube-play fa-3x social-media" aria-hidden="true"></i></a>
+		<a class="white-text" target="_blank" href="https://www.instagram.com/capcitypercussion/"><i class="fa fa-instagram fa-3x social-media" aria-hidden="true"></i></a>
+		<a class="white-text" target="_blank" href="https://www.snapchat.com/add/snapcityperc"><i class="fa fa-snapchat fa-3x social-media" aria-hidden="true"></i></a>
 	</div>
 
 	<!-- Sponsors -->
