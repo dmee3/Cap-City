@@ -249,5 +249,8 @@
 
 @section('scripts')
 	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+	<script type="text/javascript">
+		var pub_key = '{{ env('STRIPE_PUBLIC') }}';
+	</script>
 	<script src="/js/auditions.js"></script>
 @endsection

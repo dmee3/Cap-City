@@ -28,7 +28,7 @@ $(document).ready(function() {
 	$('.filled-in').click(updateTotals);
 });
 
-Stripe.setPublishableKey('pk_live_NaA3DEeypr9dPa8YzfN0nnaa');
+Stripe.setPublishableKey(pub_key);
 
 function stripeResponseHandler(status, response) {
 

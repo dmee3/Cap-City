@@ -76,7 +76,7 @@ class AuditionController extends Controller
 		}
 
 		//Charge card
-		\Stripe\Stripe::setApiKey("sk_live_5WvOjlZ6FcEh8ms6bEogrPYB");
+		\Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
 		$token = $_POST['stripeToken'];
 		try {
 			$charge = \Stripe\Charge::create(array(
