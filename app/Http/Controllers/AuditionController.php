@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Audition;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -200,6 +201,19 @@ class AuditionController extends Controller
 	public function showAll(Request $request) {
 
 		$auds = Audition::all();
-		return view('app.auditions-list', ['auditions' => $auds]);
+
+		$data['snare'] = DB::table('auditions')->where('instr1', 'Snare')->count();
+		$data['tenors'] = DB::table('auditions')->where('instr1', 'Tenors')->count();
+		$data['bass'] = DB::table('auditions')->where('instr1', 'Bass')->count();
+		$data['cymbals'] = DB::table('auditions')->where('instr1', 'Cymbals')->count();
+		$data['marimba'] = DB::table('auditions')->where('instr1', 'Marimba')->count();
+		$data['vibes'] = DB::table('auditions')->where('instr1', 'Vibes')->count();
+		$data['xylo'] = DB::table('auditions')->where('instr1', 'Xylophone')->count();
+		$data['drumset'] = DB::table('auditions')->where('instr1', 'Drumset')->count();
+		$data['synth'] = DB::table('auditions')->where('instr1', 'Synthesizer')->count();
+		$data['guitar'] = DB::table('auditions')->where('instr1', 'Bass Guitar')->count();
+		$data['aux'] = DB::table('auditions')->where('instr1', 'Auxiliary')->count();
+
+		return view('app.auditions-list', ['auditions' => $auds, 'data' => $data]);
 	}
 }

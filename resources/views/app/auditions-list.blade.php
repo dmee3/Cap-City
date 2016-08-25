@@ -8,6 +8,27 @@
 				<h1>2017 Audition Registrations</h1>
 			</div>
 		</div>
+		<div class="container row">
+			<div class="col s6">
+				<ul class="collection">
+					<li class="collection-item">Snare<span class="secondary-content">{{ $data['snare'] }}</span></li>
+					<li class="collection-item">Tenors<span class="secondary-content">{{ $data['tenors'] }}</span></li>
+					<li class="collection-item">Bass<span class="secondary-content">{{ $data['bass'] }}</span></li>
+					<li class="collection-item">Cymbals<span class="secondary-content">{{ $data['cymbals'] }}</span></li>
+				</ul>
+			</div>
+			<div class="col s6">
+				<ul class="collection">
+					<li class="collection-item">Marimba<span class="secondary-content">{{ $data['marimba'] }}</span></li>
+					<li class="collection-item">Vibes<span class="secondary-content">{{ $data['vibes'] }}</span></li>
+					<li class="collection-item">Xylophone<span class="secondary-content">{{ $data['xylo'] }}</span></li>
+					<li class="collection-item">Drumset<span class="secondary-content">{{ $data['drumset'] }}</span></li>
+					<li class="collection-item">Synthesizer<span class="secondary-content">{{ $data['synth'] }}</span></li>
+					<li class="collection-item">Bass Guitar<span class="secondary-content">{{ $data['guitar'] }}</span></li>
+					<li class="collection-item">Auxiliary<span class="secondary-content">{{ $data['aux'] }}</span></li>
+				</ul>
+			</div>
+		</div>
 		<div class="container row cap-blue">
 			<ul class="collapsible popout" data-collapsible="accordion">
 				@foreach ($auditions as $a)
