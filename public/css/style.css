@@ -53,10 +53,97 @@ nav li:hover {
 }
 
 /*
+ * Main content
+ */
+#hero {
+	background-image: url("../img/slider_bg.jpg");
+	background-size: 100% 100%;
+}
+
+.indicators {
+	padding: 10px 0 10px 0;
+}
+
+.slider .indicators .indicator-item.active {
+	background-color: #cc2f44 !important;
+}
+
+#logo-outline {
+	background-size: auto !important;
+	background-repeat: no-repeat !important;
+}
+
+#mobile-hero img {
+	width: 100%;
+}
+
+.coming-soon {
+	min-height: 500px;
+}
+.coming-soon h5 {
+	width: 100%;
+	text-align: center;
+}
+
+/*
+ * Staff page
+ */
+.collection .collection-item.avatar {
+	min-height: 0 !important;
+}
+
+#detail-image {
+	float: left;
+}
+
+#detail-name-group {
+	padding-left: 174px;
+}
+
+@media only screen and (max-width: 600px) {
+	#detail-name-group {
+		padding-left: 0;
+	}
+}
+/*
+ * custom input colors
+ */
+/* label focus color */
+.input-field input:focus + label, .input-field textarea:focus + label {
+	color: #78eff7 !important;
+}
+
+/* label underline focus color */
+.input-field input:focus, .input-field textarea:focus {
+	border-bottom: 1px solid #78eff7 !important;
+	box-shadow: 0 1px 0 0 #78eff7 !important;
+}
+
+/* valid color */
+.input-field input.valid {
+	border-bottom: 1px solid #e7f1f0 !important;
+	box-shadow: 1px solid #e7f1f0 !important;
+}
+
+/* invalid color */
+.input-field input.invalid {
+	border-bottom: 1px solid #cc2f44 !important;
+	box-shadow: 0 1px 0 0 #cc2f44 !important;
+}
+
+/*
  * Social media icons
  */
 .social-media {
 	margin: 0 20px;
+}
+
+/*
+ * Typography
+ */
+.thin-text {
+	font-weight: 200;
+	font-size: 1.2rem;
 }
 
 /*
@@ -68,6 +155,7 @@ nav li:hover {
 .cap-white { background-color: #e7f1f0 !important; }
 .cap-black { background-color: #323337 !important; }
 .cap-grey { background-color: #8D9294 !important; }
+.cap-green { background-color: #26a65b !important; }
 
 .cap-red-text { color: #cc2f44 !important; }
 .cap-blue-text { color: #386374 !important; }
@@ -75,3 +163,4 @@ nav li:hover {
 .cap-white-text { color: #e7f1f0 !important; }
 .cap-black-text { color: #323337 !important; }
 .cap-grey-text { color: #8D9294 !important; }
+.cap-green-text { color: #26a65b !important; }

@@ -17,14 +17,15 @@
 Route::get('/', function () { return view('site/index'); });
 Route::get('/schedule', function () { return view('site/schedule'); });
 Route::get('/members', function () { return view('site/members'); });
-Route::get('/auditions', function () { return view('site/auditions'); });
 Route::get('/staff', function () { return view('site/staff'); });
 Route::get('/news', function () { return view('site/news'); });
 Route::get('/store', function () { return view('site/store'); });
 Route::get('/contact', function () { return view('site/contact'); });
 Route::post('/contact', 'ContactController@sendContactInfo');
 Route::get('/auditions', function () { return view('site/auditions'); });
+Route::get('/auditions-success', function () { return view('site/auditions-success'); });
 Route::post('/auditions', 'AuditionController@signUp');
+Route::get('/get-packet', 'AuditionController@getPacket');
 
 
 /**

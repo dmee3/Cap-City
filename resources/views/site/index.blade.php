@@ -20,7 +20,7 @@
 					<h1>Auditions</h1>
 					<br>
 					<h4>Auditions will be held on Sunday, 9/25 and Sunday, 10/2.</h4>
-					<h5>Please check back next week for more info and registration!</h5>
+					<h5>Registration available <a href="auditions" class="cap-red-text">here!</a></h5>
 				</div>
 			</li>
 		</ul>
@@ -37,7 +37,7 @@
 						</div>
 						<div class="card-content hide-on-med-and-up">
 							<span class="card-title">Auditions</span>
-							<p>Audition info coming 8/25!</p>
+							<p>Click here to register!</p>
 						</div>
 					</div>
 				</a>
