@@ -16,6 +16,7 @@
 	<title>Cap City</title>
 
 	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+	<link type="text/css" rel="stylesheet" href="css/materialize-style.css"/>
 	<link type="text/css" rel="stylesheet" href="css/style.css"/>
 	@yield('styles')
 	<link rel="icon" type="image/png" href="img/icon.png">

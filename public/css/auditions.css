@@ -1,0 +1,49 @@
+#auditions {
+	background:url('/img/snare_vert_bw.jpg') top center no-repeat;
+	background-attachment:fixed;
+}
+
+/*
+ * custom input colors
+ */
+/* Unfocused linr color */
+.input-field input, .input-field textarea {
+	border-bottom: 1px solid #e7f1f0 !important;
+	box-shadow: 1px solid #e7f1f0 !important;
+}
+.input-field label {
+	/*color: #e7f1f0; !important;
+}
+
+/* label focus color */
+.input-field input:focus + label, .input-field textarea:focus + label {
+	color: #78eff7 !important;
+}
+
+/* label underline focus color */
+.input-field input:focus, .input-field textarea:focus {
+	border-bottom: 1px solid #78eff7 !important;
+	box-shadow: 0 1px 0 0 #78eff7 !important;
+}
+
+/* valid color */
+.input-field input.valid {
+	border-bottom: 1px solid #e7f1f0 !important;
+	box-shadow: 1px solid #e7f1f0 !important;
+}
+
+/* invalid color */
+.input-field input.invalid {
+	border-bottom: 1px solid #cc2f44 !important;
+	box-shadow: 0 1px 0 0 #cc2f44 !important;
+}
+
+/* Checked label */
+[type="checkbox"]:checked + label {
+	color: #e7f1f0 !important;
+}
+
+/* Disabled checkbox color */
+[type="checkbox"].filled-in:disabled:not(:checked) + label:after {
+	background-color: #323337 !important;
+}

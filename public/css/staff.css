@@ -1,0 +1,20 @@
+/*
+ * Staff page
+ */
+.collection .collection-item.avatar {
+	min-height: 0 !important;
+}
+
+#detail-image {
+	float: left;
+}
+
+#detail-name-group {
+	padding-left: 174px;
+}
+
+@media only screen and (max-width: 600px) {
+	#detail-name-group {
+		padding-left: 0;
+	}
+}

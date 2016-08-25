@@ -13,6 +13,9 @@ class CreateStaffmembersTable extends Migration
     public function up()
     {
         Schema::create('staffmembers', function (Blueprint $table) {
+
+			$table->engine = 'InnoDB';
+
             $table->increments('id');
             $table->integer('user_id')->unsigned();
 			$table->string('first_name');
@@ -22,10 +25,8 @@ class CreateStaffmembersTable extends Migration
 			$table->string('bio');
 			$table->decimal('pay', 7, 2);
             $table->timestamps();
-        });
 
-		Schema::table('staffmembers', function($table) {
-			$table->foreign('user_id')->references('id')->on('users');
+			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 		});
     }
 

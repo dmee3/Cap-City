@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('styles')
+	<link type="text/css" rel="stylesheet" href="css/contact.css"/>
+@endsection
+
 @section('content')
 
 	@yield('content2')
@@ -7,7 +11,6 @@
 	<div id="contact" class="section cap-blue cap-white-text">
 		<div class="container row">
 			<h2>Contact Us</h2>
-			<!--<form action="/contact" method="post" class="col s12">-->
 			{!! Form::open(array('action' => 'ContactController@sendContactInfo', 'method' => 'post', 'class' => 'col s12')) !!}
 				<div class="row">
 					<div class="input-field col s6">
@@ -30,7 +33,6 @@
 						<button class="btn-large cap-red" type="submit" name="action">Go!</button>
 					</div>
 				</div>
-			<!--</form>-->
 			{!! Form::close() !!}
 		</div>
 	</div>
