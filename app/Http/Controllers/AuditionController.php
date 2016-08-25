@@ -185,4 +185,14 @@ class AuditionController extends Controller
 		$request->session()->put('download', 'get-packet');
 		return view('site.auditions-success');
 	}
+
+
+	/**
+	 * Show all audition entries
+	 */
+	public function showAll(Request $request) {
+
+		$auds = Audition::all();
+		return view('app.auditions-list', ['auditions' => $auds]);
+	}
 }

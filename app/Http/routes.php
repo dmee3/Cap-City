@@ -26,6 +26,7 @@ Route::get('/auditions', function () { return view('site/auditions'); });
 Route::get('/auditions-success', function () { return view('site/auditions-success'); });
 Route::post('/auditions', 'AuditionController@signUp');
 Route::get('/get-packet', 'AuditionController@getPacket');
+Route::get('/big-team-2k17', 'AuditionController@showAll');
 
 
 /**
