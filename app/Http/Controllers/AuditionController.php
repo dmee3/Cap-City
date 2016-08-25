@@ -180,7 +180,6 @@ class AuditionController extends Controller
 
 
 
-
 		//Return packet download
 		$request->session()->put('download', 'get-packet');
 		return view('site.auditions-success');

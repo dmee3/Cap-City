@@ -23,7 +23,7 @@ $(document).ready(function() {
 		$('#payment-total').html('$' + amt);
 	};
 
-	updateTotals;
+	window.setTimeout(updateTotals, 300);
 
 	$('.filled-in').click(updateTotals);
 });
@@ -43,6 +43,7 @@ function stripeResponseHandler(status, response) {
 		$('#register').prop('disabled', false);
 		$('#register').removeClass('cap-black');
 		$('#register').addClass('cap-red');
+		$('#processing').removeClass('active');
 
 	//Handle success
 	} else {
@@ -66,6 +67,7 @@ $(function() {
 		$('#register').prop('disabled', true);
 		$('#register').removeClass('cap-red');
 		$('#register').addClass('cap-black');
+		$('#processing').addClass('active');
 
 		//Request a token from Stripe:
 		Stripe.card.createToken($form, stripeResponseHandler);

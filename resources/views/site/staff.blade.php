@@ -70,7 +70,7 @@
 					<h3 id="detail-name">Name</h3>
 					<h5 id="detail-position" class="cap-black-text">Position</h5>
 				</div>
-				<p id="detail-bio">Bio</p>
+				<p class="light" id="detail-bio">Bio</p>
 			</div>
 			<div class="modal-footer text-right">
 				<a href="javascript:;" class="modal-action modal-close btn cap-red white-text">Close</a>

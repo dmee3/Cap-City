@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col s12 m6 l4">
 					<h5>Details</h5>
-					<p class="thin-text">We will be holding our auditions for the 2017 season on 9/25 and 10/2 from 10 am to 6 pm (registration begins at 9).</p>
+					<p class="thin-text">We will be holding our auditions for the 2017 season on 9/25 and 10/2 from 10 am to 6 pm (registration begins at 9 am).</p>
 				</div>
 				<div class="col s12 m6 l4">
 					<h5>Location</h5>
@@ -240,6 +240,15 @@
 				</div>
 				<div class="row center">
 					<input id="register" type="submit" class="btn-large cap-red" value="Submit">
+				</div>
+				<div class="row center">
+					<div id="processing" class="preloader-wrapper">
+						<div class="spinner-layer">
+							<div class="circle-clipper left"><div class="circle"></div></div>
+							<div class="gap-patch"><div class="circle"></div></div>
+							<div class="circle-clipper right"><div class="circle"></div></div>
+						</div>
+					</div>
 				</div>
 			{!! Form::close() !!}
 		</div>
