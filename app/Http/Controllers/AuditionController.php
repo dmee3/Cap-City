@@ -56,7 +56,7 @@ class AuditionController extends Controller
 			return redirect('/auditions')->withInput()->withErrors($val);
 		}
 
-		//Calculate charge amount
+		//Calculate charge amount (in cents)
 		$amt = 0;
 		$description = "";
 		if ($request->packet) {
@@ -83,10 +83,11 @@ class AuditionController extends Controller
 				"amount" => $amt, //Amount in cents
 				"currency" => "usd",
 				"source" => $token,
-				"description" => "Cap City Auditions - " . $request->first . " " . $request->last
+				"description" => "Cap City Auditions - " . $request->first . " " . $request->last,
+				"receipt_email" => $request->email
 			));
 		} catch(\Stripe\Error\Card $e) {
-			$request->session()->flash('error', 'We had an issue charging your card.  Please email dan.meehan17@gmail.com for help.  Sorry about that!');
+			$request->session()->flash('error', 'We had an error, please double-check your card info.  If this message pops up again, please email dan.meehan17@gmail.com for help.');
 			return view('site.auditions');
 		}
 
@@ -140,6 +141,13 @@ class AuditionController extends Controller
 				});
 			}
 
+			if ($aud->instr1 == 'Synthesizer' || $aud->instr2 == 'Synthesizer' || $aud->instr3 == 'Synthesizer' || $aud->instr1 == 'Bass Guitar' || $aud->instr2 == 'Bass Guitar' || $aud->instr3 == 'Bass Guitar' || $aud->instr1 == 'Drumset' || $aud->instr2 == 'Drumset' || $aud->instr3 == 'Drumset' || $aud->instr1 == 'Auxiliary' || $aud->instr2 == 'Auxiliary' || $aud->instr3 == 'Auxiliary') {
+				Mail::send('emails.registration', $data, function($message) use ($data) {
+					$message->subject('Cap City Cymbals Audition: ' . $data['name'])
+						->to('capitalcitypercussion@gmail.com');
+				});
+			}
+
 			//Send confirmation email to purchaser
 			$conf = array('id' => $aud->id);
 			$total = 0;
@@ -182,7 +190,7 @@ class AuditionController extends Controller
 
 		//Return packet download
 		$request->session()->put('download', 'get-packet');
-		return view('site.auditions-success');
+		return view('site.auditions-success', ['email' => $aud->email]);
 	}
 
 

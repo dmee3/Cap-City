@@ -22,10 +22,13 @@ Route::get('/news', function () { return view('site/news'); });
 Route::get('/store', function () { return view('site/store'); });
 Route::get('/contact', function () { return view('site/contact'); });
 Route::post('/contact', 'ContactController@sendContactInfo');
+
+/* Auditions routes */
 Route::get('/auditions', function () { return view('site/auditions'); });
 Route::get('/auditions-success', function () { return view('site/auditions-success'); });
 Route::post('/auditions', 'AuditionController@signUp');
 Route::get('/get-packet', 'AuditionController@getPacket');
+/* Admin side */
 Route::get('/big-team-2k17', 'AuditionController@showAll');
 
 

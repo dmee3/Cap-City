@@ -15,7 +15,10 @@
 				<h2>Thank You!</h2>
 				<div class="row">
 					<br>
-					<p class="flow-text">Your download should start momentarily.  If it does not, please click the button below.</p>
+					<h5>Your download should start momentarily.  If it does not, please click the button below.</h5>
+					@if (!empty($email))
+						<h5 class="thin">We've also sent an email to {{ $email }} with the packet attached.</h5>
+					@endif
 					<br>
 				</div>
 				<div class="row">
