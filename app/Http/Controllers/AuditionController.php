@@ -214,6 +214,8 @@ class AuditionController extends Controller
 		$data['guitar'] = DB::table('auditions')->where('instr1', 'Bass Guitar')->count();
 		$data['aux'] = DB::table('auditions')->where('instr1', 'Auxiliary')->count();
 
-		return view('app.auditions-list', ['auditions' => $auds, 'data' => $data]);
+		$total = array_sum($data);
+
+		return view('app.auditions-list', ['auditions' => $auds, 'data' => $data, 'total' => $total]);
 	}
 }
