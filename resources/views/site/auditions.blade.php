@@ -239,7 +239,7 @@
 					</div>
 				</div>
 				<div class="row center">
-					<input id="register" type="submit" class="btn-large cap-red" value="Submit">
+					<input id="register" type="submit" class="btn-large cap-black" value="Submit" disabled>
 				</div>
 				<div class="row center">
 					<div id="processing" class="preloader-wrapper">

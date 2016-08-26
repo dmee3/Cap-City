@@ -4653,7 +4653,7 @@ form p:last-child {
   border: 2px solid transparent; }
 [type="checkbox"].filled-in:disabled:not(:checked) + label:after {
   border-color: transparent;
-  background-color: #BDBDBD; }
+  background-color: #323337; }
 [type="checkbox"].filled-in:disabled:checked + label:before {
   background-color: transparent; }
 [type="checkbox"].filled-in:disabled:checked + label:after {

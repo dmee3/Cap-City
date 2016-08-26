@@ -2,6 +2,8 @@ $(document).ready(function() {
 	$('select').material_select();
 
 	var updateTotals = function() {
+
+		//Enable or disable chipotle options
 		if(!$('#audition-register').is(':checked')) {
 			$('.chipotle-checkbox').prop('checked', false);
 			$('.chipotle-checkbox').prop('disabled', true);
@@ -9,6 +11,8 @@ $(document).ready(function() {
 			$('.chipotle-checkbox').prop('disabled', false);
 		}
 
+
+		//Calculate payment amount
 		var amt = 0;
 		if ($('#audition-packet').is(':checked')) amt += 15;
 		if ($('#audition-register').is(':checked')) amt += 65;
@@ -21,6 +25,18 @@ $(document).ready(function() {
 			$('#processing-fee').prop('checked', false);
 		}
 		$('#payment-total').html('$' + amt);
+
+		//Enable or disable submission button
+		if (amt > 0) {
+			$('#register').prop('disabled', false);
+			$('#register').removeClass('cap-black');
+			$('#register').addClass('cap-red');
+		} else {
+			$('#register').prop('disabled', true);
+			$('#register').removeClass('cap-red');
+			$('#register').addClass('cap-black');
+		}
+
 	};
 
 	window.setTimeout(updateTotals, 300);
