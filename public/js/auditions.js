@@ -1,6 +1,10 @@
 $(document).ready(function() {
 	$('select').material_select();
 
+	if (!cookiesEnabled()) {
+		$('#cookie-check').show();
+	}
+
 	var updateTotals = function() {
 
 		//Enable or disable chipotle options
@@ -92,3 +96,14 @@ $(function() {
 		return false;
   });
 });
+
+function cookiesEnabled() {
+	var cookieEnabled = (navigator.cookieEnabled) ? true : false;
+
+	if (typeof navigator.cookieEnabled == "undefined" && !cookieEnabled) { 
+		document.cookie="testcookie";
+		cookieEnabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
+	}
+
+	return (cookieEnabled);
+}

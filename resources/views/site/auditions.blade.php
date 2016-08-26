@@ -10,6 +10,9 @@
 		<div class="container row">
 			<h2>2017 Auditions</h2>
 			<div class="row">
+				<div id="cookie-check" class="col s12" style="display: none;">
+					<p class="cap-red-text">Warning!  You have cookies disabled in your browser, please enable them to fill out this form.</p>
+				</div>
 				<div class="col s12 m6 l4">
 					<h5>Details</h5>
 					<p class="thin-text">We will be holding our auditions for the 2017 season on 9/25 and 10/2 from 10 am to 6 pm (registration begins at 9 am).</p>
