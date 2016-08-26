@@ -20,7 +20,7 @@
 				</div>
 				<div class="col s12 m6 offset-m3 l4">
 					<h5>Fees</h5>
-					<p class="thin-text">The audition fee is $65, and includes both days of instruction.  The audition packet itself is $15.  Pre-register below to sign up for auditions and receive the packet for free!</p>
+					<p class="thin-text">The audition fee is $65, and includes both days of instruction.  The audition packet itself is $15.  You can register at 9 am on the first day of auditions, or pre-register below to receive a packet for free!</p>
 				</div>
 			</div>
 			@include('common.errors')
