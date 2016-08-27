@@ -202,20 +202,18 @@ class AuditionController extends Controller
 
 		$auds = Audition::all();
 
-		$data['snare'] = DB::table('auditions')->where('instr1', 'Snare')->count();
-		$data['tenors'] = DB::table('auditions')->where('instr1', 'Tenors')->count();
-		$data['bass'] = DB::table('auditions')->where('instr1', 'Bass')->count();
-		$data['cymbals'] = DB::table('auditions')->where('instr1', 'Cymbals')->count();
-		$data['marimba'] = DB::table('auditions')->where('instr1', 'Marimba')->count();
-		$data['vibes'] = DB::table('auditions')->where('instr1', 'Vibes')->count();
-		$data['xylo'] = DB::table('auditions')->where('instr1', 'Xylophone')->count();
-		$data['drumset'] = DB::table('auditions')->where('instr1', 'Drumset')->count();
-		$data['synth'] = DB::table('auditions')->where('instr1', 'Synthesizer')->count();
-		$data['guitar'] = DB::table('auditions')->where('instr1', 'Bass Guitar')->count();
-		$data['aux'] = DB::table('auditions')->where('instr1', 'Auxiliary')->count();
+		$data['snare'] = Audition::where('instr1', 'Snare')->get();
+		$data['tenors'] = Audition::where('instr1', 'Tenors')->get();
+		$data['bass'] = Audition::where('instr1', 'Bass')->get();
+		$data['cymbals'] = Audition::where('instr1', 'Cymbals')->get();
+		$data['marimba'] = Audition::where('instr1', 'Marimba')->get();
+		$data['vibes'] = Audition::where('instr1', 'Vibes')->get();
+		$data['xylo'] = Audition::where('instr1', 'Xylophone')->get();
+		$data['drumset'] = Audition::where('instr1', 'Drumset')->get();
+		$data['synth'] = Audition::where('instr1', 'Synthesizer')->get();
+		$data['guitar'] = Audition::where('instr1', 'Bass Guitar')->get();
+		$data['aux'] = Audition::where('instr1', 'Auxiliary')->get();
 
-		$total = array_sum($data);
-
-		return view('app.auditions-list', ['auditions' => $auds, 'data' => $data, 'total' => $total]);
+		return view('app.auditions-list', ['auditions' => $auds, 'data' => $data]);
 	}
 }
