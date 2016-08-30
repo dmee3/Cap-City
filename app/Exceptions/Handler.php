@@ -45,7 +45,15 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+
+		//When not in production, return custom error pages
 		if (!config('app.debug') && !$this->isHttpException($e)) {
+
+			if ($e instanceof TokenMismatchException) {
+				return redirect('/')->with('error', 'Your page session expired, please try again.');
+			}
+
+			//Catch any other server-side errors
 			return response()->view('errors.500', [], 500);
 		}
 
