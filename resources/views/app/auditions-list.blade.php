@@ -93,11 +93,11 @@
 							<div class="row" style="padding: 0 30px 0 30px;">
 								<div class="col s12 m6">
 									<h5 class="cap-blue-text">Reason</h5>
-									{{ $a->reason }}
+									{!! nl2br(e($a->reason)) !!}
 								</div>
 								<div class="col s12 m6">
 									<h5 class="cap-blue-text">Experience</h5>
-									{{ $a->experience }}
+									{!! nl2br(e($a->experience)) !!}
 								</div>
 							</div>
 						</div>
