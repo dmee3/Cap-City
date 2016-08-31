@@ -24,10 +24,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-	public function roles() {
-		return $this->belongsToMany('App\Role');
-	}
-
 	/**
 	 * Check for a given role on the current user.
 	 *
@@ -37,9 +33,16 @@ class User extends Authenticatable
 	protected function is($role) {
 
 		foreach ($this->roles()->get() as $r) {
-			if ($r->name == $role) return true;
+			if ($r->name == $role) {
+				return true;
+			}
 		}
 
 		return false;
 	}
+
+	/* Model relationships */
+	public function roles() { return $this->belongsToMany('App\Role'); }
+	public function payments() { return $this->hasMany('App\Payments'); }
+	public function conflicts() { return $this->hasMany('App\Conflicts'); }
 }

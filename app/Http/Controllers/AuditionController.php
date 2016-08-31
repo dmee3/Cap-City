@@ -88,7 +88,7 @@ class AuditionController extends Controller
 				"receipt_email" => $request->email
 			));
 		} catch(\Stripe\Error\Card $e) {
-			$request->session()->flash('error', 'We had an error, please double-check your card info.  If this message pops up again, please email dan.meehan17@gmail.com for help.');
+			$request->session()->flash('error', 'Your credit card was declined, please double check your card info.  If this pops up again, please use our contact form to get help.');
 			return view('site.auditions');
 		}
 
