@@ -9,7 +9,7 @@ use App\Http\Requests;
 class PaymentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of all payments.
      *
      * @return \Illuminate\Http\Response
      */
@@ -20,6 +20,8 @@ class PaymentController extends Controller
 			$request->session()->flash('error', 'You aren\'t allowed to go there');
 			return redirect('/');
 		}
+
+		return view('admin.payments');
     }
 
     /**

@@ -87,6 +87,16 @@ nav li:hover {
 }
 
 /*
+ * hard-code fix for btn-flat animation
+ */
+.btn-flat {
+	transition: all 0.3s ease-out;
+}
+.btn-flat:hover {
+	background-color: rgba(0,0,0,0.1);
+}
+
+/*
  * Staff page
  */
 .collection .collection-item.avatar {
@@ -106,28 +116,29 @@ nav li:hover {
 		padding-left: 0;
 	}
 }
+
 /*
- * custom input colors
+ * Custom input colors - blue background
  */
 /* label focus color */
-.input-field input:focus + label, .input-field textarea:focus + label {
+.cap-blue .input-field input:focus + label, .cap-blue .input-field textarea:focus + label {
 	color: #78eff7 !important;
 }
 
 /* label underline focus color */
-.input-field input:focus, .input-field textarea:focus {
+.cap-blue .input-field input:focus, .cap-blue .input-field textarea:focus {
 	border-bottom: 1px solid #78eff7 !important;
 	box-shadow: 0 1px 0 0 #78eff7 !important;
 }
 
 /* valid color */
-.input-field input.valid {
+.cap-blue .input-field input.valid {
 	border-bottom: 1px solid #e7f1f0 !important;
 	box-shadow: 1px solid #e7f1f0 !important;
 }
 
 /* invalid color */
-.input-field input.invalid {
+.cap-blue .input-field input.invalid {
 	border-bottom: 1px solid #cc2f44 !important;
 	box-shadow: 0 1px 0 0 #cc2f44 !important;
 }
@@ -145,6 +156,32 @@ nav li:hover {
 .thin-text {
 	font-weight: 200;
 	font-size: 1.2rem;
+}
+
+/*
+ * Custom input colors - white background
+ */
+/* label focus color */
+.white .input-field input:focus + label, .white .input-field textarea:focus + label {
+	color: #323337 !important;
+}
+
+/* label underline focus color */
+.white .input-field input:focus, .white .input-field textarea:focus {
+	border-bottom: 1px solid #323337 !important;
+	box-shadow: 0 1px 0 0 #323337 !important;
+}
+
+/* valid color */
+.white .input-field input.valid {
+	border-bottom: 1px solid #323337 !important;
+	box-shadow: 1px solid #323337 !important;
+}
+
+/* invalid color */
+.white .input-field input.invalid {
+	border-bottom: 1px solid #cc2f44 !important;
+	box-shadow: 0 1px 0 0 #cc2f44 !important;
 }
 
 /*

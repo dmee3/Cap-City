@@ -28,13 +28,14 @@ Route::get('/auditions', function () { return view('site/auditions'); });
 Route::get('/auditions-success', function () { return view('site/auditions-success'); });
 Route::post('/auditions', 'AuditionController@signUp');
 Route::get('/get-packet', 'AuditionController@getPacket');
-/* Admin side */
-Route::get('/big-team-2k17', 'AuditionController@showAll');
-
 
 /**
- * Members-only routes
+ * Registered routes
  */
 Route::auth();
-
 Route::get('/home', 'HomeController@index');
+
+/**
+ * Admin routes
+ */
+Route::get('/big-team-2k17', 'AuditionController@showAll');

@@ -214,6 +214,6 @@ class AuditionController extends Controller
 		$data['guitar'] = Audition::where('instr1', 'Bass Guitar')->get();
 		$data['aux'] = Audition::where('instr1', 'Auxiliary')->get();
 
-		return view('app.auditions-list', ['auditions' => $auds, 'data' => $data]);
+		return view('admin.auditions-list', ['auditions' => $auds, 'data' => $data]);
 	}
 }

@@ -1,6 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
+
+	<div class="section white">
+		<div class="container">
+			<div class="row">
+				<h4 class="cap-blue-text">Reset Password</h4>
+			</div>
+			<div class="row">
+				@if(count($errors) > 0)
+					@include('common.errors-side')
+					<div class="col s12 m8 pull-m4">
+				@else
+					<div class="col s12">
+				@endif
+
+					{!! Form::open(array('url' => '/password/reset', 'method' => 'post')) !!}
+						<input type="hidden" name="token" value="{{ $token }}">
+						<div class="row">
+							<div class="input-field col s12">
+								<input type="text" id="email" name="email">
+								<label for="email">Email</label>
+							</div>
+							<div class="input-field col s12">
+								<input type="password" id="password" name="password">
+								<label for="password">Password</label>
+							</div>
+							<div class="input-field col s12">
+								<input type="password" id="password-confirmation" name="password_confirmation">
+								<label for="password-confirmation">Confirm Password</label>
+							</div>
+						</div>
+						<div class="row">
+							<button type="submit" class="btn cap-green white-text">Reset</button>
+						</div>
+					{!! Form::close() !!}
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!--
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -66,5 +107,6 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
+
 @endsection

@@ -1,66 +1,86 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+	<div class="section white">
+		<div class="container">
+			<div class="row">
+				<h4 class="cap-blue-text">Login</h4>
+			</div>
+			<div class="row">
+				@if(count($errors) > 0)
+					@include('common.errors-side')
+					<div class="col s12 m8 pull-m4">
+				@else
+					<div class="col s12">
+				@endif
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+					@if (session('status'))
+						<div class="col s12">
+							<div class="card-panel cap-green">
+								<p class="white-text">{{ session('status') }}</p>
+							</div>
+						</div>
+					@endif
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+					{!! Form::open(array('url' => '/login', 'method' => 'post')) !!}
+						<div class="row">
+							<div class="input-field col s12">
+								<input type="text" id="email" name="email">
+								<label for="email">Email</label>
+							</div>
+							<div class="input-field col s12">
+								<input type="password" id="password" name="password">
+								<label for="password">Password</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col s12">
+							<p>
+								<input type="checkbox" id="remember" name="remember">
+								<label for="remember">Remember Me</label>
+							</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col s6 center">
+								<button type="submit" class="btn cap-green">Login</button>
+							</div>
+							<div class="col s6 center">
+								<a class="modal-trigger btn cap-black" href="#password-reset">Forgot Your Password?</a>
+							</div>
+						</div>
+					{!! Form::close() !!}
+				</div>
+			</div>
+		</div>
+	</div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+	<div id="password-reset" class="modal cap-black-text">
+		{!! Form::open(array('url' => '/password/email', 'method' => 'post')) !!}
+			<div class="modal-content white">
+				<h4>Reset Password</h4>
+				<div class="input-field col s12">
+					<input type="text" id="reset-email" name="email">
+					<label for="reset-email">Email</label>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn-flat waves-effect waves-red modal-action modal-close">Close</a>
+				<button type="submit" class="btn-flat modal-action modal-close">Send Email</button>
+			</div>
+		{!! Form::close() !!}
+	</div>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
 
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+@endsection
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+@section('scripts')
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i> Login
-                                </button>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('.modal-trigger').leanModal();
+	});
+	</script>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
