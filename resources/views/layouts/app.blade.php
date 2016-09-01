@@ -50,6 +50,11 @@
 					</a>
 				</li>
 				<li>
+					<a href="/admin/registrations" class="white-text">
+						<i class="material-icons small cap-red-text">assignment</i><span>Registrations</span>
+					</a>
+				</li>
+				<li>
 					<a href="/admin/payments" class="white-text">
 						<i class="material-icons small cap-red-text">attach_money</i><span>Payments</span>
 					</a>

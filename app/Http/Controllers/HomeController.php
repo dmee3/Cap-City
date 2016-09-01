@@ -40,7 +40,7 @@ class HomeController extends Controller
 		$reg['total'] = DB::table('auditions')->count();
 		$pay['week'] = DB::table('payments')->whereDate('created_at', '>=', $lastWeek)->sum('amount');
 		$pay['month'] = DB::table('payments')->whereDate('created_at', '>=', $lastMonth)->sum('amount');
-		$members = 42;
+		$members = DB::table('members')->count();
 		$staff = DB::table('staffmembers')->count();
 		$conflicts = DB::table('conflicts')->whereDate('date_absent', '>=', $today)->whereDate('date_absent', '<=', $nextMonth)->count();
 
