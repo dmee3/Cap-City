@@ -30,7 +30,7 @@ class User extends Authenticatable
 	 * @param string role
 	 * @return bool
 	 */
-	protected function is($role) {
+	public function is($role) {
 
 		foreach ($this->roles()->get() as $r) {
 			if ($r->name == $role) {

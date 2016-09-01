@@ -74,10 +74,10 @@ class AuthController extends Controller
 			'password' => bcrypt($data['password']),
         ]);
 
-		$role = App\Role::firstOrCreate(['name' => $data['role']]);
+		$role = Role::firstOrCreate(['name' => $data['role']]);
 
 		//Save use role
-		$user->roles()->save($role);
+		$user->roles()->save($role, []);
 
 		return $user;
     }
