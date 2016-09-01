@@ -194,7 +194,6 @@ nav li:hover {
 .cap-black { background-color: #323337 !important; }
 .cap-grey { background-color: #8D9294 !important; }
 .cap-green { background-color: #26a65b !important; }
-.cap-red-darken { background-color: #b82a3d !important; }
 
 .cap-red-text { color: #cc2f44 !important; }
 .cap-blue-text { color: #386374 !important; }
@@ -203,4 +202,18 @@ nav li:hover {
 .cap-black-text { color: #323337 !important; }
 .cap-grey-text { color: #8D9294 !important; }
 .cap-green-text { color: #26a65b !important; }
-.cap-red-text-darken { color: #b82a3d !important; }
+
+.cap-red.darken-1 { background-color: #b82a3d !important; }
+.cap-red.darken-2 { background-color: #a32536 !important; }
+.cap-red.darken-3 { background-color: #8f202f !important; }
+.cap-red.darken-4 { background-color: #7a1c28 !important; }
+.cap-red.darken-5 { background-color: #661722 !important; }
+
+.cap-blue.darken-1 { background-color: #325968 !important; }
+.cap-blue.darken-2 { background-color: #2c4f5c !important; }
+.cap-blue.darken-3 { background-color: #274551 !important; }
+.cap-blue.darken-4 { background-color: #213b45 !important; }
+.cap-blue.darken-5 { background-color: #1c313a !important; }
+
+.cap-red-text.text-darken-1 { color: #b82a3d !important; }
+.cap-blue-text.text-darken-1 { color: #325968 !important; }

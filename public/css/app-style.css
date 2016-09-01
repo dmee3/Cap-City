@@ -1,4 +1,32 @@
+header, main, footer {
+	padding-left: 200px;
+}
+
 .nav-wrapper {
 	padding-left: 30px;
 }
 
+@media only screen and (max-width: 992px) {
+	header, main, footer {
+		padding-left: 0;
+	}
+}
+
+#side-bar {
+	width: 200px;
+}
+
+#side-bar li a i {
+	float: right;
+	margin-top: 18px;
+}
+
+#top-bar {
+	background-color: #cc2f44;
+
+	background: -webkit-gradient(linear, left top, right top, from(#cc2f44), to(#661722));
+	background: -webkit-linear-gradient(left, #cc2f44, #661722);
+	background: -moz-linear-gradient(left, #cc2f44, #661722);
+	background: -ms-linear-gradient(left, #cc2f44, #661722);
+	background: -o-linear-gradient(left, #cc2f44, #661722);
+}

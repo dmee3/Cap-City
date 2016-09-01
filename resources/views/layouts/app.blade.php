@@ -22,22 +22,60 @@
 
 </head>
 <body id="app">
-	<nav>
-		<div class="nav-wrapper black">
-			<a href="/home" class="brand-logo">Cap City</a>
-			<ul class="right white-text">
-				@if (Auth::guest())
-					<li><a href="/login">Login</a></li>
-				@else
-					<li><a href="/home">Home</a></li>
-					<li><a>{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</a></li>
-					<li><a href="/logout">Logout</a></li>
-				@endif
-			</ul>
-		</div>
-	</nav>
+	<header>
+		<nav>
+			<div id="top-bar" class="nav-wrapper white-text">
+				<a href="/" class="brand-logo">Cap City</a>
+				<a href="#" data-activates="side-bar" class="button-collapse hide-on-large-only"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					@if (Auth::guest())
+						<li><a href="/login">Login</a></li>
+					@else
+						<li><a href="/home">Home</a></li>
+						<li><a href="/logout">Logout</a></li>
+					@endif
+				</ul>
+			</div>
+		</nav>
+		<ul id="side-bar" class="side-nav fixed black">
+			@if (Auth::check())
+				<li>
+					<a href="/" class="white-text">
+						<i class="material-icons small cap-red-text">person</i><span>{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</span>
+					</a>
+				</li>
+				<li>
+					<a href="/home" class="white-text">
+						<i class="material-icons small cap-red-text">dashboard</i><span>Dashboard</span>
+					</a>
+				</li>
+				<li>
+					<a href="/admin/payments" class="white-text">
+						<i class="material-icons small cap-red-text">attach_money</i><span>Payments</span>
+					</a>
+				</li>
+				<li>
+					<a href="/admin/members" class="white-text">
+						<i class="material-icons small cap-red-text">people</i><span>Members</span>
+					</a>
+				</li>
+				<li>
+					<a href="/admin/conflicts" class="white-text">
+						<i class="material-icons small cap-red-text">not_interested</i><span>Conflicts</span>
+					</a>
+				</li>
+				<li class="hide-on-large-only">
+					<a href="/logout" class="white-text">
+						<i class="material-icons small cap-red-text">exit_to_app</i><span>Logout</span>
+					</a>
+				</li>
+			@endif
+		</ul>
+	</header>
 
-    @yield('content')
+	<main>
+	    @yield('content')
+	</main>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
