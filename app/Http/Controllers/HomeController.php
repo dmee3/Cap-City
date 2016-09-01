@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use DB;
+
 use App\User;
 use App\Http\Requests;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,6 +22,37 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+	/**
+	 * Show the admin dashboard.
+	 *
+	 * @param Request $request
+	 * @return Response
+	 */
+	protected function adminIndex(Request $request) {
+
+		$today = \Carbon\Carbon::today();
+		$lastThreeDays = \Carbon\Carbon::today()->subDays(3);
+		$lastWeek = \Carbon\Carbon::today()->subWeek();
+		$lastMonth = \Carbon\Carbon::today()->subMonth();
+		$nextMonth = \Carbon\Carbon::today()->addMonth();
+
+		$reg['three'] = DB::table('auditions')->whereDate('created_at', '>=', $lastThreeDays)->count();
+		$reg['total'] = DB::table('auditions')->count();
+		$pay['week'] = DB::table('payments')->whereDate('created_at', '>=', $lastWeek)->sum('amount');
+		$pay['month'] = DB::table('payments')->whereDate('created_at', '>=', $lastMonth)->sum('amount');
+		$members = 42;
+		$staff = DB::table('staffmembers')->count();
+		$conflicts = DB::table('conflicts')->whereDate('date_absent', '>=', $today)->whereDate('date_absent', '<=', $nextMonth)->count();
+
+		return view('admin.home', [
+				'reg' => $reg,
+				'pay' => $pay,
+				'members' => $members,
+				'staff' => $staff,
+				'conflicts' => $conflicts
+			]);
+	}
+
     /**
      * Show the application dashboard.
      *
@@ -28,9 +62,10 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 		if (Auth::user()->is('Admin')) {
-			return view('admin.home');
+			return $this->adminIndex($request);
 		}
 
         return view('home');
     }
+
 }

@@ -24,13 +24,14 @@
 <body id="app">
 	<nav>
 		<div class="nav-wrapper black">
-			<a href="{{ url('/app') }}" class="brand-logo">Cap City</a>
+			<a href="/home" class="brand-logo">Cap City</a>
 			<ul class="right white-text">
 				@if (Auth::guest())
-					<li><a href="{{ url('/login') }}">Login</a></li>
+					<li><a href="/login">Login</a></li>
 				@else
+					<li><a href="/home">Home</a></li>
 					<li><a>{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}</a></li>
-					<li><a href="{{ url('/logout') }}">Logout</a></li>
+					<li><a href="/logout">Logout</a></li>
 				@endif
 			</ul>
 		</div>

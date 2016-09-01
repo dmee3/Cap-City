@@ -34,10 +34,10 @@
 					<li><a href="staff">Staff</a></li>
 				</ul>
 				<a href="/" id="cc-logo-circle" class="brand-logo center circle cap-red hide-on-med-and-down">
-					<img src="img/cc_nav.png" id="cc-logo" width="60" height="70">
+					<img src="/img/cc_nav.png" id="cc-logo" width="60" height="70">
 				</a>
 				<a href="/" id="cc-logo-container-small" class="valign-wrapper">
-					<img src="img/cc_nav.png" id="cc-logo-small" class="valign hide-on-large-only" width="43" height="50">
+					<img src="/img/cc_nav.png" id="cc-logo-small" class="valign hide-on-large-only" width="43" height="50">
 				</a>
 				<a href="/" data-activates="mobile-nav" id="burger" class="button-collapse right hide-on-large-only"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
@@ -72,18 +72,18 @@
 	<!-- Sponsors -->
 	<div id="sponsors" class="section black center">
 		<div class="container row">
-			<div class="col s6 m3 l2"><a href="http://ateasesupplyco.spreadshirt.com/"><img src="img/sponsors/at_ease.png" /></a></div>
-			<div class="col s6 m3 l2"><a href="http://www.columbuspercussion.com/"><img src="img/sponsors/col_pro.png" /></a></div>
-			<div class="col s6 m3 l2"><a href="http://www.creative-costuming.com/"><img src="img/sponsors/creative_costuming.png" /></a></div>
-			<div class="col s6 m3 l2"><a href="http://www.innovativepercussion.com/"><img src="img/sponsors/innovative_percussion.png" /></a></div>
-			<div class="col s6 m3 l2"><a href="http://www.majestic-percussion.com/"><img src="img/sponsors/majestic.png" /></a></div>
-			<div class="col s6 m3 l2"><a href="http://www.mapexdrums.com/"><img src="img/sponsors/mapex.png" /></a></div>
-			<div class="col s6 m3 l2"><a href="http://www.on2percussion.com/"><img src="img/sponsors/on2.png" /></a></div>
-			<div class="col s6 m3 l2"><a href="http://www.pageantryinnovations.com/"><img src="img/sponsors/pageantry.png" /></a></div>
-			<div class="col s6 m3 l2"><a href="http://www.remo.com/"><img src="img/sponsors/remo.png" /></a></div>
-			<div class="col s6 m3 l2"><a href="http://www.treeworkschimes.com/"><img src="img/sponsors/treeworks.png" /></a></div>
-			<div class="col s6 m3 l2"><a href="http://www.treeworkschimes.com/"><img src="img/sponsors/winter_guard_tarps.png" /></a></div>
-			<div class="col s6 m3 l2"><a href="http://zildjian.com/"><img src="img/sponsors/zildjian.png" /></a></div></div>
+			<div class="col s6 m3 l2"><a href="http://ateasesupplyco.spreadshirt.com/"><img src="/img/sponsors/at_ease.png" /></a></div>
+			<div class="col s6 m3 l2"><a href="http://www.columbuspercussion.com/"><img src="/img/sponsors/col_pro.png" /></a></div>
+			<div class="col s6 m3 l2"><a href="http://www.creative-costuming.com/"><img src="/img/sponsors/creative_costuming.png" /></a></div>
+			<div class="col s6 m3 l2"><a href="http://www.innovativepercussion.com/"><img src="/img/sponsors/innovative_percussion.png" /></a></div>
+			<div class="col s6 m3 l2"><a href="http://www.majestic-percussion.com/"><img src="/img/sponsors/majestic.png" /></a></div>
+			<div class="col s6 m3 l2"><a href="http://www.mapexdrums.com/"><img src="/img/sponsors/mapex.png" /></a></div>
+			<div class="col s6 m3 l2"><a href="http://www.on2percussion.com/"><img src="/img/sponsors/on2.png" /></a></div>
+			<div class="col s6 m3 l2"><a href="http://www.pageantryinnovations.com/"><img src="/img/sponsors/pageantry.png" /></a></div>
+			<div class="col s6 m3 l2"><a href="http://www.remo.com/"><img src="/img/sponsors/remo.png" /></a></div>
+			<div class="col s6 m3 l2"><a href="http://www.treeworkschimes.com/"><img src="/img/sponsors/treeworks.png" /></a></div>
+			<div class="col s6 m3 l2"><a href="http://www.treeworkschimes.com/"><img src="/img/sponsors/winter_guard_tarps.png" /></a></div>
+			<div class="col s6 m3 l2"><a href="http://zildjian.com/"><img src="/img/sponsors/zildjian.png" /></a></div></div>
 	</div>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

@@ -1,4 +1,4 @@
-@extends ('layouts.master')
+@extends ('layouts.app')
 
 @section('content')
 
@@ -19,22 +19,22 @@
 			<div class="row">
 				<div class="col s6">
 					<ul class="collapsible">
-						@include('app.auditions-sub', ['name' => 'Snare', 'data' => $data['snare']])
-						@include('app.auditions-sub', ['name' => 'Tenors', 'data' => $data['tenors']])
-						@include('app.auditions-sub', ['name' => 'Bass', 'data' => $data['bass']])
-						@include('app.auditions-sub', ['name' => 'Cymbals', 'data' => $data['cymbals']])
+						@include('admin.auditions-sub', ['name' => 'Snare', 'data' => $data['snare']])
+						@include('admin.auditions-sub', ['name' => 'Tenors', 'data' => $data['tenors']])
+						@include('admin.auditions-sub', ['name' => 'Bass', 'data' => $data['bass']])
+						@include('admin.auditions-sub', ['name' => 'Cymbals', 'data' => $data['cymbals']])
 						<li><div class="collapsible-header"><b>Total<span class="secondary-content">{{ count($data['snare']) + count($data['tenors']) + count($data['bass']) + count($data['cymbals']) }}</span></b></div></li>
 					</ul>
 				</div>
 				<div class="col s6">
 					<ul class="collapsible">
-						@include('app.auditions-sub', ['name' => 'Marimba', 'data' => $data['marimba']])
-						@include('app.auditions-sub', ['name' => 'Vibes', 'data' => $data['vibes']])
-						@include('app.auditions-sub', ['name' => 'Xylophone', 'data' => $data['xylo']])
-						@include('app.auditions-sub', ['name' => 'Drum Set', 'data' => $data['drumset']])
-						@include('app.auditions-sub', ['name' => 'Synthesizer', 'data' => $data['synth']])
-						@include('app.auditions-sub', ['name' => 'Bass Guitar', 'data' => $data['guitar']])
-						@include('app.auditions-sub', ['name' => 'Auxiliary', 'data' => $data['aux']])
+						@include('admin.auditions-sub', ['name' => 'Marimba', 'data' => $data['marimba']])
+						@include('admin.auditions-sub', ['name' => 'Vibes', 'data' => $data['vibes']])
+						@include('admin.auditions-sub', ['name' => 'Xylophone', 'data' => $data['xylo']])
+						@include('admin.auditions-sub', ['name' => 'Drum Set', 'data' => $data['drumset']])
+						@include('admin.auditions-sub', ['name' => 'Synthesizer', 'data' => $data['synth']])
+						@include('admin.auditions-sub', ['name' => 'Bass Guitar', 'data' => $data['guitar']])
+						@include('admin.auditions-sub', ['name' => 'Auxiliary', 'data' => $data['aux']])
 						<li><div class="collapsible-header"><b>Total<span class="secondary-content">{{ count($data['marimba']) + count($data['vibes']) + count($data['xylo']) + count($data['drumset']) + count($data['synth']) + count($data['guitar']) + count($data['aux']) }}</span></b></div></li>
 					</ul>
 				</div>

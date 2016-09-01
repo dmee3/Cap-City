@@ -30,12 +30,20 @@ Route::post('/auditions', 'AuditionController@signUp');
 Route::get('/get-packet', 'AuditionController@getPacket');
 
 /**
- * Registered routes
+ * Basic login/logout/register routes
  */
 Route::auth();
 Route::get('/home', 'HomeController@index');
 
 /**
- * Admin routes
+ * App routes
  */
-Route::get('/big-team-2k17', 'AuditionController@showAll');
+Route::group(['middleware' => 'auth'], function() {
+
+	/* Admin routes */
+	Route::get('/admin/registrations', ['middleware' => 'role:admin', 'uses' => 'AuditionController@showAll']);
+
+
+
+
+});
