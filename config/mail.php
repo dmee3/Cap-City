@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'donotreply@capcitypercussion.com', 'name' => 'Cap City Auto Mail'],
+    'from' => ['address' => 'donotreply@capcitypercussion.com', 'name' => 'Cap City'],
 
     /*
     |--------------------------------------------------------------------------

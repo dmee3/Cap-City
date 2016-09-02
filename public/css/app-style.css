@@ -30,3 +30,15 @@ header, main, footer {
 	background: -ms-linear-gradient(left, #cc2f44, #661722);
 	background: -o-linear-gradient(left, #cc2f44, #661722);
 }
+
+#dashboard-bg {
+	background: -webkit-gradient(linear, left top, left bottom, from(#386374), to(#1c313a));
+	background: -webkit-linear-gradient(top, #386374, #1c313a);
+	background: -moz-linear-gradient(top, #386374, #1c313a);
+	background: -ms-linear-gradient(top, #386374, #1c313a);
+	background: -o-linear-gradient(top, #386374, #1c313a);
+}
+
+.dashboard-card {
+	height: 220px;
+}

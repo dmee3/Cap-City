@@ -76,7 +76,7 @@
 	<div id="about" class="section cap-black white-text">
 		<div class="container row">
 			<h2>About Us</h2>
-			<p class="thin">Cap City was founded in 2011 as Capital City Percussion, a group for percussionists from the Central Ohio area to grow as musicians and performers.  We began competing in both Winter Guard International  and the Ohio Indoor Performance Association during the 2012 season in percussion independent A class.  During the 2012 season, Capital City was bumped up to Open class and finished the season in 9th place at WGI World Championships.  Capital City followed a strong first season with a WGI gold medal in 2013, and was subsequently promoted to World class in 2014.</p>
+			<p class="thin">Cap City was envisioned in 2011 as Capital City Percussion, a group for percussionists from the Central Ohio area to grow as musicians and performers.  We began competing in both Winter Guard International  and the Ohio Indoor Performance Association during the 2012 season in percussion independent A class.  During the 2012 season, Capital City was bumped up to Open class and finished the season in 9th place at WGI World Championships.  Capital City followed a strong first season with a WGI gold medal in 2013, and was subsequently promoted to World class in 2014.</p>
 			<p class="thin">Following our 2016 season, Cap City is looking ahead to another year of competition at the highest level.  All of our members and staff are excited to continue pushing ourselves throughout the winter and spring to perform the best show we can.</p>
 			<p class="thin">See you on the floor!</p>
 		</div>

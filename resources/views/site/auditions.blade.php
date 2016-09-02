@@ -6,7 +6,7 @@
 
 @section('content')
 
-	<div class="section cap-white-text" id="auditions">
+	<div class="section cap-blue cap-white-text" id="auditions">
 		<div class="container row">
 			<h2>2017 Auditions</h2>
 			<div class="row">

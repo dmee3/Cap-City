@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="section cap-blue darken-2">
+<div id="dashboard-bg" class="section cap-blue darken-2">
 	<div class="container">
 
 		<div class="row">
@@ -14,7 +14,7 @@
 
 			<div class="col s12 m6">
 				<a href="/admin/registrations">
-					<div class="card hoverable cap-black white-text">
+					<div class="card dashboard-card hoverable cap-black white-text">
 						<div class="card-content">
 							<h5 class="thin">Registrations</h5>
 							<div class="row">
@@ -34,7 +34,7 @@
 
 			<div class="col s12 m6">
 				<a href="/admin/payments">
-					<div class="card hoverable cap-white cap-green-text">
+					<div class="card dashboard-card hoverable cap-white cap-green-text">
 						<div class="card-content">
 							<h5 class="thin">Payments</h5>
 							<div class="row">
@@ -57,7 +57,7 @@
 
 			<div class="col s6 m3">
 				<a href="/admin/members">
-					<div class="card hoverable cap-blue white-text">
+					<div class="card dashboard-card hoverable cap-blue white-text">
 						<div class="card-content">
 							<h5 class="thin">Members</h5>
 							<div class="row">
@@ -73,7 +73,7 @@
 
 			<div class="col s6 m3">
 				<a href="/admin/staff">
-					<div class="card hoverable cap-black white-text">
+					<div class="card dashboard-card hoverable cap-black white-text">
 						<div class="card-content">
 							<h5 class="thin">Staff</h5>
 							<div class="row">
@@ -89,12 +89,12 @@
 
 			<div class="col s6 m3">
 				<a href="/schedule">
-					<div class="card hoverable cap-black white-text">
+					<div class="card dashboard-card hoverable cap-black white-text">
 						<div class="card-content">
 							<h5 class="thin">Next Show</h5>
 							<div class="row">
 								<div class="col s12 center">
-									<h3>Sunday, 2/4</h3>
+									<h5>Sunday, 2/4</h5>
 									<p class="thin">Olentangy Liberty High School</p>
 								</div>
 							</div>
@@ -105,7 +105,7 @@
 
 			<div class="col s6 m3">
 				<a href="/admin/conflicts">
-					<div class="card hoverable cap-white cap-red-text">
+					<div class="card dashboard-card hoverable cap-white cap-red-text">
 						<div class="card-content">
 							<h5 class="thin">Conflicts</h5>
 							<div class="row">
