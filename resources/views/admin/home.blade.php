@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div id="dashboard-bg" class="section cap-blue darken-2">
+<div id="dashboard-bg">
 	<div class="container">
 
 		<div class="row">
@@ -122,4 +122,5 @@
 		</div>
 	</div>
 </div>
+
 @endsection
