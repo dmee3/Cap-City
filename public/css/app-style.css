@@ -16,6 +16,10 @@ header, main, footer {
 	width: 200px;
 }
 
+#side-bar li {
+	transition: all 0.3s ease;
+}
+
 #side-bar li a i {
 	float: right;
 	margin-top: 18px;
@@ -29,6 +33,10 @@ header, main, footer {
 	background: -moz-linear-gradient(left, #cc2f44, #661722);
 	background: -ms-linear-gradient(left, #cc2f44, #661722);
 	background: -o-linear-gradient(left, #cc2f44, #661722);
+}
+
+#top-bar ul li:hover {
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 #dashboard-bg {
