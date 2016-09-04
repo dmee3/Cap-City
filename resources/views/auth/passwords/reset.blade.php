@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-basic')
 
 @section('content')
 
@@ -18,15 +18,15 @@
 					{!! Form::open(array('url' => '/password/reset', 'method' => 'post')) !!}
 						<input type="hidden" name="token" value="{{ $token }}">
 						<div class="row">
-							<div class="input-field col s12">
+							<div class="hl-black input-field col s12">
 								<input type="text" id="email" name="email">
 								<label for="email">Email</label>
 							</div>
-							<div class="input-field col s12">
+							<div class="hl-black input-field col s12">
 								<input type="password" id="password" name="password">
 								<label for="password">Password</label>
 							</div>
-							<div class="input-field col s12">
+							<div class="hl-black input-field col s12">
 								<input type="password" id="password-confirmation" name="password_confirmation">
 								<label for="password-confirmation">Confirm Password</label>
 							</div>

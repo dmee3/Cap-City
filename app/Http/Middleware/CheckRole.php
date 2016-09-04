@@ -14,9 +14,10 @@ class CheckRole
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $role)
-    {
-		if (Auth::user()->is($role)) {
+    public function handle($request, Closure $next, $role) {
+
+		if (!$request->user()->is($role)) {
+			$request->session()->flash('error', 'Unauthorized');
 			return redirect('/home');
 		}
         return $next($request);

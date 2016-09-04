@@ -32,16 +32,24 @@ Route::get('/get-packet', 'AuditionController@getPacket');
 /**
  * Basic login/logout/register routes
  */
-Route::auth();
+Route::get('login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@showLoginForm']);
+Route::post('login', ['as' => 'auth.login', 'uses' => 'Auth\AuthController@login']);
+Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@logout']);
+//Route::get('register', ['as' => 'auth.register', 'uses' => 'Auth\AuthController@showRegistrationForm']);
+//Route::post('register', ['as' => 'auth.register', 'uses' => 'Auth\AuthController@register']);
+Route::get('password/reset/{token?}', ['as' => 'auth.password.reset', 'uses' => 'Auth\PasswordController@showResetForm']);
+Route::post('password/email', ['as' => 'auth.password.email', 'uses' => 'Auth\PasswordController@sendResetLinkEmail']);
+Route::post('password/reset', ['as' => 'auth.password.reset', 'uses' => 'Auth\PasswordController@reset']);
 Route::get('/home', 'HomeController@index');
 
 /**
- * App routes
+ * App routes - admin
  */
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => ['auth', 'role:Admin']], function() {
 
-	/* Admin routes */
-	Route::get('/admin/registrations', ['middleware' => 'role:admin', 'uses' => 'AuditionController@showAll']);
+	Route::get('/admin/registrations', 'AuditionController@showAll');
+	Route::get('/admin/create-user', function() { return view('admin.create-user'); });
+	Route::post('/admin/create-user', 'AdminController@createUser');
 
 
 

@@ -13,17 +13,17 @@
 			<h2>Contact Us</h2>
 			{!! Form::open(array('action' => 'ContactController@sendContactInfo', 'method' => 'post', 'class' => 'col s12')) !!}
 				<div class="row">
-					<div class="input-field col s6">
+					<div class="hl-teal input-field col s6">
 						<input id="contact-name" type="text" name="name">
 						<label for="contact-name">Name</label>
 					</div>
-					<div class="input-field col s6">
+					<div class="hl-teal input-field col s6">
 						<input id="contact-email" type="email" class="validate" name="email">
 						<label for="contact-email" data-error="Please enter a valid email address">Email</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12">
+					<div class="hl-teal input-field col s12">
 						<textarea id="contact-message" class="materialize-textarea" name="message"></textarea>
 						<label for="contact-message">What's up?</label>
 					</div>

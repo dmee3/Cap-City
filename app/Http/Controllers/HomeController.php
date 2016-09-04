@@ -45,12 +45,40 @@ class HomeController extends Controller
 		$conflicts = DB::table('conflicts')->whereDate('date_absent', '>=', $today)->whereDate('date_absent', '<=', $nextMonth)->count();
 
 		return view('admin.home', [
-				'reg' => $reg,
-				'pay' => $pay,
-				'members' => $members,
-				'staff' => $staff,
-				'conflicts' => $conflicts
-			]);
+			'reg' => $reg,
+			'pay' => $pay,
+			'members' => $members,
+			'staff' => $staff,
+			'conflicts' => $conflicts
+		]);
+	}
+
+	/**
+	 * Show the staff dashboard.
+	 *
+	 * @param Request $request
+	 * @return Response
+	 */
+	protected function staffIndex(Request $request) {
+
+		return view('staff.home');
+	}
+
+	/**
+	 * Show the member dashboard.
+	 *
+	 * @param Request $request
+	 * @return Response
+	 */
+	protected function memberIndex(Request $request) {
+
+		$user = $request->user();
+		$paid = $user->payments()->sum('amount');
+		return view('members.home', [
+			'payments' => $user->payments,
+			'paid' => $paid,
+			'conflicts' => $user->conflicts
+		]);
 	}
 
     /**
@@ -65,7 +93,11 @@ class HomeController extends Controller
 			return $this->adminIndex($request);
 		}
 
-        return view('home');
+		if (Auth::user()->is('Staff')) {
+			return $this->staffIndex($request);
+		}
+
+        return $this->memberIndex($request);
     }
 
 }

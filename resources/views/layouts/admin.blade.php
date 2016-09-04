@@ -69,6 +69,11 @@
 						<i class="material-icons small cap-red-text">not_interested</i><span>Conflicts</span>
 					</a>
 				</li>
+				<li>
+					<a href="/admin/create-user" class="white-text">
+						<i class="material-icons small cap-red-text">person_add</i><span>New User</span>
+					</a>
+				</li>
 				<li class="hide-on-large-only">
 					<a href="/logout" class="white-text">
 						<i class="material-icons small cap-red-text">exit_to_app</i><span>Logout</span>
@@ -85,6 +90,7 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 	<script type="text/javascript" src="/js/script.js"></script>
+	<script type="text/javascript" src="/js/app.js"></script>
 	<script src="https://use.fontawesome.com/c006854291.js"></script>
 	@yield('scripts')
 	@if (Session::has('success'))

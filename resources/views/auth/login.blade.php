@@ -25,11 +25,11 @@
 
 					{!! Form::open(array('url' => '/login', 'method' => 'post')) !!}
 						<div class="row">
-							<div class="input-field col s12">
+							<div class="hl-black input-field col s12">
 								<input type="text" id="email" name="email">
 								<label for="email">Email</label>
 							</div>
-							<div class="input-field col s12">
+							<div class="hl-black input-field col s12">
 								<input type="password" id="password" name="password">
 								<label for="password">Password</label>
 							</div>
@@ -43,11 +43,11 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col s6 center">
+							<div class="col s4 m6 center">
 								<button type="submit" class="btn cap-green">Login</button>
 							</div>
-							<div class="col s6 center">
-								<a class="modal-trigger btn cap-black" href="#password-reset">Forgot Your Password?</a>
+							<div class="col s8 m6 center">
+								<a class="modal-trigger btn cap-black" href="#password-reset">Forgot Password?</a>
 							</div>
 						</div>
 					{!! Form::close() !!}
@@ -60,7 +60,7 @@
 		{!! Form::open(array('url' => '/password/email', 'method' => 'post')) !!}
 			<div class="modal-content white">
 				<h4>Reset Password</h4>
-				<div class="input-field col s12">
+				<div class="hl-black input-field col s12">
 					<input type="text" id="reset-email" name="email">
 					<label for="reset-email">Email</label>
 				</div>

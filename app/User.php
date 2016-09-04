@@ -43,6 +43,6 @@ class User extends Authenticatable
 
 	/* Model relationships */
 	public function roles() { return $this->belongsToMany('App\Role'); }
-	public function payments() { return $this->hasMany('App\Payments'); }
-	public function conflicts() { return $this->hasMany('App\Conflicts'); }
+	public function payments() { return $this->hasMany('App\Payment'); }
+	public function conflicts() { return $this->hasMany('App\Conflict'); }
 }
