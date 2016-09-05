@@ -223,19 +223,19 @@
 						<div class="col s12 center">
 							<h3 id="payment-total">$0</h3>
 					</div>
-						<div class="input-field col s12">
+						<div class="input-field hl-teal col s12">
 							<input type="text" size="20" data-stripe="number" id="stripe-number">
 							<label for="stripe-number">Card Number</label>
 						</div>
-						<div class="input-field col s5 m6">
+						<div class="input-field hl-teal col s5 m6">
 							<input type="text" placeholder="MM"  size="2" data-stripe="exp_month" id="stripe-month">
 							<label for="stripe-month">Expiration Month</label>
 						</div>
-						<div class="input-field col s5 m6">
+						<div class="input-field hl-teal col s5 m6">
 							<input type="text" placeholder="YY" size="2" data-stripe="exp_year" id="stripe-year">
 							<label for="stripe-year">Expiration Year</label>
 						</div>
-						<div class="input-field col s2 m4 offset-m4">
+						<div class="input-field hl-teal col s2 m4 offset-m4">
 							<input type="text" size="4" data-stripe="cvc" id="stripe-cvc">
 							<label for="stripe-cvc">CVC</label>
 						</div>

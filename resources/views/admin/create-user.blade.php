@@ -37,35 +37,20 @@
 					</div>
 					<div class="row">
 						<div class="hl-teal input-field col s6 offset-s3">
-							<select name="role">
+							<select id="role" name="role">
 								<option value="" disabled selected>Choose a role</option>
-								<option value="Member">Member</option>
-								<option value="Staff">Staff</option>
-								<option value="Admin">Admin</option>
 							</select>
 						</div>
 					</div>
-					<div id="member-info" class="row">
+					<div id="info" class="row">
 						<div class="hl-teal input-field col s6">
-							<select id="member-section" name="member-section">
-								<option value="" disabled selected>Choose a section</option>
-								<option value="Battery">Battery</option>
-								<option value="Front">Front</option>
+							<select id="section" name="section">
+								<option value="" disabled selected>Please choose a role first</option>
 							</select>
 						</div>
 						<div class="hl-teal input-field col s6">
-							<select id="member-sub" name="member-sub">
-								<option value="" disabled selected>Choose a sub-section</option>
-								<option value="Snare">Snare</option>
-								<option value="Tenors">Tenors</option>
-								<option value="Bass">Bass</option>
-								<option value="Cymbals">Cymbals</option>
-								<option value=""></option>
-								<option value=""></option>
-								<option value=""></option>
-								<option value=""></option>
-								<option value=""></option>
-								<option value=""></option>
+							<select id="subsection" name="subsection">
+								<option value="" disabled selected>Please choose a section first</option>
 							</select>
 						</div>
 					</div>
@@ -89,5 +74,11 @@
 		</div>
 	</div>
 </div>
+
+@endsection
+
+@section('scripts')
+
+	<script src="/js/create-user.js" type="text/javascript"></script>
 
 @endsection
