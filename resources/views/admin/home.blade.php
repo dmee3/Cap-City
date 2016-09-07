@@ -2,16 +2,20 @@
 
 @section('content')
 
-<div id="dashboard-bg">
-	<div class="container">
-
-		<div class="row">
-			<h3 class="cap-white-text">Dashboard</h3>
-			<div class="divider"></div>
-		</div>
-
+	<div id="app" class="container">
+		<br>
 		<div class="row">
 
+<!--
+			<div class="col s12">
+				<a href="/admin/payments">
+					<div class="card hoverable white cap-black-text">
+
+
+					</div>
+				</a>
+			</div>
+-->
 			<div class="col s12 m6">
 				<a href="/admin/registrations">
 					<div class="card dashboard-card hoverable cap-black white-text">
@@ -34,7 +38,7 @@
 
 			<div class="col s12 m6">
 				<a href="/admin/payments">
-					<div class="card dashboard-card hoverable cap-white cap-green-text">
+					<div class="card dashboard-card hoverable white cap-green-text">
 						<div class="card-content">
 							<h5 class="thin">Payments</h5>
 							<div class="row">
@@ -105,7 +109,7 @@
 
 			<div class="col s6 m3">
 				<a href="/admin/conflicts">
-					<div class="card dashboard-card hoverable cap-white cap-red-text">
+					<div class="card dashboard-card hoverable white cap-red-text">
 						<div class="card-content">
 							<h5 class="thin">Conflicts</h5>
 							<div class="row">
@@ -121,6 +125,5 @@
 
 		</div>
 	</div>
-</div>
 
 @endsection

@@ -6,6 +6,9 @@
 		<div class="container">
 			<div class="row">
 				<h4 class="cap-blue-text">Login</h4>
+				<div id="cookie-check" class="col s12" style="display: none;">
+					<p class="cap-red-text">Warning!  You have cookies disabled in your browser, please enable them to fill out this form.</p>
+				</div>
 			</div>
 			<div class="row">
 				@if(count($errors) > 0)
@@ -80,7 +83,21 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('.modal-trigger').leanModal();
+		if (!cookiesEnabled()) {
+			$('#cookie-check').show();
+		}
 	});
+
+	function cookiesEnabled() {
+		var cookieEnabled = (navigator.cookieEnabled) ? true : false;
+
+		if (typeof navigator.cookieEnabled == "undefined" && !cookieEnabled) { 
+			document.cookie="testcookie";
+			cookieEnabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
+		}
+
+		return (cookieEnabled);
+	}
 	</script>
 
 @endsection

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Role;
+use App\Member;
+use App\Staffmember;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests;
 
@@ -40,6 +42,21 @@ class AdminController extends Controller
 		//Save user role
 		$role = Role::firstOrCreate(['name' => $request->input('role')]);
 		$user->roles()->save($role, []);
+
+		//Set up member or staff
+		if ($request->input('role') == 'Member') {
+			$member = Member::create([
+				'user_id' => $user->id,
+				'dues' => $request->input('member_dues')
+			]);
+		} else if ($request->input('role') == 'Staff') {
+			$staff = Staffmember::create([
+				'user_id' => $user->id,
+				'position' => $request->input('staff_position'),
+				'pay' => $request->input('staff_pay'),
+				'conflict_section' => $request->input('staff_conflict_section')
+			]);
+		}
 
 		//Send email to user
 		$emailData['first'] = $request->input('first_name');

@@ -4,49 +4,52 @@ $(document).ready(function() {
 	var frontSubOptions = ['Marimba', 'Vibes', 'Xylophone', 'Electronics', 'Auxiliary'];
 
 	//Populate section dropdown based on role choice
-	$('#role').change(function() {
+	$(document).on('change', '#role', function() {
 
-		//Remove old settings
-		$('#role').prop('multiple', false);
-		$('#section').empty();
-		$('#subsection').empty();
+		$('#member-info').hide();
+		$('#staff-info').hide();
 
-		//Section values that apply to admins, members, and staff
-		$('#section').append($('<option></option>').prop('disabled', true).prop('selected', true).text('Choose a sub-section'));
-		$('#section').append($('<option></option>').attr('value', 'Battery').text('Battery'));
-		$('#section').append($('<option></option>').attr('value', 'Front').text('Front'));
-
-		//Populate section dropdown for staff/admins
-		if ($('#role').val() !== 'Members') {
-			$('#role').prop('multiple', true);
-			$('#section').append($('<option></option>').attr('value', 'Visual').text('Visual'));
-			$('#section').append($('<option></option>').attr('value', 'Admin').text('Admin'));
-			$('#section').append($('<option></option>').attr('value', 'Design').text('Design'));
+		//Show / hide member and staff-specific info
+		if ($('#role').val() === 'Staff') {
+			$('#staff-info').show();
+		} else if ($('#role').val() === 'Member') {
+			$('#member-info').show();
 		}
 
+		//Update materialize select options
+		$('select').material_select();
 	});
 
 	//Populate sub-section dropdown based on section choice
-	$('#section').change(function() {
+	$(document).on('change', '#section', function() {
 
 		//Remove old settings
 		$('#subsection').empty();
 		$('#subsection').append($('<option></option>').prop('disabled', true).prop('selected', true).text('Choose a sub-section'));
 
 		//Populate for front
-		if ($('section').val() == 'Front') {
-
-			for (var i = 0; i < batterySubOptions.length; i++) {
-				$('#subsection').append($('<option></option>').attr('value', batterySubOptions[i]).text(batterySubOptions[i]));
-			}
-
-		//Populate for battery
-		} else if ($('section').val() == 'Battery') {
+		if ($('#section').val() === 'Front') {
 
 			for (var i = 0; i < frontSubOptions.length; i++) {
 				$('#subsection').append($('<option></option>').attr('value', frontSubOptions[i]).text(frontSubOptions[i]));
 			}
 
+		//Populate for battery
+		} else if ($('#section').val() === 'Battery') {
+
+			for (var i = 0; i < batterySubOptions.length; i++) {
+				$('#subsection').append($('<option></option>').attr('value', batterySubOptions[i]).text(batterySubOptions[i]));
+			}
+
+		//Disable if neither battery nor front is chosen
+		} else {
+
+			$('#subsection').empty();
+			$('#subsection').append($('<option></option>').prop('disabled', true).prop('selected', true).text('Please choose  a section first'));
 		}
+
+		//Update materialize select options
+		$('select').material_select();
 	});
+
 });

@@ -32,7 +32,7 @@
 				<a href="https://capcitypercussion.com/auditions">
 					<div class="card hoverable cap-blue news-card white-text">
 						<div class="card-image hide-on-small-and-down">
-							<img src="img/tenor_close.png">
+							<img src="img/tenor_card.png">
 							<span class="card-title">Auditions</span>
 						</div>
 						<div class="card-content hide-on-med-and-up">
@@ -46,7 +46,7 @@
 				<a href="staff">
 					<div class="card hoverable cap-blue news-card white-text">
 						<div class="card-image hide-on-small-and-down">
-							<img src="img/ensemble.png">
+							<img src="img/ensemble_card.png">
 							<span class="card-title">2017 Staff</span>
 						</div>
 						<div class="card-content hide-on-med-and-up">
@@ -60,12 +60,12 @@
 				<a href="store">
 					<div class="card hoverable cap-blue news-card white-text">
 						<div class="card-image hide-on-small-and-down">
-							<img src="img/marimba.png">
-							<span class="card-title">Store</span>
+							<img src="img/fire_card.png">
+							<span class="card-title">Schedule</span>
 						</div>
 						<div class="card-content hide-on-med-and-up">
-							<span class="card-title">Store</span>
-							<p>Coming soon!</p>
+							<span class="card-title">Schedule</span>
+							<p>Check out our show schedule for 2017!</p>
 						</div>
 					</div>
 				</a>

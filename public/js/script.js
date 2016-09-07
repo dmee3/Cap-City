@@ -4,12 +4,12 @@ $(document).ready(function() {
 	$('#cc-logo-circle').hover(function() {
 
 		//Hover in - lighten color
-		$(this).addClass('darken-1');
+		$(this).addClass('lighten-1');
 
 	}, function() {
 
 		//Hover out - back to normal
-		$(this).removeClass('darken-1');
+		$(this).removeClass('lighten-1');
 
 	});
 
