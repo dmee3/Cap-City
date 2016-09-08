@@ -65,7 +65,7 @@ class AdminController extends Controller
 		$emailData['email'] = $request->input('email');
 		Mail::send('emails.new-user', $emailData, function($message) use ($emailData) {
 			$message->subject('New User Account')->to($emailData['email'])
-				->bcc('dan@capcitypercussion.com');
+				->bcc('dan.meehan17@gmail.com');
 		});
 
 		//Return to dashboard
