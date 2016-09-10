@@ -43,7 +43,7 @@
 				</a>
 			</div>
 			<div class="col s12 m4">
-				<a href="staff">
+				<a href="/staff">
 					<div class="card hoverable cap-blue news-card white-text">
 						<div class="card-image hide-on-small-and-down">
 							<img src="img/ensemble_card.png">
@@ -57,7 +57,7 @@
 				</a>
 			</div>
 			<div class="col s12 m4">
-				<a href="store">
+				<a href="/schedule">
 					<div class="card hoverable cap-blue news-card white-text">
 						<div class="card-image hide-on-small-and-down">
 							<img src="img/fire_card.png">
