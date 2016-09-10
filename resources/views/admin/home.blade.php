@@ -23,8 +23,8 @@
 							<h5 class="thin">Registrations</h5>
 							<div class="row">
 								<div class="col s6 center">
-									<h3>{{ $reg['three'] }}</h3>
-									<p>Last 3 Days</p>
+									<h3>{{ $reg['week'] }}</h3>
+									<p>Past Week</p>
 								</div>
 								<div class="col s6 center">
 									<h3>{{ $reg['total'] }}</h3>

@@ -36,7 +36,7 @@ class HomeController extends Controller
 		$lastMonth = \Carbon\Carbon::today()->subMonth();
 		$nextMonth = \Carbon\Carbon::today()->addMonth();
 
-		$reg['three'] = DB::table('auditions')->whereDate('created_at', '>=', $lastThreeDays)->count();
+		$reg['week'] = DB::table('auditions')->whereDate('created_at', '>=', $lastWeek)->count();
 		$reg['total'] = DB::table('auditions')->count();
 		$pay['week'] = DB::table('payments')->whereDate('created_at', '>=', $lastWeek)->sum('amount');
 		$pay['month'] = DB::table('payments')->whereDate('created_at', '>=', $lastMonth)->sum('amount');
