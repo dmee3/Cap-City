@@ -40,7 +40,7 @@
 						<div class="row">
 							<div class="col s12">
 							<p>
-								<input type="checkbox" id="remember" name="remember">
+								<input type="checkbox" id="remember" name="remember" checked>
 								<label for="remember">Remember Me</label>
 							</p>
 							</div>

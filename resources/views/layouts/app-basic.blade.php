@@ -21,7 +21,7 @@
 	<link rel="icon" type="image/png" href="img/icon.png">
 
 </head>
-<body id="app">
+<body>
 	<nav>
 		<div id="top-bar" class="nav-wrapper white-text">
 			<a href="/" class="brand-logo">Cap City</a>
