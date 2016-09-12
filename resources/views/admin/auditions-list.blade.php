@@ -40,7 +40,7 @@
 				<div class="col s6">
 					<div class="card">
 						<div class="card-content">
-							<h4 class="cap-blue-text">Battery</h4>
+							<h4 class="cap-blue-text">Front</h4>
 							<ul class="collapsible">
 								@include('admin.auditions-sub', ['name' => 'Marimba', 'data' => $data['marimba']])
 								@include('admin.auditions-sub', ['name' => 'Vibes', 'data' => $data['vibes']])
