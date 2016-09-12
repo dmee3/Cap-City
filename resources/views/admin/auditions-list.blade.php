@@ -11,32 +11,48 @@
 		<div class="container">
 			<div class="row">
 				<div class="col s12">
-					<ul class="collection">
-						<li class="collection-item center"><h4>Total: {{ count($auditions) }}</h4></li>
-					</ul>
+					<div class="card">
+						<div class="card-content center">
+							<div class="row valign-wrapper">
+								<div class="col s4 valign"><h4>{{ $reg }}</h4><p>Registrations</p></div>
+								<div class="col s4 valign"><h3>{{ $total }}</h3><p>Total</p></div>
+								<div class="col s4 valign"><h4>{{ $packet }}</h4><p>Packets</p></div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col s6">
-					<ul class="collapsible">
-						@include('admin.auditions-sub', ['name' => 'Snare', 'data' => $data['snare']])
-						@include('admin.auditions-sub', ['name' => 'Tenors', 'data' => $data['tenors']])
-						@include('admin.auditions-sub', ['name' => 'Bass', 'data' => $data['bass']])
-						@include('admin.auditions-sub', ['name' => 'Cymbals', 'data' => $data['cymbals']])
-						<li><div class="collapsible-header"><b>Total<span class="secondary-content">{{ count($data['snare']) + count($data['tenors']) + count($data['bass']) + count($data['cymbals']) }}</span></b></div></li>
-					</ul>
+					<div class="card">
+						<div class="card-content">
+							<h4 class="cap-blue-text">Battery</h4>
+							<ul class="collapsible">
+								@include('admin.auditions-sub', ['name' => 'Snare', 'data' => $data['snare']])
+								@include('admin.auditions-sub', ['name' => 'Tenors', 'data' => $data['tenors']])
+								@include('admin.auditions-sub', ['name' => 'Bass', 'data' => $data['bass']])
+								@include('admin.auditions-sub', ['name' => 'Cymbals', 'data' => $data['cymbals']])
+								<li><div class="collapsible-header"><b>Total<span class="secondary-content">{{ count($data['snare']) + count($data['tenors']) + count($data['bass']) + count($data['cymbals']) }}</span></b></div></li>
+							</ul>
+						</div>
+					</div>
 				</div>
 				<div class="col s6">
-					<ul class="collapsible">
-						@include('admin.auditions-sub', ['name' => 'Marimba', 'data' => $data['marimba']])
-						@include('admin.auditions-sub', ['name' => 'Vibes', 'data' => $data['vibes']])
-						@include('admin.auditions-sub', ['name' => 'Xylophone', 'data' => $data['xylo']])
-						@include('admin.auditions-sub', ['name' => 'Drum Set', 'data' => $data['drumset']])
-						@include('admin.auditions-sub', ['name' => 'Synthesizer', 'data' => $data['synth']])
-						@include('admin.auditions-sub', ['name' => 'Bass Guitar', 'data' => $data['guitar']])
-						@include('admin.auditions-sub', ['name' => 'Auxiliary', 'data' => $data['aux']])
-						<li><div class="collapsible-header"><b>Total<span class="secondary-content">{{ count($data['marimba']) + count($data['vibes']) + count($data['xylo']) + count($data['drumset']) + count($data['synth']) + count($data['guitar']) + count($data['aux']) }}</span></b></div></li>
-					</ul>
+					<div class="card">
+						<div class="card-content">
+							<h4 class="cap-blue-text">Battery</h4>
+							<ul class="collapsible">
+								@include('admin.auditions-sub', ['name' => 'Marimba', 'data' => $data['marimba']])
+								@include('admin.auditions-sub', ['name' => 'Vibes', 'data' => $data['vibes']])
+								@include('admin.auditions-sub', ['name' => 'Xylophone', 'data' => $data['xylo']])
+								@include('admin.auditions-sub', ['name' => 'Drum Set', 'data' => $data['drumset']])
+								@include('admin.auditions-sub', ['name' => 'Synthesizer', 'data' => $data['synth']])
+								@include('admin.auditions-sub', ['name' => 'Bass Guitar', 'data' => $data['guitar']])
+								@include('admin.auditions-sub', ['name' => 'Auxiliary', 'data' => $data['aux']])
+								<li><div class="collapsible-header"><b>Total<span class="secondary-content">{{ count($data['marimba']) + count($data['vibes']) + count($data['xylo']) + count($data['drumset']) + count($data['synth']) + count($data['guitar']) + count($data['aux']) }}</span></b></div></li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

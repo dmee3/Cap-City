@@ -201,6 +201,12 @@ class AuditionController extends Controller
 	public function showAll(Request $request) {
 
 		$auds = Audition::all();
+		$total = count(Audition::all());
+		$reg = count(Audition::where('registered', 'true')->get());
+		$packet = count(Audition::where([
+			['packet', '=', 'true'],
+			['registered', '=', 'false']
+		])->get());
 
 		$data['snare'] = Audition::where('instr1', 'Snare')->get();
 		$data['tenors'] = Audition::where('instr1', 'Tenors')->get();
@@ -214,6 +220,6 @@ class AuditionController extends Controller
 		$data['guitar'] = Audition::where('instr1', 'Bass Guitar')->get();
 		$data['aux'] = Audition::where('instr1', 'Auxiliary')->get();
 
-		return view('admin.auditions-list', ['auditions' => $auds, 'data' => $data]);
+		return view('admin.auditions-list', ['auditions' => $auds, 'total' => $total, 'reg' => $reg, 'packet' => $packet, 'data' => $data]);
 	}
 }
