@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link type="text/css" rel="stylesheet" href="/css/materialize-style.css"/>
 	<link type="text/css" rel="stylesheet" href="/css/style.css"/>
-	<link type="text/css" rel="stylesheet" href="/css/app-style.css"/>
+	<link type="text/css" rel="stylesheet" href="/css/admin.css"/>
 	@yield('styles')
 	<link rel="icon" type="image/png" href="img/icon.png">
 
@@ -87,10 +87,10 @@
 	    @yield('content')
 	</main>
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 	<script type="text/javascript" src="/js/script.js"></script>
-	<script type="text/javascript" src="/js/app.js"></script>
+	<script type="text/javascript" src="/js/admin.js"></script>
 	<script src="https://use.fontawesome.com/c006854291.js"></script>
 	@yield('scripts')
 	@if (Session::has('success'))
