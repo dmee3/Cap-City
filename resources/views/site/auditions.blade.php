@@ -30,39 +30,39 @@
 			{!! Form::open(array('action' => 'AuditionController@signUp', 'method' => 'post', 'id' => 'audition-form', 'class' => 'col s12')) !!}
 				<div class="row">
 					<h4>Personal Info</h4>
-					<div class="input-field col s6">
+					<div class="input-field hl-teal col s6">
 						<input id="audition-first-name" type="text" name="first">
 						<label for="audition-first-name">First Name</label>
 					</div>
-					<div class="input-field col s6">
+					<div class="input-field hl-teal col s6">
 						<input id="audition-last-name" type="text" name="last">
 						<label for="audition-last-name">Last Name</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s6">
+					<div class="input-field hl-teal col s6">
 						<input id="audition-email" type="email" class="validate" name="email">
 						<label for="audition-email" data-error="Please enter a valid email address">Email</label>
 					</div>
-					<div class="input-field col s6">
+					<div class="input-field hl-teal col s6">
 						<input id="audition-phone" type="tel" name="phone">
 						<label for="audition-phone">Phone</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12">
+					<div class="input-field hl-teal col s12">
 						<input id="audition-address-1" type="text" name="address1">
 						<label for="audition-address-1">Address</label>
 					</div>
-					<div class="input-field col s12">
+					<div class="input-field hl-teal col s12">
 						<input id="audition-address-2" type="text" name="address2">
 						<label for="audition-address-2">Address 2</label>
 					</div>
-					<div class="input-field col s6">
+					<div class="input-field hl-teal col s6">
 						<input id="audition-city" type="text" name="city">
 						<label for="audition-city">City</label>
 					</div>
-					<div class="input-field col s3">
+					<div class="input-field hl-teal col s3">
 						<select id="audition-state" name="state">
 							<option value="" disabled selected>Choose your state</option>
 							<option value="AK">AK</option>
@@ -119,7 +119,7 @@
 						</select>
 						<label for="audition-state">State</label>
 					</div>
-					<div class="input-field col s3">
+					<div class="input-field hl-teal col s3">
 						<input id="audition-zip" type="text" name="zip">
 						<label for="audition-zip">Zip</label>
 					</div>
@@ -127,7 +127,7 @@
 				<br><br><br>
 				<div class="row">
 					<h4>Audition Info</h4>
-					<div class="input-field col s4">
+					<div class="input-field hl-teal col s4">
 						<select id="audition-instr1" name="instr1">
 							<option value="" disabled selected>First Choice</option>
 							<option value="Snare">Snare</option>
@@ -144,7 +144,7 @@
 						</select>
 						<label for="audition-instr1">Instrument</label>
 					</div>
-					<div class="input-field col s4">
+					<div class="input-field hl-teal col s4">
 						<select id="audition-instr2" name="instr2">
 							<option value="" disabled selected>Second Choice</option>
 							<option value="Snare">Snare</option>
@@ -160,7 +160,7 @@
 							<option value="Auxiliary">Auxiliary</option>
 						</select>
 					</div>
-					<div class="input-field col s4">
+					<div class="input-field hl-teal col s4">
 						<select id="audition-instr3" name="instr3">
 							<option value="" disabled selected>Third Choice</option>
 							<option value="Snare">Snare</option>
@@ -178,13 +178,13 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12">
+					<div class="input-field hl-teal col s12">
 						<textarea id="audition-reason" placeholder="Why do you want to be a part of Cap City?" class="materialize-textarea" name="reason"></textarea>
 						<label for="audition-reason">Reason</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12">
+					<div class="input-field hl-teal col s12">
 						<textarea id="audition-experience" placeholder="Where have you marched before?  Please be specific." class="materialize-textarea" name="experience"></textarea>
 						<label for="audition-experience">Experience</label>
 					</div>
