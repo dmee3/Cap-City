@@ -69,6 +69,16 @@
 		<a class="white-text" target="_blank" href="https://www.snapchat.com/add/snapcityperc"><i class="fa fa-snapchat fa-3x social-media" aria-hidden="true"></i></a>
 	</div>
 
+	<!-- Copyright / login -->
+	<div class="section black row">
+		<div class="col s6 center">
+			<p class="white-text">© Cap City Percussion 2016</p>
+		</div>
+		<div class="col s6 center">
+			<p><a href="/login" class="white-text" style="text-decoration: underline;">Login</a></p>
+		</div>
+	</div>
+
 	<!-- Sponsors -->
 	<div id="sponsors" class="section black center">
 		<div class="container row">

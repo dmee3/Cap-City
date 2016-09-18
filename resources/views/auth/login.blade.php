@@ -46,10 +46,11 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col s4 m6 center">
-								<button type="submit" class="btn cap-green">Login</button>
+							<div class="col s12 m6 center">
+								<input type="submit" class="btn cap-green" value="Login"></input>
 							</div>
-							<div class="col s8 m6 center">
+							<div class="col s12 hide-on-med-and-up"><br></div>
+							<div class="col s12 m6 center">
 								<a class="modal-trigger btn cap-black" href="#password-reset">Forgot Password?</a>
 							</div>
 						</div>
