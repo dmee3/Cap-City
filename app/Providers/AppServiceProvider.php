@@ -13,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+		//Inject view name into each view
+		view()->composer('*', function($view) {
+			view()->share('view_name', str_replace('.', '-', $view->getName()));
+		});
     }
 
     /**
