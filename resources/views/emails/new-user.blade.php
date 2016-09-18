@@ -1,6 +1,6 @@
 <h3>Welcome, {{ $first }}!</h3>
 <br>
-<p>A new Cap City account has been created for you.  Use the email address and temporary password listed below to sign in to your account.  Once signed in, please change your password by going to account settings (click on your name in the menu).</p>
+<p>A new Cap City account has been created for you.  Use the email address and temporary password listed below to sign in to your account.  Once signed in, please change your password by going to your settings page.</p>
 <br>
 <p>Email: {{ $email }}</p>
 <p>Password: {{ $password }}</p>

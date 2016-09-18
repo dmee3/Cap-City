@@ -1,17 +1,12 @@
-<p>
-  You have received a new message from your website contact form.
-</p>
-<p>
-  Here are the details:
-</p>
-<ul>
-  <li>Name: <strong>{{ $name }}</strong></li>
-  <li>Email: <strong>{{ $email }}</strong></li>
-</ul>
-<hr>
+<h3>Cap City Contact Form</h3>
+<br>
+<p>Name: <strong> {{ $name }}</strong></p>
+<p>Email: <strong> {{ $email }}</strong></p>
+<br>
+<p>Messsage:</p>
+<br>
 <p>
   @foreach ($messageLines as $messageLine)
     {{ $messageLine }}<br>
   @endforeach
 </p>
-<hr>
