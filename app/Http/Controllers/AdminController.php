@@ -47,7 +47,9 @@ class AdminController extends Controller
 		if ($request->input('role') == 'Member') {
 			$member = Member::create([
 				'user_id' => $user->id,
-				'dues' => $request->input('member_dues')
+				'dues' => $request->input('member_dues'),
+				'section' => $request->input('section'),
+				'subsection' => $request->input('subsection')
 			]);
 		} else if ($request->input('role') == 'Staff') {
 			$staff = Staffmember::create([
@@ -64,8 +66,7 @@ class AdminController extends Controller
 		$emailData['password'] = $request->input('password');
 		$emailData['email'] = $request->input('email');
 		Mail::send('emails.new-user', $emailData, function($message) use ($emailData) {
-			$message->subject('New User Account')->to($emailData['email'])
-				->bcc('dan.meehan17@gmail.com');
+			$message->subject('New User Account')->to($emailData['email']);
 		});
 
 		//Return to dashboard

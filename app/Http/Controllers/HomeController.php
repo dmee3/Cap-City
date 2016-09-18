@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use Auth;
 use DB;
+use Hash;
 
 use App\User;
+use App\Staffmember;
+use App\Member;
+use App\Conflict;
 use App\Http\Requests;
 
 use Illuminate\Http\Request;
@@ -61,7 +65,28 @@ class HomeController extends Controller
 	 */
 	protected function staffIndex(Request $request) {
 
-		return view('staff.home');
+		$today = \Carbon\Carbon::today();
+		$nextMonth = \Carbon\Carbon::today()->addMonth();
+
+		$user = $request->user();
+		$staff = Staffmember::where('user_id', $user->id)->first();
+		$paid = sprintf('%.2f', $user->payments()->sum('amount'));
+
+		$section = $staff->conflict_section;
+		$sectionIDs = Member::where('section', $section)->select('user_id')->get();
+		$idArray = array_map(function($val) { return $val['user_id']; }, $sectionIDs->toArray());
+		$conflicts = Conflict::whereIn('user_id', $idArray)
+			->whereDate('date_absent', '>=', $today)
+			->whereDate('date_absent', '<=', $nextMonth)
+			->orderBy('date_absent')->get();
+
+		return view('staff.home', [
+			'user' => $user,
+			'paid' => $paid,
+			'payments' => $user->payments(),
+			'staff' => $staff,
+			'conflicts' => $conflicts
+		]);
 	}
 
 	/**
@@ -72,17 +97,22 @@ class HomeController extends Controller
 	 */
 	protected function memberIndex(Request $request) {
 
+		$today = \Carbon\Carbon::today();
+
 		$user = $request->user();
-		$paid = $user->payments()->sum('amount');
+		$member = Member::where('user_id', $user->id)->first();
+		$paid = sprintf('%.2f', $user->payments()->sum('amount'));
 		return view('members.home', [
+			'user' => $user,
 			'payments' => $user->payments,
 			'paid' => $paid,
-			'conflicts' => $user->conflicts
+			'member' => $member,
+			'conflicts' => $user->futureConflicts
 		]);
 	}
 
     /**
-     * Show the application dashboard.
+     * Show the application home.
      *
 	 * @param Request $request
      * @return \Illuminate\Http\Response
@@ -100,4 +130,65 @@ class HomeController extends Controller
         return $this->memberIndex($request);
     }
 
+    /**
+     * Show user settings.
+     *
+	 * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+	public function settings(Request $request) {
+
+		if (Auth::user()->is('Admin')) {
+			return view('admin.settings');
+		}
+
+		if (Auth::user()->is('Staff')) {
+			return view('staff.settings');
+		}
+
+		return view('members.settings');
+	}
+
+    /**
+     * Change current user's password.
+     *
+	 * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+	public function changePassword(Request $request) {
+
+		if (!Hash::check($request->old_pass, $request->user()->password)) {
+			return back()->withErrors('Old password was incorrect');
+		}
+
+		if ($request->new_pass != $request->confirm_pass) {
+			return back()->withErrors('Passwords do not match');
+		}
+
+		$user = $request->user();
+		$user->password = bcrypt($request->new_pass);
+		$user->save();
+
+		$request->session()->flash('success', 'Password changed!');
+		return redirect('/home');
+	}
+
+    /**
+     * Show full seasonn schedule.
+     *
+	 * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+	public function schedule(Request $request) {
+
+		if (Auth::user()->is('Admin')) {
+			return view('admin.schedule');
+		}
+
+		if (Auth::user()->is('Staff')) {
+			return view('staff.schedule');
+		}
+
+		return view('members.schedule');
+	}
 }

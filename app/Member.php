@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
@@ -14,4 +15,6 @@ class Member extends Model
     protected $fillable = [
         'user_id', 'dues', 'section', 'subsection'
     ];
+
+	public function user() { return $this->hasOne('App\User'); }
 }

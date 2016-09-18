@@ -23,7 +23,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col s6">
+				<div class="col s12 m6">
 					<div class="card">
 						<div class="card-content">
 							<h4 class="cap-blue-text">Battery</h4>
@@ -37,7 +37,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col s6">
+				<div class="col s12 m6">
 					<div class="card">
 						<div class="card-content">
 							<h4 class="cap-blue-text">Front</h4>

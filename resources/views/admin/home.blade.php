@@ -37,7 +37,7 @@
 			</div>
 
 			<div class="col s12 m6">
-				<a href="/admin/payments">
+				<a href="/admin/dues">
 					<div class="card dashboard-card hoverable white cap-green-text">
 						<div class="card-content">
 							<h5 class="thin">Payments</h5>

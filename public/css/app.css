@@ -1,0 +1,143 @@
+html {
+	background-color: #eeeeee;
+}
+
+.nav-wrapper ul li:hover {
+	background-color: rgba(0, 0, 0, .1);
+}
+
+@media screen and (min-width: 992px) {
+	.nav-wrapper {
+		margin-left: 30px;
+	}
+}
+
+#hero {
+	background-image: url("/img/app/marimba.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	height: 250px;
+}
+
+/* specific section backgrounds */
+#hero.snare { background-image: url("/img/app/snare.png") !important; }
+#hero.tenors { background-image: url("/img/app/tenors.png") !important; }
+#hero.bass { background-image: url("/img/app/bass.png") !important; }
+#hero.cymbals { background-image: url("/img/app/cymbals.png") !important; }
+#hero.marimba { background-image: url("/img/app/marimba.png") !important; }
+#hero.vibes { background-image: url("/img/app/vibes.png") !important; }
+#hero.xylophone { background-image: url("/img/app/xylophone.png") !important; }
+#hero.auxiliary { background-image: url("/img/app/auxiliary.png") !important; }
+#hero.electronics { background-image: url("/img/app/electronics.png") !important; }
+#hero.battery { background-image: url("/img/app/battery.png") !important; }
+#hero.front { background-image: url("/img/app/front.png") !important; }
+
+#name {
+	width: 100%;
+	position: relative;
+	bottom: -125px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 991px) {
+	#hero {
+		height: 300px;
+	}
+
+	#name {
+		bottom: -175px;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	#hero {
+		height: 400px;
+	}
+
+	#name {
+		bottom: -275px;
+	}
+}
+
+#paid-info {
+	letter-spacing: 1px;
+}
+
+#dues-bar {
+	height: 20px;
+	background-color: #bee8d5;
+	border-radius: 10px;
+}
+
+#dues-progress {
+	border-radius: 10px;
+}
+
+.collection-icon {
+	margin-right: 10px;
+}
+
+.collection-icon i {
+	vertical-align: bottom;
+}
+
+#timeline {
+	position: relative;
+}
+
+#timeline li {
+	position: relative;
+	padding: 10px 0 0 0;
+}
+
+#timeline li::before {
+	display: block;
+	position: absolute;
+	content: '';
+	left: 11px;
+	top: 20px;
+	background-color: #e7f1f0;
+	width: 2px;
+	height: 100%;
+	z-index: 1;
+}
+
+#timeline li:last-child::before {
+	display: none;
+}
+
+#timeline li .event {
+	margin-left: 30px;
+}
+
+#timeline li .dot {
+	display: block;
+	position: absolute;
+	top: 10px;
+	left: 1px;
+	width: 22px;
+	height: 22px;
+	border: 4px solid;
+	border-radius: 50%;
+	z-index: 2;
+}
+
+#timeline li .dot.rehearsal {
+	border-color: #386374;
+}
+
+#timeline li .dot.show {
+	border-color: #cc2f44;
+}
+
+.cap-black { background-color: #323337 !important; }
+.cap-blue { background-color: #386374 !important; }
+.cap-red { background-color: #cc2f44 !important; }
+.cap-white { background-color: #e7f1f0 !important; }
+.cap-green { background-color: #25a56b !important; }
+
+.cap-black-text { color: #323337 !important; }
+.cap-blue-text { color: #386374 !important; }
+.cap-red-text { color: #cc2f44 !important; }
+.cap-white-text { color: #e7f1f0 !important; }
+.cap-green-text { color: #25a56b !important; }

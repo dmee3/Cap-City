@@ -132,20 +132,20 @@ class AuditionController extends Controller
 
 			Mail::send('emails.registration', $data, function($message) use ($data) {
 				$message->subject('Cap City Audition: ' . $data['name'])
-					->to('dan.meehan17@gmail.com');
+					->to(env('DAN_EMAIL'));
 			});
 
 			if ($aud->instr1 == 'Cymbals' || $aud->instr2 == 'Cymbals' || $aud->instr3 == 'Cymbals') {
 				Mail::send('emails.registration', $data, function($message) use ($data) {
 					$message->subject('Cap City Cymbals Audition: ' . $data['name'])
-						->to('arielpeel@gmail.com')->cc('coopermannon@gmail.com');
+						->to(env('ARIEL_EMAIL'))->cc(env('COOPER_EMAIL'));
 				});
 			}
 
 			if ($aud->instr1 == 'Synthesizer' || $aud->instr2 == 'Synthesizer' || $aud->instr3 == 'Synthesizer' || $aud->instr1 == 'Bass Guitar' || $aud->instr2 == 'Bass Guitar' || $aud->instr3 == 'Bass Guitar' || $aud->instr1 == 'Drumset' || $aud->instr2 == 'Drumset' || $aud->instr3 == 'Drumset' || $aud->instr1 == 'Auxiliary' || $aud->instr2 == 'Auxiliary' || $aud->instr3 == 'Auxiliary') {
 				Mail::send('emails.registration', $data, function($message) use ($data) {
 					$message->subject('Cap City Front Aux Audition: ' . $data['name'])
-						->to('capitalcitypercussion@gmail.com');
+						->to(env('DONNIE_EMAIL'));
 				});
 			}
 

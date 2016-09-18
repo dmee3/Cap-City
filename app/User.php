@@ -45,4 +45,9 @@ class User extends Authenticatable
 	public function roles() { return $this->belongsToMany('App\Role'); }
 	public function payments() { return $this->hasMany('App\Payment'); }
 	public function conflicts() { return $this->hasMany('App\Conflict'); }
+	public function member() { return $this->hasOne('App\Member'); }
+	public function futureConflicts() {
+		$today = \Carbon\Carbon::today();
+		return $this->hasMany('App\Conflict')->whereDate('date_absent', '>=', $today);
+	}
 }

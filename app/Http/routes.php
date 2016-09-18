@@ -40,18 +40,30 @@ Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@logo
 Route::get('password/reset/{token?}', ['as' => 'auth.password.reset', 'uses' => 'Auth\PasswordController@showResetForm']);
 Route::post('password/email', ['as' => 'auth.password.email', 'uses' => 'Auth\PasswordController@sendResetLinkEmail']);
 Route::post('password/reset', ['as' => 'auth.password.reset', 'uses' => 'Auth\PasswordController@reset']);
+
+
+/**
+ * App routes - general
+ */
 Route::get('/home', 'HomeController@index');
+Route::get('/settings', 'HomeController@settings');
+Route::post('/settings', 'HomeController@changePassword');
+Route::get('/full-schedule', 'HomeController@schedule');
 
 /**
  * App routes - admin
  */
 Route::group(['middleware' => ['auth', 'role:Admin']], function() {
-
 	Route::get('/admin/registrations', 'AuditionController@showAll');
 	Route::get('/admin/create-user', function() { return view('admin.create-user'); });
 	Route::post('/admin/create-user', 'AdminController@createUser');
+	Route::get('/admin/dues', 'PaymentController@index');
+});
 
-
-
-
+/**
+ * App routes - member
+ */
+Route::group(['middleware' => ['auth', 'role:Member']], function() {
+	Route::post('/home', 'PaymentController@newStripePayment');
+	Route::post('/add-conflict', 'ConflictController@newConflict');
 });

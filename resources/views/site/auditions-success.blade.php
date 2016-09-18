@@ -31,7 +31,7 @@
 				<h2>Whoops...</h2>
 				<div class="row">
 					<br>
-					<p class="flow-text">Something went wrong.  If you just attempted to buy a packet, please email dan.meehan17@gmail.com for help.  Sorry about that!</p>
+					<p class="flow-text">Something went wrong.  If you just attempted to buy a packet, please use our contact form for help.  Sorry about that!</p>
 					<br>
 				</div>
 			</div>

@@ -14,4 +14,6 @@ class Staffmember extends Model
     protected $fillable = [
         'user_id', 'pay', 'position', 'conflict_section'
     ];
+
+	public function user() { return $this->hasOne('user'); }
 }
