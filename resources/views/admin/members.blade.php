@@ -51,7 +51,7 @@
 			{!! Form::open(['action' => 'MemberController@delete']) !!}
 			<p class="center">Are you sure you want to delete <span id="del-name"></span>?</p>
 			<br>
-			<input type="hidden" name="member-id" id="del-id">
+			<input type="hidden" name="member_id" id="del-id">
 			<button type="submit" class="btn cap-red">Delete</button>
 			{!! Form::close() !!}
 		</div>
@@ -71,10 +71,8 @@
 			$('.collapsible').collapsible();
 
 			$('.modal-trigger').on('click', function() {
-				var name = $(this).attr('data-name');
-				var id = $(this).attr('data-id');
-				$('#del-name').html(name);
-				$('#del-id').val(id);
+				$('#del-name').html($(this).data('name'));
+				$('#del-id').val($(this).data('id'));
 			});
 		});
 	</script>
