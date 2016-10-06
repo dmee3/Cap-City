@@ -7,7 +7,7 @@
 <body class="cap-blue">
 	<div class="container center white-text">
 		<div class="row">
-			<h2>Go Fish</h2>
+			<h2>Go Fish!</h2>
 			<h5>That page doesn't exist.</h5>
 		</div>
 		<div class="row">

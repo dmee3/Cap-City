@@ -15,29 +15,21 @@
 			<li>
 				<img id="logo-outline" src="img/logo_outline.png">
 			</li>
-			<li>
-				<div class="caption center-align white-text">
-					<h1>Auditions</h1>
-					<br>
-					<h4>Auditions will be held on Sunday, 9/25 and Sunday, 10/2.</h4>
-					<h5>Registration available <a href="https://capcitypercussion.com/auditions" class="cap-red-text">here!</a></h5>
-				</div>
-			</li>
 		</ul>
 	</div>
 
 	<div id="cards" class="section cap-white">
 		<div class="container row">
-			<div class="col s12 m4">
-				<a href="https://capcitypercussion.com/auditions">
+			<div class="col s12 m4 offset-m2">
+				<a href="/schedule">
 					<div class="card hoverable cap-blue news-card white-text">
 						<div class="card-image hide-on-small-and-down">
-							<img src="img/tenor_card.png">
-							<span class="card-title">Auditions</span>
+							<img src="img/fire_card.png">
+							<span class="card-title">Schedule</span>
 						</div>
 						<div class="card-content hide-on-med-and-up">
-							<span class="card-title">Auditions</span>
-							<p>Click here to register!</p>
+							<span class="card-title">Schedule</span>
+							<p>Check out our show schedule for 2017!</p>
 						</div>
 					</div>
 				</a>
@@ -52,20 +44,6 @@
 						<div class="card-content hide-on-med-and-up">
 							<span class="card-title">2017 Staff</span>
 							<p>Meet our staff for this season!</p>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col s12 m4">
-				<a href="/schedule">
-					<div class="card hoverable cap-blue news-card white-text">
-						<div class="card-image hide-on-small-and-down">
-							<img src="img/fire_card.png">
-							<span class="card-title">Schedule</span>
-						</div>
-						<div class="card-content hide-on-med-and-up">
-							<span class="card-title">Schedule</span>
-							<p>Check out our show schedule for 2017!</p>
 						</div>
 					</div>
 				</a>
