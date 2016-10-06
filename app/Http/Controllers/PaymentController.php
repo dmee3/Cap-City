@@ -24,7 +24,7 @@ class PaymentController extends Controller
 			->join('members', 'users.id', '=', 'members.user_id')
 			->select('users.first_name', 'users.last_name', 'members.dues',
 				'members.section', 'members.subsection')
-			->orderBy('users.last_name')
+			->orderBy('users.first_name')
 			->get();
 
 		$batterySections = ['Snare', 'Tenors', 'Bass', 'Cymbals'];

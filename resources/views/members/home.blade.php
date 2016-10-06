@@ -25,9 +25,9 @@
 								<a id="payment-modal-trigger" class="modal-trigger btn-floating btn-large waves-effect waves-light cap-green right" href="#payment-modal"><i class="material-icons">add</i></a>
 							</div>
 						</div>
-						<div id="paid-info" class="row grey-text center">
+						<div id="paid-info" class="row grey-text center ">
 							<h5>PAID: ${{ $paid }}</h5>
-							<div id="dues-bar" class="progress z-depth-1">
+							<div id="dues-bar" class="progress z-depth-1 cap-green-fade">
 								<div id="dues-progress" class="determinate cap-green" style="width: {{ $paid * 100 / $member['dues'] }}%;"></div>
 							</div>
 							<h6>TOTAL: ${{ $member['dues'] }}</h6>

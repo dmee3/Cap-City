@@ -56,3 +56,16 @@ header, main, footer {
 .dashboard-card {
 	height: 220px;
 }
+
+#paid-info {
+	letter-spacing: 1px;
+}
+
+#dues-bar {
+	height: 20px;
+	border-radius: 10px;
+}
+
+#dues-progress {
+	border-radius: 10px;
+}

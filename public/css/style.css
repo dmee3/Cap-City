@@ -166,6 +166,8 @@ nav li:hover {
 .cap-grey { background-color: #8D9294 !important; }
 .cap-green { background-color: #26a65b !important; }
 
+.cap-green-fade { background-color: #bee8d5 !important; }
+
 .cap-red-text { color: #cc2f44 !important; }
 .cap-blue-text { color: #386374 !important; }
 .cap-teal-text { color: #78eff7 !important; }

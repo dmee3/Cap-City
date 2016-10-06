@@ -60,6 +60,8 @@ Route::group(['middleware' => ['auth', 'role:Admin']], function() {
 	Route::get('/admin/create-user', function() { return view('admin.create-user'); });
 	Route::post('/admin/create-user', 'AdminController@createUser');
 	Route::get('/admin/dues', 'PaymentController@index');
+	Route::get('/admin/members', 'MemberController@index');
+	Route::post('/admin/members', 'MemberController@delete');
 });
 
 /**
