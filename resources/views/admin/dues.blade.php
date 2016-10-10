@@ -13,7 +13,7 @@
 								<h5>{{ $section }}</h5>
 								<ul class="collection">
 								@foreach ($members as $m)
-									<li class="collection-item payment-list-item pay-{{ $m->pay_color }}" style="background-size: {{ $m->paid * 100 / $m->member->dues }}%;">
+									<li class="collection-item payment-list-item pay-{{ $m->pay_color }}" style="background-size: {{ $m->pay_width }}%;">
 										{{ $m->first_name . " " . $m->last_name }}
 										<span class="secondary-content black-text">${{ number_format($m->paid, 2, ".", "") }} / ${{ $m->member->dues }}</span>
 									</li>
@@ -33,7 +33,7 @@
 								<h5>{{ $section }}</h5>
 								<ul class="collection">
 								@foreach ($members as $m)
-									<li class="collection-item payment-list-item pay-{{ $m->pay_color }}" style="background-size: {{ $m->paid * 100 / $m->member->dues }}%;">
+									<li class="collection-item payment-list-item pay-{{ $m->pay_color }}" style="background-size: {{ $m->pay_width }}%;">
 										{{ $m->first_name . " " . $m->last_name }}
 										<span class="secondary-content black-text">${{ number_format($m->paid, 2, ".", "") }} / ${{ $m->member->dues }}</span>
 									</li>

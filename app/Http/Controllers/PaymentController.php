@@ -27,7 +27,13 @@ class PaymentController extends Controller
 		$users = User::with('member', 'payments')->get();
 		$members = $users->reject(function($u) { return $u->member == null; });
 		foreach($members as $m) {
+
 			$m->paid = $m->payments->sum('amount');
+			$m->pay_width = $m->paid * 100 / $m->member->dues;
+			if ($m->pay_width == 0) {
+				$m->pay_width = 0.5;
+			}
+
 			$m->pay_color = "red";
 			if ($m->paid > $total_due) {
 				$m->pay_color = "green";
