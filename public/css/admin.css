@@ -60,7 +60,6 @@ header, main, footer {
 #paid-info {
 	letter-spacing: 1px;
 }
-
 #dues-bar {
 	height: 20px;
 	border-radius: 10px;
@@ -68,4 +67,19 @@ header, main, footer {
 
 #dues-progress {
 	border-radius: 10px;
+}
+
+.payment-list-item {
+	background-position-x: left;
+	background-repeat: repeat-y;
+}
+
+.payment-list-item.pay-green {
+	background-image: url('/img/app/progress-bg-green.png');
+}
+.payment-list-item.pay-red {
+	background-image: url('/img/app/progress-bg-red.png');
+}
+.payment-list-item.pay-orange {
+	background-image: url('/img/app/progress-bg-orange.png');
 }

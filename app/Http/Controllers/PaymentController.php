@@ -20,25 +20,34 @@ class PaymentController extends Controller
      */
     public function index(Request $request)
     {
-		$members = DB::table('users')
-			->join('members', 'users.id', '=', 'members.user_id')
-			->select('users.first_name', 'users.last_name', 'members.dues',
-				'members.section', 'members.subsection')
-			->orderBy('users.first_name')
-			->get();
+
+		$today = \Carbon\Carbon::today();
+		$total_due = DB::table('pay_dates')->whereDate('due_date', '<', $today)->sum('due');
+
+		$users = User::with('member', 'payments')->get();
+		$members = $users->reject(function($u) { return $u->member == null; });
+		foreach($members as $m) {
+			$m->paid = $m->payments->sum('amount');
+			$m->pay_color = "red";
+			if ($m->paid > $total_due) {
+				$m->pay_color = "green";
+			}
+		}
 
 		$batterySections = ['Snare', 'Tenors', 'Bass', 'Cymbals'];
 		$frontSections = ['Marimba', 'Vibes', 'Xylophone', 'Auxiliary', 'Electronics'];
 
-		foreach($batterySections as $s) {
-			$mem = array_filter($members, function($ele) use ($s) { return $ele->subsection == $s; });
-			$battery[$s] = ['name' => $s, 'members' => $mem];
+		foreach($batterySections as $section) {
+			$battery[$section] = $members->filter(function($ele) use ($section) {
+				return $ele->member->subsection == $section;
+			});
+		}
+		foreach($frontSections as $section) {
+			$front[$section] = $members->filter(function($ele) use ($section) {
+				return $ele->member->subsection == $section;
+			});
 		}
 
-		foreach ($frontSections as $s) {
-			$mem = array_filter($members, function($ele) use ($s) { return $ele->subsection == $s; });
-			$front[$s] = ['name' => $s, 'members' => $mem];
-		}
 		return view('admin.dues', ['battery' => $battery, 'front' => $front]);
     }
 
