@@ -82,7 +82,7 @@
 
 @section('scripts')
 
-<script type="text/javascript" src="js/vue.js"></script>
-<script type="text/javascript" src="js/staff.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/staff.js"></script>
 
 @endsection

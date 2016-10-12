@@ -25,8 +25,8 @@
 			<div class="row">
 				<ul id="timeline" class="white-text">
 					<li v-for="s in shows">
-						<a class="white-text" target="_blank" href="@{{ s.url }}">
-							<div class="card hoverable @{{ s.type }}">
+						<a class="white-text" target="_blank" v-bind:href="s.url">
+							<div v-bind:class="'card hoverable ' + s.type">
 								<div class="card-content">
 									<span class="card-title">@{{ s.name }}</span>
 									<p>@{{ s.date }}</p>
@@ -44,7 +44,7 @@
 
 @section('scripts')
 
-	<script type="text/javascript" src="/js/vue.js"></script>
+	<script type="text/javascript" src="/js/vue.min.js"></script>
 	<script type="text/javascript" src="/js/schedule.js"></script>
 
 @endsection
