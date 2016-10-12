@@ -56,7 +56,7 @@
 				</li>
 				<li>
 					<a href="/admin/dues" class="white-text">
-						<i class="material-icons small cap-red-text">attach_money</i><span>Payments</span>
+						<i class="material-icons small cap-red-text">attach_money</i><span>Dues</span>
 					</a>
 				</li>
 				<li>

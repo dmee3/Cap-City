@@ -101,18 +101,25 @@ var vm = new Vue({
         bio: 'Chad was raised and currently resides in Huntington, WV. After marching with the Glassmen in 2006 he quickly transitioned into teaching. He has taught and arranged for various high schools in the area, winning high percussion in the state the past two years. He also enjoys giving private lessons, and many of his students have since gone on to perform and teach for various groups in DCI/WGI.<br><br>Chad has had the privilege of learning from/studying under many great educators, musicians, and performers including Dustin Lowes, Chris Hestin, Eric Ward, Jon Merritt, George Chaffin, Rudy Garcia, etc.<br><br>Chad is currently teaching percussion at Marshall University while continuing to consult and arrange for select high school programs. He is thrilled to be part of this staff and Cap City this coming season!'
       },
       {
+        name: 'Kyle Goodhart',
+        position: 'Bass Technician',
+        image: 'img/staff/kyle.jpg',
+        area: ['battery'],
+        bio: 'Kyle Goodhart is a native of Middle Eastern, Pennsylvania. He joins Cap City with a wealth of experience including marching bass drum with the Hawthorne Caballeros 2011-2012, Cadets2 2013, Cadets 2014-2015, and Rhythm X 2015. Kyle is a graduate of the California University of Pennsylvania with a bachelors degree in business administration concentrated in financial management, and currently works for the United States Army.<br><br>Kyle is very excited to join the team at Cap City!'
+      },
+      {
+        name: 'Dave Jackson',
+        position: 'Bass Technician',
+        image: 'img/staff/dave.jpg',
+        area: ['battery'],
+        bio: 'Hailing from Toledo Ohio, Dave has been a music educator in North Carolina\'s Triangle area for the last 6 years.  He began studying music at a very young age through influence from his mother (who has been a choral music director in Ohio for 30+ years) and his father (who has served as an assistant dean of music at Appalachian State University as well as being a respected band director since the mid-90\'s).  Dave furthered his music education upon leaving Maumee High School (through his numerous high school seasons of marching band, indoor drumline, string orchestra, select choir and pit orchestra), by studying upright string bass at Appalachian State University in Boone, North Carolina.  While at ASU Dave performed with the Marching Mountaineers, Symphony Orchestra, String Orchestra and Wind Ensemble.  In his DCI and WGI career, he performed with Constitution Percussion out of Raleigh, North Carolina (Bass 5 in 2007 and Bass 2 in 2008, serving both seasons as section leader), Odyssey Percussion Theatre from Atlanta, Georgia (Bass 4 in 2009), and The Toledo Glassmen Drum and Bugle Corps (Bass 5 in 2008 and Bass 3 in 2009).  Dave aged out with the 2010 WGI PIW silver medalist Rhythm X on Bass 5.<br><br>Upon aging out, Dave moved back to NC to become the Percussion Director at West Johnston High School (Benson, NC). In between his duties at West, Dave has worked for Superior Band Camps, The East Carolina University Marching Pirates Drumline, Forza East Independent Percussion (as an instructor, arranger and assistant director), and many other ensembles throughout the Carolinas and US.  Dave currently teaches at Cleveland High School (Clayton, NC), and is the Bass Drum Technician as well as Battery Visual Technician at The Jersey Surf Drum and Bugle Corps.<br><br>Dave is thrilled to have the ability to join the educational staff Capital City once again.'
+      },
+      {
         name: 'Ariel Peel',
         position: 'Cymbal Technician',
         image: 'img/staff/ariel.jpg',
         area: ['battery'],
         bio: 'Ariel found her passion for playing cymbals with the Indiana University Drumline in the Fall of 2012 and returned in 2013 as section leader. She marched her first year of Independent World with Legacy Indoor Percussion as the cymbal section leader in 2013, their debut season. Ariel then went on to march two seasons with Rhythm X, receiving a bronze medal in 2014 and a silver in 2015. She also marched the Crossmen Drum and Bugle Corps cymbal line in 2014, becoming a DCI Finalist.<br><br>Ariel finished her undergraduate study at Indiana University in 2015, graduating with a Bachelor of Arts in Psychology and Gender Studies. She now works as a social worker for the State of Indiana. Ariel teaches the cymbal line at the Scholastic World group Center Grove High School and is excited to to get started with Cap City this winter.'
-      },
-      {
-        name: 'Kyle Goodheart',
-        position: 'Bass Technician',
-        image: 'img/staff/kyle.jpg',
-        area: ['battery'],
-        bio: 'Kyle Goodhart is a native of Middle Eastern, Pennsylvania. He joins Cap City with a wealth of experience including marching bass drum with the Hawthorne Caballeros 2011-2012, Cadets2 2013, Cadets 2014-2015, and Rhythm X 2015. Kyle is a graduate of the California University of Pennsylvania with a bachelors degree in business administration concentrated in financial management, and currently works for the United States Army.<br><br>Kyle is very excited to join the team at Cap City!'
       },
       {
         name: 'Cooper Mannon',
