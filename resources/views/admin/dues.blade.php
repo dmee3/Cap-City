@@ -45,14 +45,14 @@
 				@endforeach
 			</div>
 		</div>
-	</div>
 
-	<div id="payment-modal" class="modal">
-		<div class="modal-content">
-			<h3 id="modal-name"></h3>
-		</div>
-		<div class="modal-footer">
-			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+		<div id="payment-modal" class="modal">
+			<div class="modal-content">
+				<h3 id="modal-name"></h3>
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+			</div>
 		</div>
 	</div>
 
@@ -63,6 +63,11 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('.modal-trigger').leanModal();
+		});
+
+		var dues = new Vue({
+			el: '#dues',
+			data: { }
 		});
 	</script>
 
