@@ -74,6 +74,10 @@ header, main, footer {
 	background-repeat: repeat-y;
 }
 
+.payment-list-item:hover {
+	cursor: pointer;
+}
+
 .payment-list-item.pay-green {
 	background-image: url('/img/app/progress-bg-green.png');
 }

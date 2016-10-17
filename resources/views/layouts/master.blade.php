@@ -19,7 +19,7 @@
 	<link type="text/css" rel="stylesheet" href="/css/materialize-style.css"/>
 	<link type="text/css" rel="stylesheet" href="/css/style.css"/>
 	@yield('styles')
-	<link rel="icon" type="image/png" href="img/icon.png">
+	<link rel="icon" type="image/png" href="/img/icon.png">
 
 </head>
 <body>

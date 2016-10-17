@@ -60,6 +60,7 @@ Route::group(['middleware' => ['auth', 'role:Admin']], function() {
 	Route::get('/admin/create-user', function() { return view('admin.create-user'); });
 	Route::post('/admin/create-user', 'AdminController@createUser');
 	Route::get('/admin/dues', 'PaymentController@index');
+	Route::post('/admin/dues', 'PaymentController@store');
 	Route::get('/admin/members', 'MemberController@index');
 	Route::post('/admin/members', 'MemberController@delete');
 });
@@ -71,3 +72,10 @@ Route::group(['middleware' => ['auth', 'role:Member']], function() {
 	Route::post('/home', 'PaymentController@newStripePayment');
 	Route::post('/add-conflict', 'ConflictController@newConflict');
 });
+
+
+/**
+ * API routes
+ */
+Route::get('/api/battery-dues-payments', 'PaymentController@batteryDues');
+Route::get('/api/front-dues-payments', 'PaymentController@frontDues');

@@ -20,51 +20,33 @@ class PaymentController extends Controller
      */
     public function index(Request $request)
     {
-
-		$today = \Carbon\Carbon::today();
-		$total_due = DB::table('pay_dates')->whereDate('due_date', '<', $today)->sum('due');
-
-		$users = User::with('member', 'payments')->get();
-		$members = $users->reject(function($u) { return $u->member == null; });
-		foreach($members as $m) {
-
-			$m->paid = $m->payments->sum('amount');
-			$m->pay_width = $m->paid * 100 / $m->member->dues;
-			if ($m->pay_width == 0) {
-				$m->pay_width = 0.5;
-			}
-
-			$m->pay_color = "red";
-			if ($m->paid > $total_due) {
-				$m->pay_color = "green";
-			}
-		}
-
-		$batterySections = ['Snare', 'Tenors', 'Bass', 'Cymbals'];
-		$frontSections = ['Marimba', 'Vibes', 'Xylophone', 'Auxiliary', 'Electronics'];
-
-		foreach($batterySections as $section) {
-			$battery[$section] = $members->filter(function($ele) use ($section) {
-				return $ele->member->subsection == $section;
-			});
-		}
-		foreach($frontSections as $section) {
-			$front[$section] = $members->filter(function($ele) use ($section) {
-				return $ele->member->subsection == $section;
-			});
-		}
-
-		return view('admin.dues', ['battery' => $battery, 'front' => $front]);
+		return view('admin.dues');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Return a JSON listing of all battery member payments (for admins only).
      *
+	 * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function batteryDues(Request $request)
     {
-        //
+		$users = User::with('member', 'payments')->get();
+		$members = $users->filter(function($u) { return $u->member != null && $u->member->section == 'Battery'; });
+		return $this->getFormattedMembers($members, ['Snare', 'Tenors', 'Bass', 'Cymbals']);
+    }
+
+    /**
+     * Return a JSON listing of all front member payments (for admins only).
+     *
+	 * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function frontDues(Request $request)
+    {
+		$users = User::with('member', 'payments')->get();
+		$members = $users->filter(function($u) { return $u->member != null && $u->member->section == 'Front'; });
+		return $this->getFormattedMembers($members, ['Marimba', 'Vibes', 'Xylophone', 'Auxiliary', 'Electronics']);
     }
 
     /**
@@ -75,29 +57,27 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+		//Validate required fields
+		$val = Validator::make($request->all(), [
+			'user_id' => 'required',
+			'amount' => 'required',
+			'date_paid' => 'required'
+		]);
+		if ($val->fails()) {
+			return redirect('/dues')->withErrors($val);
+		}
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+		//Create and store payment
+		$payment = Payment::create([
+			'user_id' => $request->input('user_id'),
+			'amount' => $request->input('amount'),
+			'date_paid' => $request->input('date_paid'),
+			'type' => $request->input('type'),
+			'info' => $request->input('info'),
+			'category' => 0
+		]);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return redirect('/admin/dues');
     }
 
     /**
@@ -137,7 +117,7 @@ class PaymentController extends Controller
 			'charge_amount' => 'required'
 		]);
 		if ($val->fails()) {
-			return redirect('/home')->withErros($val);
+			return redirect('/home')->withErrors($val);
 		}
 
 		//Charge card
@@ -168,5 +148,38 @@ class PaymentController extends Controller
 
 		$request->session()->flash('success', 'Payment received!');
 		return redirect('/home');
+	}
+
+	/**
+	 * Helper function to get members of a section
+	 */
+	private function getFormattedMembers($members, $sectionNames) {
+
+		$today = \Carbon\Carbon::today();
+		$total_due = DB::table('pay_dates')->whereDate('due_date', '<', $today)->sum('due');
+
+		foreach($members as $m) {
+
+			$m->paid = $m->payments->sum('amount');
+			$m->pay_width = $m->paid * 100 / $m->member->dues;
+			if ($m->pay_width == 0) {
+				$m->pay_width = 0.5;
+			}
+
+			$m->pay_color = "red";
+			if ($m->paid > $total_due) {
+				$m->pay_color = "green";
+			}
+		}
+
+		$sections = [];
+		foreach($sectionNames as $s) {
+			$sections[$s]['members'] = $members->filter(function($ele) use ($s) {
+				return $ele->member->subsection == $s;
+			});
+			$sections[$s]['name'] = $s;
+		}
+
+		return $sections;
 	}
 }
