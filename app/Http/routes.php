@@ -45,7 +45,7 @@ Route::post('password/reset', ['as' => 'auth.password.reset', 'uses' => 'Auth\Pa
 
 
 /**
- * App routes - general
+ * Web routes - general
  */
 Route::get('/home', 'HomeController@index');
 Route::get('/settings', 'HomeController@settings');
@@ -53,16 +53,30 @@ Route::post('/settings', 'HomeController@changePassword');
 Route::get('/full-schedule', 'HomeController@schedule');
 
 /**
- * App routes - admin
+ * Web routes - admin
  */
-Route::group(['middleware' => ['auth', 'role:Admin']], function() {
-	Route::get('/admin/registrations', 'AuditionController@showAll');
-	Route::get('/admin/create-user', function() { return view('admin.create-user'); });
-	Route::post('/admin/create-user', 'AdminController@createUser');
-	Route::get('/admin/dues', 'PaymentController@index');
-	Route::post('/admin/dues', 'PaymentController@store');
-	Route::get('/admin/members', 'MemberController@index');
-	Route::post('/admin/members', 'MemberController@delete');
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:Admin']], function() {
+
+	//View routes
+	Route::get('/registrations', 'AuditionController@showAll');
+	Route::get('/create-user', function() { return view('admin.create-user'); });
+	Route::get('/dues', 'PaymentController@index');
+	Route::get('/members', 'MemberController@index');
+	Route::get('/conflicts', 'ConflictController@index');
+
+	//Form routes
+	Route::post('/create-user', 'AdminController@createUser');
+	Route::post('/dues', 'PaymentController@store');
+	Route::post('/members', 'MemberController@delete');
+});
+
+/**
+ * JSON routes - admin
+ */
+Route::group(['prefix' => '/api/admin', 'middleware' => ['auth', 'role:Admin']], function() {
+	Route::get('/conflicts', 'ConflictController@allConflicts');
+	Route::get('/battery-dues-payments', 'PaymentController@batteryDues');
+	Route::get('/front-dues-payments', 'PaymentController@frontDues');
 });
 
 /**
@@ -72,10 +86,3 @@ Route::group(['middleware' => ['auth', 'role:Member']], function() {
 	Route::post('/home', 'PaymentController@newStripePayment');
 	Route::post('/add-conflict', 'ConflictController@newConflict');
 });
-
-
-/**
- * API routes
- */
-Route::get('/api/battery-dues-payments', 'PaymentController@batteryDues');
-Route::get('/api/front-dues-payments', 'PaymentController@frontDues');

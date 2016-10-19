@@ -3,12 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\Conflict;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Mail;
 
 class ConflictController extends Controller
 {
+
+	/**
+	 * Show a listing of all upcoming conflicts.
+	 *
+	 * @param Request $request
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index(Request $request) {
+		return view('admin.conflicts');
+	}
+
+	/**
+	 * Get all upcoming conflicts.
+	 *
+	 * @param Request $request
+	 * @return \Illuminate\Http\Response
+	 */
+	public function allConflicts(Request $request) {
+
+		$today = \Carbon\Carbon::today();
+		$conflicts = Conflict::with('user')
+			->select('user_id', 'date_absent', 'reason')
+			->whereDate('date_absent', '>', $today)
+			->get();
+
+		return $conflicts;
+	}
+
     /**
      * Add a new conflict.
      *

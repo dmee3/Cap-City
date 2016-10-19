@@ -107,7 +107,7 @@
 				return { sections: [] };
 			},
 			created: function() {
-				$.getJSON('/api/' + this.name.toLowerCase() + '-dues-payments', function(response) {
+				$.getJSON('/api/admin/' + this.name.toLowerCase() + '-dues-payments', function(response) {
 					this.sections = response;
 				}.bind(this));
 			},
@@ -150,7 +150,7 @@
 		});
 
 		var dues = new Vue({
-			el: '#dues',
+			el: '#dues'
 		});
 	</script>
 
