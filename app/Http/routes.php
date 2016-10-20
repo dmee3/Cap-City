@@ -77,6 +77,7 @@ Route::group(['prefix' => '/api/admin', 'middleware' => ['auth', 'role:Admin']],
 	Route::get('/conflicts', 'ConflictController@allConflicts');
 	Route::get('/battery-dues-payments', 'PaymentController@batteryDues');
 	Route::get('/front-dues-payments', 'PaymentController@frontDues');
+	Route::get('/members', 'MemberController@allMembers');
 });
 
 /**

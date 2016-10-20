@@ -33,7 +33,12 @@ class ConflictController extends Controller
 		$conflicts = Conflict::with('user')
 			->select('user_id', 'date_absent', 'reason')
 			->whereDate('date_absent', '>', $today)
+			->orderBy('date_absent')
 			->get();
+
+		foreach ($conflicts as $c) {
+			$c->date_absent = date('l, n/j/Y', strtotime($c->date_absent));
+		}
 
 		return $conflicts;
 	}

@@ -9,18 +9,6 @@
 			<dues-list name="Front"></dues-list>
 		</div>
 
-		<div id="payment-modal" class="modal">
-			<div class="modal-content">
-				<a id="add-payment-btn" class="btn-floating btn-large waves-effect waves-light right green"><i class="material-icons">add</i></a>
-				<h3 id="modal-name"></h3>
-				<br>
-				<ul id="modal-payments" class="collapsible"></ul>
-			</div>
-			<div class="modal-footer">
-				<a href="#" class=" modal-action modal-close waves-effect waves-red btn-flat">Close</a>
-			</div>
-		</div>
-
 		<div id="new-payment-modal" class="modal">
 			{!! Form::open(['action' => 'PaymentController@store']) !!}
 				<input type="hidden" name="user_id" id="user_id">
@@ -79,6 +67,26 @@
 					</div>
 				</div>
 			</div>
+			<payments-list :section="name" :name="currName" :payments="currPayments"></payments-list>
+		</div>
+	</template>
+
+	<template id="payments-template">
+		<div v-bind:id="section + '-payments-modal'" class="modal">
+			<div class="modal-content">
+				<a id="add-payment-btn" class="btn-floating btn-large waves-effect waves-light right green"><i class="material-icons">add</i></a>
+				<h3>@{{ name }}</h3>
+				<br>
+				<ul id="modal-payments" class="collapsible">
+					<li v-for="p in payments">
+						<div class="collapsible-header"><i class="material-icons">@{{ p.icon }}</i> $@{{ p.amount }}<span class="secondary-content">@{{ p.date }}</span></div>
+						<div class="collapsible-body"><p>@{{ p.info }}</p></div>
+					</li>
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class=" modal-action modal-close waves-effect waves-red btn-flat">Close</a>
+			</div>
 		</div>
 	</template>
 
@@ -86,72 +94,21 @@
 
 @section('scripts')
 
-	<script type="text/javascript" src="/js/vue.min.js"></script>
+	<script type="text/javascript" src="/js/vue.js"></script>
+	<script type="text/javascript" src="/js/admin/dues.js"></script>
 	<script type="text/javascript">
 
 		$(document).ready(function() {
 
 			$('#add-payment-btn').on('click', function() {
 
-				$('#payment-modal').closeModal();
-				$('new-modal-name').html($(this).data('name'));
+				$('.modal').closeModal();
+				$('#new-modal-name').html($(this).data('name'));
 
 				$('#new-payment-modal').openModal();
 			});
 		});
 
-		Vue.component('dues-list', {
-			template: '#section-template',
-			props: ['name'],
-			data: function() {
-				return { sections: [] };
-			},
-			created: function() {
-				$.getJSON('/api/admin/' + this.name.toLowerCase() + '-dues-payments', function(response) {
-					this.sections = response;
-				}.bind(this));
-			},
-			methods: {
-				showModal: function(m) {
-
-					var name = m.first_name + ' ' + m.last_name;
-					$('#new-modal-name').html(name);
-					$('#user_id').val(m.id);
-					$('#modal-name').html(name);
-					$('#modal-payments').html('');
-
-					for (var i = 0; i < m.payments.length; i++) {
-
-						var p = m.payments[i];
-						var amt = '$' + p.amount;
-						var paid = p.date_paid;
-
-						var icon = '';
-						if (p.type === 'cash') {
-							icon = '<i class="material-icons">attach_money</i>';
-						} else if (p.type === 'check') {
-							icon = '<i class="material-icons">account_balance</i>';
-						} else if (p.type === 'stripe') {
-							icon = '<i class="material-icons">credit_card</i>';
-						}
-
-						var header = $('<div class="collapsible-header">' + icon + amt + '<span class="secondary-content">' + paid + '</span></div>');
-						var body = $('<div class="collapsible-body"><p>' + p.info + '</p></div>');
-
-						var item = $('<li></li>').append(header).append(body);
-						$('#modal-payments').append(item);
-					}
-
-					$('#payment-modal').openModal();
-					$('.collapsible').collapsible();
-				}
-
-			}
-		});
-
-		var dues = new Vue({
-			el: '#dues'
-		});
 	</script>
 
 @endsection

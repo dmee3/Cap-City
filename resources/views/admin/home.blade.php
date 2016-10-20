@@ -15,7 +15,7 @@
 					</div>
 				</a>
 			</div>
--->
+
 			<div class="col s12 m6">
 				<a href="/admin/registrations">
 					<div class="card dashboard-card hoverable cap-black white-text">
@@ -35,8 +35,8 @@
 					</div>
 				</a>
 			</div>
-
-			<div class="col s12 m6">
+-->
+			<div class="col s12 m8">
 				<a href="/admin/dues">
 					<div class="card dashboard-card hoverable white cap-green-text">
 						<div class="card-content">
@@ -56,10 +56,26 @@
 				</a>
 			</div>
 
+			<div class="col s12 m4">
+				<a href="/admin/conflicts">
+					<div class="card dashboard-card hoverable white cap-red-text">
+						<div class="card-content">
+							<h5 class="thin">Conflicts</h5>
+							<div class="row">
+								<div class="col s12 center">
+									<h3>{{ $conflicts }}</h3>
+									<p>Next Month</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+
 		</div>
 		<div class="row">
 
-			<div class="col s6 m3">
+			<div class="col s6 m4">
 				<a href="/admin/members">
 					<div class="card dashboard-card hoverable cap-blue white-text">
 						<div class="card-content">
@@ -75,9 +91,9 @@
 				</a>
 			</div>
 
-			<div class="col s6 m3">
+			<div class="col s6 m4">
 				<a href="/admin/staff">
-					<div class="card dashboard-card hoverable cap-black white-text">
+					<div class="card dashboard-card hoverable cap-blue white-text">
 						<div class="card-content">
 							<h5 class="thin">Staff</h5>
 							<div class="row">
@@ -91,7 +107,7 @@
 				</a>
 			</div>
 
-			<div class="col s6 m3">
+			<div class="col s12 m4">
 				<a href="/schedule">
 					<div class="card dashboard-card hoverable cap-black white-text">
 						<div class="card-content">
@@ -100,22 +116,6 @@
 								<div class="col s12 center">
 									<h5>Sunday, 2/4</h5>
 									<p class="thin">Olentangy Liberty High School</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-
-			<div class="col s6 m3">
-				<a href="/admin/conflicts">
-					<div class="card dashboard-card hoverable white cap-red-text">
-						<div class="card-content">
-							<h5 class="thin">Conflicts</h5>
-							<div class="row">
-								<div class="col s12 center">
-									<h3>{{ $conflicts }}</h3>
-									<p>Next Month</p>
 								</div>
 							</div>
 						</div>

@@ -160,6 +160,10 @@ class PaymentController extends Controller
 
 		foreach($members as $m) {
 
+			foreach ($m->payments as $p) {
+				$p->date_paid = date('l, n/j/Y', strtotime($p->date_paid));
+			}
+
 			$m->paid = $m->payments->sum('amount');
 			$m->pay_width = $m->paid * 100 / $m->member->dues;
 			if ($m->pay_width == 0) {

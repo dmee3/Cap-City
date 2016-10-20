@@ -13,31 +13,14 @@ use App\Http\Requests;
 class MemberController extends Controller
 {
     /**
-     * Display a listing of all members (for admins only).
+     * Display a view for listing members (for admins only).
      *
 	 * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-		$members = DB::table('users')
-			->join('members', 'users.id', '=', 'members.user_id')
-			->select('members.id', 'members.user_id', 'users.first_name', 'users.last_name', 'members.dues',
-				'members.section', 'members.subsection',
-				DB::raw('(SELECT SUM(amount) FROM payments WHERE user_id = users.id) AS paid'),
-				DB::raw('(SELECT COUNT(*) FROM conflicts WHERE user_id = users.id) AS conflicts')
-			)
-			->where('users.deleted_at', null)
-			->orderBy('users.first_name')
-			->get();
-
-		foreach ($members as $m) {
-			if ($m->paid == null || $m->paid == '') {
-				$m->paid = 0;
-			}
-		}
-
-		return view('admin.members', ['members' => $members]);
-	}
+        return view('admin.members');
+    }
 
     /**
      * Delete a member (for admins only).
@@ -63,5 +46,33 @@ class MemberController extends Controller
 		foreach($conflicts as $c) { $c->delete(); }
 
 		return $this->index($request);
+	}
+
+    /**
+     * Return a list of all members (for admins only).
+     *
+	 * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function allMembers(Request $request) {
+
+		$members = DB::table('users')
+			->join('members', 'users.id', '=', 'members.user_id')
+			->select('members.id', 'members.user_id', 'users.first_name', 'users.last_name', 'members.dues',
+				'members.section', 'members.subsection',
+				DB::raw('(SELECT SUM(amount) FROM payments WHERE user_id = users.id) AS paid'),
+				DB::raw('(SELECT COUNT(*) FROM conflicts WHERE user_id = users.id) AS conflicts')
+			)
+			->where('users.deleted_at', null)
+			->orderBy('users.first_name')
+			->get();
+
+		foreach ($members as $m) {
+			if ($m->paid == null || $m->paid == '') {
+				$m->paid = 0;
+			}
+		}
+
+		return $members;
 	}
 }

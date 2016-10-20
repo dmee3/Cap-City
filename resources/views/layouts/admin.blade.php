@@ -90,7 +90,7 @@
 	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 	<script type="text/javascript" src="/js/script.js"></script>
-	<script type="text/javascript" src="/js/admin.js"></script>
+	<script type="text/javascript" src="/js/admin/layout.js"></script>
 	<script src="https://use.fontawesome.com/c006854291.js"></script>
 	@yield('scripts')
 	@if (Session::has('success'))
