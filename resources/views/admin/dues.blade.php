@@ -79,7 +79,7 @@
 				<br>
 				<ul id="modal-payments" class="collapsible">
 					<li v-for="p in payments">
-						<div class="collapsible-header"><i class="material-icons">@{{ p.icon }}</i> $@{{ p.amount }}<span class="secondary-content">@{{ p.date }}</span></div>
+						<div class="collapsible-header"><i class="material-icons">@{{ p.icon }}</i> $@{{ p.amount }}<span class="secondary-content">@{{ p.date_paid }}</span></div>
 						<div class="collapsible-body"><p>@{{ p.info }}</p></div>
 					</li>
 				</ul>
