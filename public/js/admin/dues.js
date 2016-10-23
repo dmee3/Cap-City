@@ -36,13 +36,23 @@ Vue.component('dues-list', {
 			$('#' + this.name + '-payments-modal').openModal();
 			$('.collapsible').collapsible();
 		}
-
 	}
 });
 
 Vue.component('payments-list', {
 	template: '#payments-template',
-	props: ['section', 'name', 'payments']
+	props: ['section', 'name', 'payments'],
+	methods: {
+		newPaymentModal: function() {
+
+			$('.modal').closeModal();
+			$('.new-modal-name').html(this.name);
+
+			window.setTimeout(function() {
+				$('#new-payment-modal').openModal();
+			}, 500);
+		}
+	}
 });
 
 var dues = new Vue({

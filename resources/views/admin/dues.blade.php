@@ -13,7 +13,7 @@
 			{!! Form::open(['action' => 'PaymentController@store']) !!}
 				<input type="hidden" name="user_id" id="user_id">
 				<div class="modal-content">
-					<h3 id="new-modal-name"></h3>
+					<h3 class="new-modal-name"></h3>
 					<br>
 					<div class="container">
 						<div class="row">
@@ -74,7 +74,7 @@
 	<template id="payments-template">
 		<div v-bind:id="section + '-payments-modal'" class="modal">
 			<div class="modal-content">
-				<a id="add-payment-btn" class="btn-floating btn-large waves-effect waves-light right green"><i class="material-icons">add</i></a>
+				<a class="btn-floating btn-large waves-effect waves-light right green" v-on:click="newPaymentModal()"><i class="material-icons">add</i></a>
 				<h3>@{{ name }}</h3>
 				<br>
 				<ul id="modal-payments" class="collapsible">
@@ -96,19 +96,5 @@
 
 	<script type="text/javascript" src="/js/vue.js"></script>
 	<script type="text/javascript" src="/js/admin/dues.js"></script>
-	<script type="text/javascript">
-
-		$(document).ready(function() {
-
-			$('#add-payment-btn').on('click', function() {
-
-				$('.modal').closeModal();
-				$('#new-modal-name').html($(this).data('name'));
-
-				$('#new-payment-modal').openModal();
-			});
-		});
-
-	</script>
 
 @endsection
