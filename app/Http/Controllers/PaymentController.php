@@ -64,7 +64,7 @@ class PaymentController extends Controller
 			'date_paid' => 'required'
 		]);
 		if ($val->fails()) {
-			return redirect('/dues')->withErrors($val);
+			return redirect('/admin/dues')->withErrors($val);
 		}
 
 		//Create and store payment

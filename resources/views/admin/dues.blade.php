@@ -11,7 +11,7 @@
 
 		<div id="new-payment-modal" class="modal">
 			{!! Form::open(['action' => 'PaymentController@store']) !!}
-				<input type="hidden" name="user_id" id="user_id">
+				<input type="hidden" name="user_id" class="user_id">
 				<div class="modal-content">
 					<h3 class="new-modal-name"></h3>
 					<br>
@@ -67,7 +67,7 @@
 					</div>
 				</div>
 			</div>
-			<payments-list :section="name" :name="currName" :payments="currPayments"></payments-list>
+			<payments-list :section="name" :name="currName" :id="currId" :payments="currPayments"></payments-list>
 		</div>
 	</template>
 

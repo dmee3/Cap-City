@@ -5,6 +5,7 @@ Vue.component('dues-list', {
 		return {
 			sections: [],
 			currName: '',
+			currId: '',
 			currPayments: []
 		};
 	},
@@ -15,8 +16,9 @@ Vue.component('dues-list', {
 	},
 	methods: {
 		showModal: function(m) {
-
+debugger;
 			this.currName = m.first_name + ' ' + m.last_name;
+			this.currId = m.id;
 
 			this.currPayments = [];
 			for (var i = 0; i < m.payments.length; i++) {
@@ -41,12 +43,14 @@ Vue.component('dues-list', {
 
 Vue.component('payments-list', {
 	template: '#payments-template',
-	props: ['section', 'name', 'payments'],
+	props: ['section', 'name', 'id', 'payments'],
 	methods: {
 		newPaymentModal: function() {
 
 			$('.modal').closeModal();
 			$('.new-modal-name').html(this.name);
+debugger;
+			$('.user_id').val(this.id);
 
 			window.setTimeout(function() {
 				$('#new-payment-modal').openModal();
