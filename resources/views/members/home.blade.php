@@ -11,7 +11,7 @@
 
 	<br>
 
-	<div class="container row">
+	<div id="home" class="container row">
 
 		@if ($member['dues'] > 0)
 			<div class="col s12 m10 offset-m1 l4">
@@ -77,23 +77,7 @@
 				</div>
 			</a>
 
-			<div class="card cap-blue">
-				<div class="card-content">
-					<div class="row white-text">
-						<div class="col s12">
-							<h4>Pay Schedule</h4>
-						</div>
-					</div>
-					<div class="row black-text">
-						<ul class="collection">
-							@foreach($payDates as $p)
-								<li class="collection-item">{{ date('n/j/Y', strtotime($p->due_date)) }}<span class="secondary-content">${{ $p->due }}</span></li>
-							@endforeach
-						</ul>
-					</div>
-				</div>
-			</div>
-
+			<pay-schedule></pay-schedule>
 		</div>
 
 		@if ($member['dues'] > 0)
@@ -200,11 +184,32 @@
 		{!! Form::close() !!}
 	</div>
 
+	<template id="pay-schedule-template">
+		<div class="card cap-blue">
+			<div class="card-content">
+				<div class="row white-text">
+					<div class="col s12">
+						<h4>Pay Schedule</h4>
+					</div>
+				</div>
+				<div class="row black-text">
+					<ul class="collection">
+								<li v-for="p in payments" class="collection-item">@{{ p.due_date }}<span class="cap-grey-text"> - $@{{ p.due }}</span><span class="secondary-content">$@{{ p.total_due }}</span></li>
+					</ul>
+					<p class="white-text center">*Last payment varies based on membership status</p>
+				</div>
+			</div>
+		</div>
+	</template>
+
+
 @endsection
 
 @section('scripts')
 
 	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+	<script type="text/javascript" src="/js/vue.js"></script>
+	<script type="text/javascript" src="/js/components/pay-schedule.js"></script>
 	<script type="text/javascript">
 		Stripe.setPublishableKey("{{ env('STRIPE_PUBLIC') }}");
 
@@ -212,6 +217,10 @@
 		var clientId = "{{ env('GOOGLE_CALENDAR_CLIENT_ID') }}";
 		var numEvents = 3;
 		var highlightNextEvent = 0;
+
+		new Vue({
+			el: '#home',
+		});
 
 		$(document).ready(function() {
 

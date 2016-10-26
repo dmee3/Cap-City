@@ -7,6 +7,10 @@
 		<div class="row">
 			<dues-list name="Battery"></dues-list>
 			<dues-list name="Front"></dues-list>
+
+			<div class="col s12 m8 offset-m2">
+				<pay-schedule></pay-schedule>
+			</div>
 		</div>
 
 		<div id="new-payment-modal" class="modal">
@@ -90,11 +94,36 @@
 		</div>
 	</template>
 
+	<template id="pay-schedule-template">
+		<div class="card cap-blue">
+			<div class="card-content">
+				<div class="row white-text">
+					<div class="col s12">
+						<h4>Pay Schedule</h4>
+					</div>
+				</div>
+				<div class="row black-text">
+					<ul class="collection">
+								<li v-for="p in payments" class="collection-item">@{{ p.due_date }}<span class="cap-grey-text"> - $@{{ p.due }}</span><span class="secondary-content">$@{{ p.total_due }}</span></li>
+					</ul>
+					<p class="white-text center">*Last payment varies based on membership status</p>
+				</div>
+			</div>
+		</div>
+	</template>
+
 @endsection
 
 @section('scripts')
 
 	<script type="text/javascript" src="/js/vue.js"></script>
-	<script type="text/javascript" src="/js/admin/dues.js"></script>
+	<script type="text/javascript" src="/js/components/dues.js"></script>
+	<script type="text/javascript" src="/js/components/pay-schedule.js"></script>
+	<script type="text/javascript">
+
+		new Vue({
+			el: '#dues'
+		});
+	</script>
 
 @endsection

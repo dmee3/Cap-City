@@ -58,7 +58,3 @@ debugger;
 		}
 	}
 });
-
-var dues = new Vue({
-	el: '#dues'
-});

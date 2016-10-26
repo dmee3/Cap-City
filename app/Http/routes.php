@@ -87,3 +87,10 @@ Route::group(['middleware' => ['auth', 'role:Member']], function() {
 	Route::post('/home', 'PaymentController@newStripePayment');
 	Route::post('/add-conflict', 'ConflictController@newConflict');
 });
+
+/**
+ * JSON routes - general
+ */
+Route::group(['prefix' => '/api/admin'], function() {
+	Route::get('/pay-schedule', 'PaymentController@payDates');
+});

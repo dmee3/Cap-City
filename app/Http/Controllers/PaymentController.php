@@ -50,6 +50,21 @@ class PaymentController extends Controller
     }
 
     /**
+     * Return a JSON listing of all front payment dates.
+     *
+	 * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function payDates(Request $request)
+    {
+		$payDates = DB::table('pay_dates')->get();
+		foreach ($payDates as $p) {
+			$p->due_date = date('n/j/Y', strtotime($p->due_date));
+		}
+		return $payDates;
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
