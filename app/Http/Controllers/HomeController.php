@@ -47,13 +47,15 @@ class HomeController extends Controller
 		$members = DB::table('members')->count();
 		$staff = DB::table('staffmembers')->count();
 		$conflicts = DB::table('conflicts')->whereDate('date_absent', '>=', $today)->whereDate('date_absent', '<=', $nextMonth)->count();
+		$nextPayment = DB::table('pay_dates')->whereDate('due_date', '>=', $today)->first();
 
 		return view('admin.home', [
 			'reg' => $reg,
 			'pay' => $pay,
 			'members' => $members,
 			'staff' => $staff,
-			'conflicts' => $conflicts
+			'conflicts' => $conflicts,
+			'nextPayment' => $nextPayment
 		]);
 	}
 
@@ -101,11 +103,16 @@ class HomeController extends Controller
 
 		$user = $request->user();
 		$member = Member::where('user_id', $user->id)->first();
+
+		$payDates = DB::table('pay_dates')->get();
+		
 		$paid = sprintf('%.2f', $user->payments()->sum('amount'));
+
 		return view('members.home', [
 			'user' => $user,
 			'payments' => $user->payments,
 			'paid' => $paid,
+			'payDates' => $payDates,
 			'member' => $member,
 			'conflicts' => $user->futureConflicts
 		]);

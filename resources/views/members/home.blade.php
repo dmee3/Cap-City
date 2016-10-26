@@ -76,6 +76,24 @@
 					</div>
 				</div>
 			</a>
+
+			<div class="card cap-blue">
+				<div class="card-content">
+					<div class="row white-text">
+						<div class="col s12">
+							<h4>Pay Schedule</h4>
+						</div>
+					</div>
+					<div class="row black-text">
+						<ul class="collection">
+							@foreach($payDates as $p)
+								<li class="collection-item">{{ date('n/j/Y', strtotime($p->due_date)) }}<span class="secondary-content">${{ $p->due }}</span></li>
+							@endforeach
+						</ul>
+					</div>
+				</div>
+			</div>
+
 		</div>
 
 		@if ($member['dues'] > 0)

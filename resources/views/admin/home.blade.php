@@ -47,8 +47,8 @@
 									<p>Last Week</p>
 								</div>
 								<div class="col s6 center">
-									<h3>${{ $pay['month'] }}</h3>
-									<p>Last Month</p>
+									<h3>{{ date('n/j', strtotime($nextPayment->due_date)) }}</h3>
+									<p>Next Pay Date</p>
 								</div>
 							</div>
 						</div>
