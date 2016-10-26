@@ -62,6 +62,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:Admin']], func
 	Route::get('/create-user', function() { return view('admin.create-user'); });
 	Route::get('/dues', 'PaymentController@index');
 	Route::get('/members', 'MemberController@index');
+	Route::get('/staff', 'MemberController@staffIndex');
 	Route::get('/conflicts', 'ConflictController@index');
 
 	//Form routes
@@ -78,6 +79,7 @@ Route::group(['prefix' => '/api/admin', 'middleware' => ['auth', 'role:Admin']],
 	Route::get('/battery-dues-payments', 'PaymentController@batteryDues');
 	Route::get('/front-dues-payments', 'PaymentController@frontDues');
 	Route::get('/members', 'MemberController@allMembers');
+	Route::get('/staff', 'MemberController@allStaff');
 });
 
 /**

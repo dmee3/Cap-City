@@ -25,7 +25,3 @@ Vue.component('delete-confirm', {
 	template: '#delete-template',
 	props: ['id', 'name']
 });
-
-new Vue({
-	el: '#members'
-});

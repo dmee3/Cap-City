@@ -23,6 +23,16 @@ class MemberController extends Controller
     }
 
     /**
+     * Display a view for listing staff (for admins only).
+     *
+	 * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function staffIndex(Request $request) {
+        return view('admin.staff');
+    }
+
+    /**
      * Delete a member (for admins only).
      *
 	 * @param Request $request
@@ -74,5 +84,32 @@ class MemberController extends Controller
 		}
 
 		return $members;
+	}
+
+    /**
+     * Return a list of all staff (for admins only).
+     *
+	 * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function allStaff(Request $request) {
+
+		$staff = DB::table('users')
+			->join('staffmembers', 'users.id', '=', 'staffmembers.user_id')
+			->select('staffmembers.id', 'staffmembers.user_id', 'users.first_name', 'users.last_name', 'staffmembers.pay',
+				'staffmembers.position',
+				DB::raw('(SELECT SUM(amount) FROM payments WHERE user_id = users.id) AS paid')
+			)
+			->where('users.deleted_at', null)
+			->orderBy('users.first_name')
+			->get();
+
+		foreach ($staff as $s) {
+			if ($s->paid == null || $s->paid == '') {
+				$s->paid = 0;
+			}
+		}
+
+		return $staff;
 	}
 }

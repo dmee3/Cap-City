@@ -20,7 +20,7 @@
 						<div class="container">
 							<div class="row">
 								<div id="paid-info" class="col s12 m6 grey-text center">
-									<h5>PAID: @{{ m.paid }}</h5>
+									<h5>PAID: $@{{ m.paid }}</h5>
 									<div id="dues-bar" class="progress z-depth-1 cap-green-fade">
 										<div id="dues-progress" class="determinate cap-green" v-bind:style="'width: ' + (m.paid * 100 / m.dues) + '%;'"></div>
 									</div>
@@ -68,6 +68,11 @@
 @section('scripts')
 
 	<script type="text/javascript" src="/js/vue.js"></script>
-	<script type="text/javascript" src="/js/admin/members.js"></script>
+	<script type="text/javascript" src="/js/components/members.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el: '#members'
+		});
+	</script>
 
 @endsection
