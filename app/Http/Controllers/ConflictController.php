@@ -32,7 +32,7 @@ class ConflictController extends Controller
 		$today = \Carbon\Carbon::today();
 		$conflicts = Conflict::with('user')
 			->select('user_id', 'date_absent', 'reason')
-			->whereDate('date_absent', '>', $today)
+			->whereDate('date_absent', '>=', $today)
 			->orderBy('date_absent')
 			->get();
 
