@@ -68,8 +68,9 @@ class MemberController extends Controller
 
 		$members = DB::table('users')
 			->join('members', 'users.id', '=', 'members.user_id')
+			->leftJoin('jobs', 'members.job_id', '=', 'jobs.id')
 			->select('members.id', 'members.user_id', 'users.first_name', 'users.last_name', 'members.dues',
-				'members.section', 'members.subsection',
+				'members.section', 'members.subsection', 'jobs.name as job_name', 
 				DB::raw('(SELECT SUM(amount) FROM payments WHERE user_id = users.id) AS paid'),
 				DB::raw('(SELECT COUNT(*) FROM conflicts WHERE user_id = users.id) AS conflicts')
 			)

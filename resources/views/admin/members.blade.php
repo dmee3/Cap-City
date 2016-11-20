@@ -32,9 +32,15 @@
 											<span class="cap-red-text">@{{ m.conflicts }}</span>
 										</template>
 										<template v-else>
-											<span class="cap-red-text">0</span>
+											<span>0</span>
 										</template>
 									</h5>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s12 grey-text center">
+									<h5 v-if="m.job_name != null">JOB: @{{ m.job_name }}</h5>
+									<h5 v-else>JOB: None</h5>
 								</div>
 							</div>
 							<div class="row">

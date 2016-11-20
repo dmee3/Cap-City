@@ -65,6 +65,11 @@
 					</a>
 				</li>
 				<li>
+					<a href="/admin/jobs" class="white-text">
+						<i class="material-icons small cap-red-text">description</i><span>Jobs</span>
+					</a>
+				</li>
+				<li>
 					<a href="/admin/conflicts" class="white-text">
 						<i class="material-icons small cap-red-text">not_interested</i><span>Conflicts</span>
 					</a>

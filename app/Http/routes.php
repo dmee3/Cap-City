@@ -64,11 +64,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:Admin']], func
 	Route::get('/members', 'MemberController@index');
 	Route::get('/staff', 'MemberController@staffIndex');
 	Route::get('/conflicts', 'ConflictController@index');
+	Route::get('/jobs', 'JobController@index');
 
 	//Form routes
 	Route::post('/create-user', 'AdminController@createUser');
 	Route::post('/dues', 'PaymentController@store');
 	Route::post('/members', 'MemberController@delete');
+	Route::post('/jobs', 'JobController@create');
 });
 
 /**
@@ -80,6 +82,7 @@ Route::group(['prefix' => '/api/admin', 'middleware' => ['auth', 'role:Admin']],
 	Route::get('/front-dues-payments', 'PaymentController@frontDues');
 	Route::get('/members', 'MemberController@allMembers');
 	Route::get('/staff', 'MemberController@allStaff');
+	Route::get('/jobs', 'JobController@allJobs');
 });
 
 /**
