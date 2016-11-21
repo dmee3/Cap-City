@@ -51,7 +51,7 @@
 				</li>
 				<li>
 					<a href="/admin/registrations" class="white-text">
-						<i class="material-icons small cap-red-text">assignment</i><span>Registrations</span>
+						<i class="material-icons small cap-red-text">description</i><span>Registrations</span>
 					</a>
 				</li>
 				<li>
@@ -66,7 +66,7 @@
 				</li>
 				<li>
 					<a href="/admin/jobs" class="white-text">
-						<i class="material-icons small cap-red-text">description</i><span>Jobs</span>
+						<i class="material-icons small cap-red-text">assignment</i><span>Jobs</span>
 					</a>
 				</li>
 				<li>

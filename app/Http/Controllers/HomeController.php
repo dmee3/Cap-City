@@ -114,7 +114,8 @@ class HomeController extends Controller
 			'paid' => $paid,
 			'payDates' => $payDates,
 			'member' => $member,
-			'conflicts' => $user->futureConflicts
+			'conflicts' => $user->futureConflicts,
+			'job' => $member->job
 		]);
 	}
 

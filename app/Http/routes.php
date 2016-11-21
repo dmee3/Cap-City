@@ -71,6 +71,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:Admin']], func
 	Route::post('/dues', 'PaymentController@store');
 	Route::post('/members', 'MemberController@delete');
 	Route::post('/jobs', 'JobController@create');
+	Route::post('/update-job', 'JobController@edit');
+	Route::post('/remove-job-member', 'JobController@removeMember');
 });
 
 /**

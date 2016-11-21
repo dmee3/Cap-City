@@ -26,5 +26,6 @@ class Member extends Model
         'user_id', 'dues', 'section', 'subsection'
     ];
 
-	public function user() { return $this->hasOne('App\User'); }
+	public function user() { return $this->belongsTo('App\User'); }
+	public function job() { return $this->belongsTo('App\Job'); }
 }
