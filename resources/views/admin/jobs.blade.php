@@ -75,6 +75,7 @@
 										<br>
 										<div class="input-field">
 											<select name="member">
+												<option value="" selected disabled>Choose</option>
 												<option v-for="m in members" v-bind:value="m.id">@{{ m.first_name + ' ' + m.last_name }}</option>
 											</select>
 											<label for="member">Add Member</label>
