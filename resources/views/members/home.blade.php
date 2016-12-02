@@ -175,6 +175,7 @@
 		{!! Form::open(['url' => '/add-conflict']) !!}
 			<div class="modal-content cap-black-text">
 				<h4>Add Conflict</h4>
+				<p class="center cap-red-text thin"><strong>Warning</strong><br>We are officially past the deadline for submitting conflicts.  Have you discussed this with your section's staff and the directors?</p>
 				<div class="row">
 					<div class="input-field col s12">
 						<input id="conflict-date" type="date" name="conflict_date">
