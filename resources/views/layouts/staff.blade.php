@@ -53,13 +53,23 @@
 	@if (Session::has('success'))
 	<script type="text/javascript">
 		var $toastContent = $('<span>{{ Session::get('success') }}</span>');
-		Materialize.toast($toastContent, 5000, 'green');
+		Materialize.toast($toastContent, 5000, 'cap-green');
 	</script>
 	@elseif (Session::has('error'))
 	<script type="text/javascript">
 		var $toastContent = $('<span>{{ Session::get('error') }}</span>');
-		Materialize.toast($toastContent, 5000, 'red');
+		Materialize.toast($toastContent, 5000, 'cap-red');
 	</script>
+	@endif
+
+	@if (count($errors) > 0)
+		<script type="text/javascript">
+			var toastErrors = '';
+			@foreach($errors->all() as $e)
+				toastErrors += '{{ $e }}<br>';
+			@endforeach
+			Materialize.toast(toastErrors, 5000, 'cap-red');
+		</script>
 	@endif
 </body>
 </html>

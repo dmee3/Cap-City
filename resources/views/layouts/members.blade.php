@@ -49,17 +49,29 @@
 	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 	<script type="text/javascript" src="/js/script.js"></script>
+
 	@yield('scripts')
+
 	@if (Session::has('success'))
-	<script type="text/javascript">
-		var $toastContent = $('<span>{{ Session::get('success') }}</span>');
-		Materialize.toast($toastContent, 5000, 'green');
-	</script>
+		<script type="text/javascript">
+			var toastContent = $('<span>{{ Session::get('success') }}</span>');
+			Materialize.toast(toastContent, 5000, 'cap-green');
+		</script>
 	@elseif (Session::has('error'))
-	<script type="text/javascript">
-		var $toastContent = $('<span>{{ Session::get('error') }}</span>');
-		Materialize.toast($toastContent, 5000, 'red');
-	</script>
+		<script type="text/javascript">
+			var toastContent = $('<span>{{ Session::get('error') }}</span>');
+			Materialize.toast(toastContent, 5000, 'cap-red');
+		</script>
+	@endif
+
+	@if (count($errors) > 0)
+		<script type="text/javascript">
+			var toastErrors = '';
+			@foreach($errors->all() as $e)
+				toastErrors += '{{ $e }}<br>';
+			@endforeach
+			Materialize.toast(toastErrors, 5000, 'cap-red');
+		</script>
 	@endif
 </body>
 </html>
