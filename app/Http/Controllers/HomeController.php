@@ -105,17 +105,24 @@ class HomeController extends Controller
 		$member = Member::where('user_id', $user->id)->first();
 
 		$payDates = DB::table('pay_dates')->get();
-		
-		$paid = sprintf('%.2f', $user->payments()->sum('amount'));
+		$paid = $user->payments()->sum('amount');
+
+		$dueNow = DB::table('pay_dates')->where('due_date', '<=', $today)->orderBy('due_date', 'desc')->value('total_due');
+		$status = 'green';
+		if ($paid < $dueNow) {
+			$status = 'red';
+		}
 
 		return view('members.home', [
 			'user' => $user,
 			'payments' => $user->payments,
-			'paid' => $paid,
+			'paid' => sprintf('%.2f', $paid),
 			'payDates' => $payDates,
 			'member' => $member,
 			'conflicts' => $user->futureConflicts,
-			'job' => $member->job
+			'job' => $member->job,
+			'dueNow' => $dueNow,
+			'status' => $status
 		]);
 	}
 

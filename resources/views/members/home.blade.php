@@ -11,115 +11,128 @@
 
 	<br>
 
-	<div id="home" class="container row">
+	<div id="home" class="container">
+		<div class="row">
 
-		<div class="col s12 m10 offset-m1 l4">
-			<div id="payments" class="card white">
-				<div class="card-content">
-					<div class="row">
-						<div class="col s9">
-							<h4 class="cap-black-text">Dues</h4>
-						</div>
-						<div class="col s3">
-							<a id="payment-modal-trigger" class="modal-trigger btn-floating btn-large waves-effect waves-light cap-green right" href="#payment-modal"><i class="material-icons">add</i></a>
-						</div>
-					</div>
-					<div id="paid-info" class="row grey-text center ">
-						<h5>PAID: ${{ $paid }}</h5>
-						<div id="dues-bar" class="progress z-depth-1 cap-green-fade">
-							<div id="dues-progress" class="determinate cap-green" style="width: {{ $paid * 100 / $member['dues'] }}%;"></div>
-						</div>
-						<h6>TOTAL: ${{ $member['dues'] }}</h6>
-					</div>
-					@if ($payments->count() > 0)
-						<div class="row">
-							<ul class="collection">
-								@foreach($payments as $p)
-									<li class="collection-item">
-										@if ($p->type == 'cash')
-											<span class="collection-icon"><i class="material-icons cap-black-text">attach_money</i></span>
-										@elseif ($p->type == 'check')
-											<span class="collection-icon"><i class="material-icons cap-black-text">account_balance</i></span>
-										@elseif ($p->type == 'stripe')
-											<span class="collection-icon"><i class="material-icons cap-black-text">credit_card</i></span>
-										@endif
-										${{ $p->amount }}
-										<span class="secondary-content cap-blue-text">{{ date('n/j/Y', strtotime($p->date_paid)) }}</span>
-									</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
-				</div>
-			</div>
-			@if ($job)
-				<div class="card cap-green white-text">
+			<div class="col s12 m10 offset-m1 l6">
+				<div id="payments" class="card white">
 					<div class="card-content">
 						<div class="row">
-							<div class="col s12">
-								<h4>Job Info</h4>
+							<div class="col s9">
+								<h4 class="cap-black-text">Dues</h4>
+							</div>
+							<div class="col s3">
+								<a id="payment-modal-trigger" class="modal-trigger btn-floating btn-large waves-effect waves-light cap-green right" href="#payment-modal"><i class="material-icons">add</i></a>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col s12">
-								<h5>{{ $job->name }}</h5>
+						<div id="paid-info" class="row grey-text center ">
+							<h5><span class="cap-{{ $status }}-text">${{ $paid }}</span> / ${{ $member['dues'] }}</h5>
+							<div id="dues-bar" class="progress z-depth-1 cap-green-fade">
+								<div id="dues-progress" class="determinate cap-green" style="width: {{ $paid * 100 / $member['dues'] }}%;"></div>
 							</div>
+							@if ($paid >= $dueNow && $paid < $member['dues'])
+								<h6>DUE NOW: ${{ $dueNow }} <span class="cap-green-text">(${{ sprintf('%.2f', $paid - $dueNow) }} ahead)</span></h6>
+							@elseif ($paid < $dueNow)
+								<h6>DUE NOW: ${{ $dueNow }} <span class="cap-red-text">(${{ sprintf('%.2f', $dueNow - $paid) }} behind)</span></h6>
+							@endif
 						</div>
-						<div class="row">
-							<div class="col s12">
-								<p>{!! str_replace("\r\n", "<br>", $job->description) !!}</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			@endif
-		</div>
-
-		<div class="col s12 m10 offset-m1 l4">
-			<a href="/full-schedule">
-				<div id="schedule" class="card cap-black white-text hoverable">
-					<div class="card-content">
-						<div class="row">
-							<div class="col s12">
-								<h4>Coming Soon</h4>
-							</div>
-						</div>
-						<div class="row">
-							<ul id="timeline">
-							</ul>
-						</div>
-					</div>
-				</div>
-			</a>
-
-			<pay-schedule></pay-schedule>
-		</div>
-
-		<div class="col s12 m10 offset-m1 l4">
-			<div id="conflicts" class="card white">
-				<div class="card-content">
-					<div class="row">
-						<div class="col s9">
-							<h4 class="cap-black-text">Conflicts</h4>
-						</div>
-						<div class="col s3">
-							<a id="conflict-modal-trigger" class="modal-trigger btn-floating btn-large waves-effect waves-light cap-red right" href="#conflict-modal"><i class="material-icons">add</i></a>
-						</div>
-					</div>
-					<div class="row">
-						@if ($conflicts->count() > 0)
-							<ul class="collection">
-								@foreach ($conflicts as $c)
-									<li class="collection-item">{{ date('n/j/Y', strtotime($c->date_absent)) }}</li>
-								@endforeach
-							</ul>
-						@else
-							<div class="col s12">
-								<h5 class="cap-black-text thin">None!</h5>
+						@if ($payments->count() > 0)
+							<div class="row">
+								<ul class="collection">
+									@foreach($payments as $p)
+										<li class="collection-item">
+											@if ($p->type == 'cash')
+												<span class="collection-icon"><i class="material-icons cap-black-text">attach_money</i></span>
+											@elseif ($p->type == 'check')
+												<span class="collection-icon"><i class="material-icons cap-black-text">account_balance</i></span>
+											@elseif ($p->type == 'stripe')
+												<span class="collection-icon"><i class="material-icons cap-black-text">credit_card</i></span>
+											@endif
+											${{ $p->amount }}
+											<span class="secondary-content cap-blue-text">{{ date('n/j/Y', strtotime($p->date_paid)) }}</span>
+										</li>
+									@endforeach
+								</ul>
 							</div>
 						@endif
 					</div>
 				</div>
+			</div>
+
+			<div class="col s12 m10 offset-m1 l6">
+				<div id="conflicts" class="card white">
+					<div class="card-content">
+						<div class="row">
+							<div class="col s9">
+								<h4 class="cap-black-text">Conflicts</h4>
+							</div>
+							<div class="col s3">
+								<a id="conflict-modal-trigger" class="modal-trigger btn-floating btn-large waves-effect waves-light cap-red right" href="#conflict-modal"><i class="material-icons">add</i></a>
+							</div>
+						</div>
+						<div class="row">
+							@if ($conflicts->count() > 0)
+								<ul class="collection">
+									@foreach ($conflicts as $c)
+										<li class="collection-item">{{ date('n/j/Y', strtotime($c->date_absent)) }}</li>
+									@endforeach
+								</ul>
+							@else
+								<div class="col s12">
+									<h5 class="cap-black-text thin">None!</h5>
+								</div>
+							@endif
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col s12 m10 offset-m1 l4">
+				<a href="/full-schedule">
+					<div id="schedule" class="card cap-black white-text hoverable">
+						<div class="card-content">
+							<div class="row">
+								<div class="col s12">
+									<h4>Coming Soon</h4>
+								</div>
+							</div>
+							<div class="row">
+								<ul id="timeline">
+								</ul>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="col s12 m10 offset-m1 l4">
+				<pay-schedule></pay-schedule>
+			</div>
+
+			@if ($job)
+				<div class="col s12 m10 offset-m1 l4">
+					<div class="card cap-green white-text">
+						<div class="card-content">
+							<div class="row">
+								<div class="col s12">
+									<h4>Job Info</h4>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s12">
+									<h5>{{ $job->name }}</h5>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s12">
+									<p>{!! str_replace("\r\n", "<br>", $job->description) !!}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				@endif
 			</div>
 		</div>
 	</div>
@@ -222,7 +235,6 @@
 	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 	<script type="text/javascript" src="/js/vue.js"></script>
 	<script type="text/javascript" src="/js/components/pay-schedule.js"></script>
-	<script type="text/javascript" src="/js/components/job-info.js"></script>
 	<script type="text/javascript">
 		Stripe.setPublishableKey("{{ env('STRIPE_PUBLIC') }}");
 
@@ -281,7 +293,6 @@
 
 				//Handle success
 				} else {
-					debugger;
 					var payAmt = $('#pay-amount-input').val();
 					if (+payAmt < 10) {
 						$('#submit-pay').prop('disabled', false);
