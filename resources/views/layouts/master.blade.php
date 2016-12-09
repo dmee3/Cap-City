@@ -29,9 +29,9 @@
 		<nav class="black">
 			<div class="nav-wrapper container">
 				<ul class="left hide-on-med-and-down">
-					<li><a href="schedule">Schedule</a></li>
-					<li><a href="members">Members</a></li>
-					<li><a href="staff">Staff</a></li>
+					<li><a href="/schedule">Schedule</a></li>
+					<li><a href="/members">Members</a></li>
+					<li><a href="/staff">Staff</a></li>
 				</ul>
 				<a href="/" id="cc-logo-circle" class="brand-logo center circle cap-red hide-on-med-and-down">
 					<img src="/img/cc_nav.png" id="cc-logo" width="60" height="70">
@@ -41,18 +41,18 @@
 				</a>
 				<a href="/" data-activates="mobile-nav" id="burger" class="button-collapse right hide-on-large-only"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="news">News</a></li>
-					<li><a href="store">Store</a></li>
-					<li><a href="contact">Contact</a></li>
+					<li><a href="/news">News</a></li>
+					<li><a href="http://shop.capcitypercussion.com">Store</a></li>
+					<li><a href="/contact">Contact</a></li>
 				</ul>
 				<ul class="side-nav black" id="mobile-nav">
 					<li><a href="/">Home</a></li>
-					<li><a href="schedule">Schedule</a></li>
-					<li><a href="members">Members</a></li>
-					<li><a href="staff">Staff</a></li>
-					<li><a href="news">News</a></li>
-					<li><a href="store">Store</a></li>
-					<li><a href="contact">Contact</a></li>
+					<li><a href="/schedule">Schedule</a></li>
+					<li><a href="/members">Members</a></li>
+					<li><a href="/staff">Staff</a></li>
+					<li><a href="/news">News</a></li>
+					<li><a href="http://shop.capcitypercussion.com">Store</a></li>
+					<li><a href="/contact">Contact</a></li>
 				</ul>
 			</div>
 		</nav>

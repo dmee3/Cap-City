@@ -20,11 +20,25 @@
 
 	<div id="cards" class="section cap-white">
 		<div class="container row">
-			<div class="col s12 m4 offset-m2">
+			<div class="col s12 m4">
+				<a href="http://shop.capcitypercussion.com">
+					<div class="card hoverable cap-blue news-card white-text">
+						<div class="card-image hide-on-small-and-down">
+							<img src="/img/shirt_card.png">
+							<span class="card-title">Store</span>
+						</div>
+						<div class="card-content hide-on-med-and-up">
+							<span class="card-title">Store</span>
+							<p>Our online store is open for business!</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col s12 m4">
 				<a href="/schedule">
 					<div class="card hoverable cap-blue news-card white-text">
 						<div class="card-image hide-on-small-and-down">
-							<img src="img/fire_card.png">
+							<img src="/img/fire_card.png">
 							<span class="card-title">Schedule</span>
 						</div>
 						<div class="card-content hide-on-med-and-up">
@@ -38,7 +52,7 @@
 				<a href="/staff">
 					<div class="card hoverable cap-blue news-card white-text">
 						<div class="card-image hide-on-small-and-down">
-							<img src="img/ensemble_card.png">
+							<img src="/img/ensemble_card.png">
 							<span class="card-title">2017 Staff</span>
 						</div>
 						<div class="card-content hide-on-med-and-up">

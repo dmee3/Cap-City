@@ -19,7 +19,6 @@ Route::get('/schedule', function () { return view('site/schedule'); });
 Route::get('/members', function () { return view('site/members'); });
 Route::get('/staff', function () { return view('site/staff'); });
 Route::get('/news', function () { return view('site/news'); });
-Route::get('/store', function () { return view('site/store'); });
 Route::get('/contact', function () { return view('site/contact'); });
 Route::post('/contact', 'ContactController@sendContactInfo');
 
