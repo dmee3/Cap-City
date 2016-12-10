@@ -34,7 +34,7 @@ class HomeController extends Controller
 	 */
 	protected function adminIndex(Request $request) {
 
-		$today = \Carbon\Carbon::today();
+		$today = \Carbon\Carbon::today()->subHours(5)->startOfDay();
 		$lastThreeDays = \Carbon\Carbon::today()->subDays(3);
 		$lastWeek = \Carbon\Carbon::today()->subWeek();
 		$lastMonth = \Carbon\Carbon::today()->subMonth();
@@ -67,7 +67,7 @@ class HomeController extends Controller
 	 */
 	protected function staffIndex(Request $request) {
 
-		$today = \Carbon\Carbon::today();
+		$today = \Carbon\Carbon::today()->subHours(5)->startOfDay();
 		$nextMonth = \Carbon\Carbon::today()->addMonth();
 
 		$user = $request->user();
@@ -99,7 +99,7 @@ class HomeController extends Controller
 	 */
 	protected function memberIndex(Request $request) {
 
-		$today = \Carbon\Carbon::today();
+		$today = \Carbon\Carbon::today()->subHours(5)->startOfDay();
 
 		$user = $request->user();
 		$member = Member::where('user_id', $user->id)->first();

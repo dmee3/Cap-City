@@ -29,7 +29,7 @@ class ConflictController extends Controller
 	 */
 	public function allConflicts(Request $request) {
 
-		$today = \Carbon\Carbon::today();
+		$today = \Carbon\Carbon::today()->subHours(5)->startOfDay();
 		$conflicts = Conflict::with('user')
 			->select('user_id', 'date_absent', 'reason')
 			->whereDate('date_absent', '>=', $today)
