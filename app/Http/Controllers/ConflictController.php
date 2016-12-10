@@ -42,7 +42,7 @@ class ConflictController extends Controller
 		$conflicts = Conflict::with('user')
 			->select('user_id', 'date_absent', 'reason')
 			->whereDate('date_absent', '>=', $today)
-			->where('approved', 1)
+			->where('status', 1)
 			->orderBy('date_absent')
 			->get();
 
@@ -72,7 +72,7 @@ class ConflictController extends Controller
 			'user_id' => $request->user()->id,
 			'date_absent' => $request->input('conflict_date'),
 			'reason' => $request->input('conflict_reason'),
-			'approved' => 0
+			'status' => 0
 		]);
 
 		//Send email for new conflict
