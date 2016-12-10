@@ -46,7 +46,7 @@ class HomeController extends Controller
 		$pay['month'] = DB::table('payments')->whereDate('created_at', '>=', $lastMonth)->sum('amount');
 		$members = DB::table('members')->count();
 		$staff = DB::table('staffmembers')->count();
-		$conflicts = DB::table('conflicts')->whereDate('date_absent', '>=', $today)->whereDate('date_absent', '<=', $nextMonth)->count();
+		$conflicts = DB::table('conflicts')->where('approved', false)->count();
 		$nextPayment = DB::table('pay_dates')->whereDate('due_date', '>=', $today)->first();
 
 		return view('admin.home', [

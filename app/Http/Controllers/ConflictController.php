@@ -18,21 +18,31 @@ class ConflictController extends Controller
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index(Request $request) {
-		return view('admin.conflicts');
+		$pending = Conflict::with('user')
+			->select('id', 'user_id', 'date_absent', 'reason')
+			->where('approved', false)
+			->orderBy('date_absent')
+			->get();
+
+		foreach ($pending as $p) {
+			$p->date_absent = date('l, n/j/Y', strtotime($p->date_absent));
+		}
+		return view('admin.conflicts', ['pending' => $pending]);
 	}
 
 	/**
-	 * Get all upcoming conflicts.
+	 * Get all approved conflicts.
 	 *
 	 * @param Request $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function allConflicts(Request $request) {
+	public function approvedConflicts(Request $request) {
 
 		$today = \Carbon\Carbon::today()->subHours(5)->startOfDay();
 		$conflicts = Conflict::with('user')
 			->select('user_id', 'date_absent', 'reason')
 			->whereDate('date_absent', '>=', $today)
+			->where('approved', true)
 			->orderBy('date_absent')
 			->get();
 
@@ -61,7 +71,8 @@ class ConflictController extends Controller
 		$conflict = Conflict::create([
 			'user_id' => $request->user()->id,
 			'date_absent' => $request->input('conflict_date'),
-			'reason' => $request->input('conflict_reason')
+			'reason' => $request->input('conflict_reason'),
+			'approved' => false
 		]);
 
 		//Send email for new conflict
@@ -76,5 +87,25 @@ class ConflictController extends Controller
 
 		$request->session()->flash('success', 'Conflict added!');
 		return redirect('/home');
+	}
+
+    /**
+     * Approve a conflict.
+     *
+	 * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function approveConflict(Request $request) {
+
+		$this->validate($request, [
+			'conflict_id' => 'required'
+		]);
+
+		$conflict = Conflict::find($request->input('conflict_id'));
+		$conflict->approved = true;
+		$conflict->save();
+
+		$request->session()->flash('success', 'Conflict approved!');
+		return redirect('/admin/conflicts');
 	}
 }

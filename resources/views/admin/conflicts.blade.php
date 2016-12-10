@@ -6,11 +6,38 @@
 
 @section('content')
 
+	@if (count($pending) > 0)
+	<div id="pending-conflicts" class="container">
+		<div class="row">
+			<div class="col s12">
+				<h2 class="cap-blue-text">Pending Conflicts</h2>
+				<div class="row">
+					<ul class="collapsible" data-accordion="collapsible">
+						@foreach($pending as $p)
+							<li>
+								<div class="collapsible-header">{{ $p->user->name() }}<span class="secondary-content">{{ $p->date_absent }}</span></div>
+								<div class="collapsible-body">
+									<p>{{ $p->reason }}</p>
+									{!! Form::open(['url' => '/admin/approve-conflict', 'class' => 'center']) !!}
+										<input type="hidden" name="conflict_id" value="{{ $p->id }}">
+										<button type="submit" class="btn cap-green">Approve</button>
+									{!! Form::close() !!}
+									<br>
+								</div>
+							</li>
+						@endforeach
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	@endif
+
 	<div id="conflicts" class="container">
 		<div class="row">
 			<div class="col s12">
 				<h2 class="cap-blue-text">Conflicts</h2>
-					<conflict-list></conflict-list>
+				<conflict-list></conflict-list>
 			</div>
 		</div>
 	</div>

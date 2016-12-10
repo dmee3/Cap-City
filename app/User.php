@@ -51,6 +51,10 @@ class User extends Authenticatable
 		return false;
 	}
 
+	public function name() {
+		return $this->first_name . ' ' . $this->last_name;
+	}
+
 	/* Model relationships */
 	public function roles() { return $this->belongsToMany('App\Role'); }
 	public function payments() { return $this->hasMany('App\Payment'); }
@@ -58,6 +62,6 @@ class User extends Authenticatable
 	public function member() { return $this->hasOne('App\Member'); }
 	public function futureConflicts() {
 		$today = \Carbon\Carbon::today();
-		return $this->hasMany('App\Conflict')->whereDate('date_absent', '>=', $today);
+		return $this->hasMany('App\Conflict')->whereDate('date_absent', '>=', $today)->orderBy('date_absent');
 	}
 }

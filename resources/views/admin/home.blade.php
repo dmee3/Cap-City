@@ -64,7 +64,7 @@
 							<div class="row">
 								<div class="col s12 center">
 									<h3>{{ $conflicts }}</h3>
-									<p>Next Month</p>
+									<p>Pending</p>
 								</div>
 							</div>
 						</div>

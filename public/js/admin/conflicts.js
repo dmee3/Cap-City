@@ -4,7 +4,7 @@ Vue.component('conflict-list', {
 		return { conflicts: [] };
 	},
 	created: function() {
-		$.getJSON('/api/admin/conflicts', function(response) {
+		$.getJSON('/api/admin/approved-conflicts', function(response) {
 
 			var list = [];
 			for (var i = 0; i < response.length; i++) {

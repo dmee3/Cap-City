@@ -72,13 +72,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:Admin']], func
 	Route::post('/jobs', 'JobController@create');
 	Route::post('/update-job', 'JobController@edit');
 	Route::post('/remove-job-member', 'JobController@removeMember');
+	Route::post('/approve-conflict', 'ConflictController@approveConflict');
 });
 
 /**
  * JSON routes - admin
  */
 Route::group(['prefix' => '/api/admin', 'middleware' => ['auth', 'role:Admin']], function() {
-	Route::get('/conflicts', 'ConflictController@allConflicts');
+	Route::get('/approved-conflicts', 'ConflictController@approvedConflicts');
+	Route::get('/pending-conflicts', 'ConflictController@pendingConflicts');
 	Route::get('/battery-dues-payments', 'PaymentController@batteryDues');
 	Route::get('/front-dues-payments', 'PaymentController@frontDues');
 	Route::get('/members', 'MemberController@allMembers');
