@@ -18,10 +18,20 @@
 								<div class="collapsible-header">{{ $p->user->name() }}<span class="secondary-content">{{ $p->date_absent }}</span></div>
 								<div class="collapsible-body">
 									<p>{{ $p->reason }}</p>
-									{!! Form::open(['url' => '/admin/approve-conflict', 'class' => 'center']) !!}
-										<input type="hidden" name="conflict_id" value="{{ $p->id }}">
-										<button type="submit" class="btn cap-green">Approve</button>
-									{!! Form::close() !!}
+									<div class="col s6">
+										{!! Form::open(['url' => '/admin/approve-conflict', 'class' => 'center']) !!}
+											<input type="hidden" name="conflict_id" value="{{ $p->id }}">
+											<button type="submit" class="btn cap-green">Approve</button>
+										{!! Form::close() !!}
+									</div>
+									<div class="col s6">
+										{!! Form::open(['url' => '/admin/decline-conflict', 'class' => 'center']) !!}
+											<input type="hidden" name="conflict_id" value="{{ $p->id }}">
+											<button type="submit" class="btn cap-red">Decline</button>
+										{!! Form::close() !!}
+									</div>
+									<br>
+									<br>
 									<br>
 								</div>
 							</li>

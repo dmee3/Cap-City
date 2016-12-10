@@ -63,7 +63,7 @@
 							<h5 class="thin">Conflicts</h5>
 							<div class="row">
 								<div class="col s12 center">
-									<h3>{{ $conflicts }}</h3>
+									<h3>{{ $pending }}</h3>
 									<p>Pending</p>
 								</div>
 							</div>

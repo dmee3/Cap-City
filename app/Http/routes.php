@@ -73,6 +73,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:Admin']], func
 	Route::post('/update-job', 'JobController@edit');
 	Route::post('/remove-job-member', 'JobController@removeMember');
 	Route::post('/approve-conflict', 'ConflictController@approveConflict');
+	Route::post('/decline-conflict', 'ConflictController@declineConflict');
 });
 
 /**

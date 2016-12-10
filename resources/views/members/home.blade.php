@@ -74,10 +74,12 @@
 							@if ($conflicts->count() > 0)
 								<ul class="collection">
 									@foreach ($conflicts as $c)
-										@if ($c->approved)
+										@if ($c->status == 1)
 											<span title="Approved"><li class="collection-item">{{ date('n/j/Y', strtotime($c->date_absent)) }}<span class="secondary-content"><i class="material-icons green-text">done</i></span></li></span>
+										@elseif ($c->status == 0)
+											<span title="Pending"><li class="collection-item grey lighten-2">{{ date('n/j/Y', strtotime($c->date_absent)) }}<span class="secondary-content"><i class="material-icons orange-text">schedule</i></span></li></span>
 										@else
-											<span title="Pending"><li class="collection-item grey lighten-2">{{ date('n/j/Y', strtotime($c->date_absent)) }}<span class="secondary-content" title="Pending"><i class="material-icons orange-text">schedule</i></span></li></span>
+											<span title="Declined"><li class="collection-item cap-black white-text">{{ date('n/j/Y', strtotime($c->date_absent)) }}<span class="secondary-content"><i class="material-icons cap-red-text">clear</i></span></li></span>
 										@endif
 									@endforeach
 								</ul>
