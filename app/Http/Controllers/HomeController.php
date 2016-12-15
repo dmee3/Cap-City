@@ -42,11 +42,11 @@ class HomeController extends Controller
 
 		$reg['week'] = DB::table('auditions')->whereDate('created_at', '>=', $lastWeek)->count();
 		$reg['total'] = DB::table('auditions')->count();
-		$pay['week'] = DB::table('payments')->whereDate('created_at', '>=', $lastWeek)->sum('amount');
-		$pay['month'] = DB::table('payments')->whereDate('created_at', '>=', $lastMonth)->sum('amount');
+		$pay['week'] = DB::table('payments')->whereDate('created_at', '>=', $lastWeek)->where('deleted_at', null)->sum('amount');
+		$pay['month'] = DB::table('payments')->whereDate('created_at', '>=', $lastMonth)->where('deleted_at', null)->sum('amount');
 		$members = DB::table('members')->count();
 		$staff = DB::table('staffmembers')->count();
-		$pending = DB::table('conflicts')->where('status', 0)->count();
+		$pending = DB::table('conflicts')->where('deleted_at', null)->where('status', 0)->count();
 		$nextPayment = DB::table('pay_dates')->whereDate('due_date', '>=', $today)->first();
 
 		return view('admin.home', [
