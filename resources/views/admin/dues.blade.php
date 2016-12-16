@@ -30,7 +30,7 @@
 								<label>Payment Type</label>
 							</div>
 							<div class="input-field col s12 m6">
-								<input name="amount" id="amount" type="number" required>
+								<input name="amount" id="amount" type="number" step=".01" required>
 								<label for="amount">Amount</label>
 							</div>
 							<div class="input-field col s12 m6">
