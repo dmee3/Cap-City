@@ -75,6 +75,11 @@
 					</a>
 				</li>
 				<li>
+					<a href="/admin/transactions" class="white-text">
+						<i class="material-icons small cap-red-text">credit_card</i><span>Transactions</span>
+					</a>
+				</li>
+				<li>
 					<a href="/admin/create-user" class="white-text">
 						<i class="material-icons small cap-red-text">person_add</i><span>New User</span>
 					</a>

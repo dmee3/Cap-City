@@ -64,6 +64,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:Admin']], func
 	Route::get('/staff', 'MemberController@staffIndex');
 	Route::get('/conflicts', 'ConflictController@index');
 	Route::get('/jobs', 'JobController@index');
+	Route::get('/transactions', 'TransactionController@index');
 
 	//Form routes
 	Route::post('/create-user', 'AdminController@createUser');
@@ -71,6 +72,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:Admin']], func
 	Route::post('/members', 'MemberController@delete');
 	Route::post('/jobs', 'JobController@create');
 	Route::post('/update-job', 'JobController@edit');
+	Route::post('/transactions', 'TransactionController@create');
 	Route::post('/remove-job-member', 'JobController@removeMember');
 	Route::post('/approve-conflict', 'ConflictController@approveConflict');
 	Route::post('/decline-conflict', 'ConflictController@declineConflict');
