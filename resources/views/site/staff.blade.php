@@ -17,7 +17,7 @@
 				<div class="row">
 					<div class="col s12 m6">
 						<div class="collection with-header">
-							<div class="collection-header cap-red-text"><h4>Administrative</h4></div>
+							<div class="collection-header cap-red-text"><h5>Administrative</h5></div>
 							<a href="#staff-description" class="collection-item avatar modal-trigger" v-for="s in admin" v-on:click="modal(s.name)">
 								<img :src="s.image" class="circle">
 								<span class="title">@{{ s.name }}</span>
@@ -25,7 +25,7 @@
 							</a>
 						</div>
 						<div class="collection with-header">
-							<div class="collection-header cap-red-text"><h4>Design</h4></div>
+							<div class="collection-header cap-red-text"><h5>Design</h5></div>
 							<a href="#staff-description" class="collection-item avatar modal-trigger" v-for="s in design" v-on:click="modal(s.name)">
 								<img :src="s.image" class="circle">
 								<span class="title">@{{ s.name }}</span>
@@ -33,7 +33,7 @@
 							</a>
 						</div>
 						<div class="collection with-header">
-							<div class="collection-header cap-red-text"><h4>Visual</h4></div>
+							<div class="collection-header cap-red-text"><h5>Visual</h5></div>
 							<a href="#staff-description" class="collection-item avatar modal-trigger" v-for="s in visual" v-on:click="modal(s.name)">
 								<img :src="s.image" class="circle">
 								<span class="title">@{{ s.name }}</span>
@@ -43,7 +43,7 @@
 					</div>
 					<div class="col s12 m6">
 						<div class="collection with-header">
-							<div class="collection-header cap-red-text"><h4>Battery</h4></div>
+							<div class="collection-header cap-red-text"><h5>Battery</h5></div>
 							<a href="#staff-description" class="collection-item avatar modal-trigger" v-for="s in battery" v-on:click="modal(s.name)">
 								<img :src="s.image" class="circle">
 								<span class="title">@{{ s.name }}</span>
@@ -51,7 +51,7 @@
 							</a>
 						</div>
 						<div class="collection with-header">
-							<div class="collection-header cap-red-text"><h4>Front</h4></div>
+							<div class="collection-header cap-red-text"><h5>Front</h5></div>
 							<a href="#staff-description" class="collection-item avatar modal-trigger" v-for="s in front" v-on:click="modal(s.name)">
 								<img :src="s.image" class="circle">
 								<span class="title">@{{ s.name }}</span>
