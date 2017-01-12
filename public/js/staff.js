@@ -80,13 +80,6 @@ var vm = new Vue({
         bio: 'Corey joined Cap City in the winter of 2014 as a member of the snare line, and was the snare section leader in 2015-2016. He has been active in the southern West Virginia marching percussion community as a battery coordinator, snare technician, consultant, arranger, and private lesson instructor for the past 5 years, working with such programs as Cabell Midland HS, Hurricane HS, and Spring Valley HS and winning multiple high percussion awards in the state.<br><br>Corey graduated from Marshall University with a B.B.A. in Management Information Systems and is working as a Technology Systems Specialist for the Wayne County School system. He currently resides in Huntington, WV with his cat Marcellus and enjoys spending any spare time building computers or spending time with his family.<br><br>This season, Corey will be returning to Cap City as a member of the staff and is honored to educate this rapidly growing ensemble!'
       },
       {
-        name: 'Dominic Devito',
-        position: 'Snare Technician',
-        image: 'img/staff/dominic.jpg',
-        area: ['battery'],
-        bio: 'Dominic is beyond excited to work with the Cap City snare line for the 2017 season!<br><br>Dominic found a passion for drumming as an adolescent. His passion evolved from drum set to the marching activity when he entered high school. His participation in the indoor marching activity, and the outdoor marching activity, is where he found an even greater passion for performing. At age 17 he landed his first teaching job for a high school indoor percussion ensemble that competed in the Mid-East Performance Association. Dominic continued his teaching career with various high schools in the Indiana and Ohio area. He marched with Matrix Indoor Marching Percussion Ensemble in 2010 and in 2011. In the summer of 2011 Dominic was a part of the percussion staff for the Glassmen Drum and Bugle Corps, and he was the battery technician for Miami University Marching Band for the Fall semester in 2011. Dominic went on to teach Matrix Percussion World for their 2012, 2013, and 2014 seasons.'
-      },
-      {
         name: 'Jesse Sieff',
         position: 'Snare Technician',
         image: 'img/staff/jesse.jpg',
@@ -99,20 +92,6 @@ var vm = new Vue({
         image: 'img/staff/chad.jpg',
         area: ['battery'],
         bio: 'Chad was raised and currently resides in Huntington, WV. After marching with the Glassmen in 2006 he quickly transitioned into teaching. He has taught and arranged for various high schools in the area, winning high percussion in the state the past two years. He also enjoys giving private lessons, and many of his students have since gone on to perform and teach for various groups in DCI/WGI.<br><br>Chad has had the privilege of learning from/studying under many great educators, musicians, and performers including Dustin Lowes, Chris Hestin, Eric Ward, Jon Merritt, George Chaffin, Rudy Garcia, etc.<br><br>Chad is currently teaching percussion at Marshall University while continuing to consult and arrange for select high school programs. He is thrilled to be part of this staff and Cap City this coming season!'
-      },
-      {
-        name: 'Kyle Goodhart',
-        position: 'Bass Technician',
-        image: 'img/staff/kyle.jpg',
-        area: ['battery'],
-        bio: 'Kyle Goodhart is a native of Middle Eastern, Pennsylvania. He joins Cap City with a wealth of experience including marching bass drum with the Hawthorne Caballeros 2011-2012, Cadets2 2013, Cadets 2014-2015, and Rhythm X 2015. Kyle is a graduate of the California University of Pennsylvania with a bachelors degree in business administration concentrated in financial management, and currently works for the United States Army.<br><br>Kyle is very excited to join the team at Cap City!'
-      },
-      {
-        name: 'Dave Jackson',
-        position: 'Bass Technician',
-        image: 'img/staff/dave.jpg',
-        area: ['battery'],
-        bio: 'Hailing from Toledo Ohio, Dave has been a music educator in North Carolina\'s Triangle area for the last 6 years.  He began studying music at a very young age through influence from his mother (who has been a choral music director in Ohio for 30+ years) and his father (who has served as an assistant dean of music at Appalachian State University as well as being a respected band director since the mid-90\'s).  Dave furthered his music education upon leaving Maumee High School (through his numerous high school seasons of marching band, indoor drumline, string orchestra, select choir and pit orchestra), by studying upright string bass at Appalachian State University in Boone, North Carolina.  While at ASU Dave performed with the Marching Mountaineers, Symphony Orchestra, String Orchestra and Wind Ensemble.  In his DCI and WGI career, he performed with Constitution Percussion out of Raleigh, North Carolina (Bass 5 in 2007 and Bass 2 in 2008, serving both seasons as section leader), Odyssey Percussion Theatre from Atlanta, Georgia (Bass 4 in 2009), and The Toledo Glassmen Drum and Bugle Corps (Bass 5 in 2008 and Bass 3 in 2009).  Dave aged out with the 2010 WGI PIW silver medalist Rhythm X on Bass 5.<br><br>Upon aging out, Dave moved back to NC to become the Percussion Director at West Johnston High School (Benson, NC). In between his duties at West, Dave has worked for Superior Band Camps, The East Carolina University Marching Pirates Drumline, Forza East Independent Percussion (as an instructor, arranger and assistant director), and many other ensembles throughout the Carolinas and US.  Dave currently teaches at Cleveland High School (Clayton, NC), and is the Bass Drum Technician as well as Battery Visual Technician at The Jersey Surf Drum and Bugle Corps.<br><br>Dave is thrilled to have the ability to join the educational staff Capital City once again.'
       },
       {
         name: 'Ariel Peel',
@@ -157,11 +136,11 @@ var vm = new Vue({
         bio: 'Phillip Showalter is a visual technician for Cap City. Originally from Marietta, Ohio, Phillip completed a degree in Music Education from Ohio University in Athens, Ohio. Phillip is now the assistant band director at Watkins Memorial High School in Pataskala, Ohio where he helps with the all of the bands 6-12. Along with his responsibilities with the Watkins Memorial Marching Warriors, Phillip is on staff for the Worthington Kilbourne High School Marching Band in Columbus. In the summer of 2014, Phillip marched for the Bluecoats Drum and Bugle Corps as a trumpet player which led to a position on the visual staff for the Blue Knights in 2015 and now with the Bluecoats.'
       },
       {
-        name: 'Brandon Wickham',
+        name: 'Kayla Cavano',
         position: 'Visual Technician',
-        image: 'img/staff/brandon.jpg',
+        image: 'img/staff/kayla.jpg',
         area: ['visual'],
-        bio: 'Brandon Wickham is a visual designer, clinician, and marching instructor from California. Brandon began his marching career as a baritone player in 2004 with the Vanguard Cadet Drum and Bugle Corps from Santa Clara, California and went on to join the Blue Devils Drum and Bugle Corps in 2005.<br><br>Since aging out from the Blue Devils organization in 2008, Brandon has gone on to work with several award winning high schools throughout California and the Mid-Western United States. From 2011-2015, Brandon worked as a designer and visual caption head of the 2011 and 2012 WBA Champion and 2013 BOA Grand National Finalist, Ayala High School Band and Color Guard, as well as the 2013 WBA Champion Upland High School Marching Band. After the 2015 competitive season, Brandon moved to Indianapolis, Indiana where he has since joined the staff of several high school programs in the area including the Ben Davis Marching Giants, the Center Grove High School Marching Band, and the Avon Marching Black and Gold.<br><br>Aside from scholastic fall and winter programs, Brandon also teaches throughout the summer with DCI. After being asked to join the visual staff of the Pacific Crest Drum and Bugle Corps in 2013, Brandon went on to become the visual caption head of the Academy Drum and Bugle in 2014 and 2015; and in 2016 was asked to join the visual staff for the Blue Devils Drum and Bugle Corps.<br><br>When he is not teaching, Brandon works as a visual designer and clinician for several groups across the United States as well as international groups in China and South America. As a drill writer, Brandon has designed for numerous fall and winter programs in several states across the country and has also designed for marching ensembles in China and Taiwan.'
+        bio: 'Kayla\'s love for the marching arts began when she joined her high school marching band in 2009 and her passion for the activity drove her to pursue degrees in Music Education and French Horn Performance at Miami University in Oxford, Ohio.<br><br>Ever since Kayla was introduced to the marching arts, she has participated in many marching ensembles including the Miami University Marching Band where she was the mellophone soloist and section leader, The 2015 Blue Stars and most recently The 2016 Blue Devils Drum & Bugle Corps.<br><br>Along with her performance experience, Kayla has instructed several high school marching bands including the Colerain HS Marching Band  (Colerain, OH) and the Lebanon High School Marching Band (Lebanon, OH). She is thrilled to join the Cap City visual team this upcoming winter season!'
       },
       {
         name: 'Tyler Stewart',
