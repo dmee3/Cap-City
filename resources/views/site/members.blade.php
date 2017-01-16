@@ -23,7 +23,7 @@
 						<li class="collection-item">Christian Rozanek<span class="secondary-content">Tenors</span></li>
 						<li class="collection-item">Nick Stazzone<span class="secondary-content">Tenors</span></li>
 						<li class="collection-item">Tanner Catalogna<span class="secondary-content">Bass</span></li>
-						<li class="collection-item">Jacob Cerrino<span class="secondary-content">Bass</span></li>
+						<li class="collection-item">Jacob Cerino<span class="secondary-content">Bass</span></li>
 						<li class="collection-item">Marshall Harless<span class="secondary-content">Bass</span></li>
 						<li class="collection-item">Gavin Nagy<span class="secondary-content">Bass</span></li>
 						<li class="collection-item">Andrew Stretch<span class="secondary-content">Bass</span></li>
