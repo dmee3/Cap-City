@@ -4,9 +4,9 @@ var sched = new Vue({
 		shows: [
 			{
 				name: 'OIPA Olentangy Liberty',
-				date: 'February 4th, 2017',
+				date: 'February 5th, 2017',
 				type: 'oipa',
-				url: 'http://ohiocircuit.com/2017-events-calendar/'
+				url: 'http://ohiocircuit.com/olentangy-liberty-high-school/'
 			},
 			{
 				name: 'WGI Dayton Regional',
@@ -18,13 +18,13 @@ var sched = new Vue({
 				name: 'OIPA Licking Valley',
 				date: 'March 4th, 2017',
 				type: 'oipa',
-				url: 'http://ohiocircuit.com/2017-events-calendar/'
+				url: 'http://ohiocircuit.com/licking-valley-high-school/'
 			},
 			{
 				name: 'OIPA Worthington Kilbourne',
 				date: 'March 5th, 2017',
 				type: 'oipa',
-				url: 'http://ohiocircuit.com/2017-events-calendar/'
+				url: 'http://ohiocircuit.com/worthington-kilbourne-high-school/'
 			},
 			{
 				name: 'WGI Mid-East Power Regional',
@@ -36,7 +36,7 @@ var sched = new Vue({
 				name: 'OIPA Championships',
 				date: 'April 2nd, 2017',
 				type: 'oipa',
-				url: 'http://ohiocircuit.com/2017-events-calendar/'
+				url: 'http://ohiocircuit.com/oipa-championships-wapakoneta-hs/'
 			},
 			{
 				name: 'WGI Championships',
