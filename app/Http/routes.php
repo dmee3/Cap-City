@@ -17,6 +17,7 @@
 Route::get('/', function () { return view('site/index'); });
 Route::get('/schedule', function () { return view('site/schedule'); });
 Route::get('/members', function () { return view('site/members'); });
+Route::get('/alumni', function () { return view('site/alumni'); });
 Route::get('/staff', function () { return view('site/staff'); });
 Route::get('/news', function () { return view('site/news'); });
 Route::get('/contact', function () { return view('site/contact'); });

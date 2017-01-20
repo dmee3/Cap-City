@@ -26,11 +26,15 @@
 
 	<!-- Nav Bar -->
 	<div class="navbar-fixed black">
+		<ul id="member-dropdown" class="dropdown-content">
+			<li><a href="/members">Current</a></li>
+			<li><a href="/alumni">Alumni</a></li>
+		</ul>
 		<nav class="black">
 			<div class="nav-wrapper container">
 				<ul class="left hide-on-med-and-down">
 					<li><a href="/schedule">Schedule</a></li>
-					<li><a href="/members">Members</a></li>
+					<li><a class="dropdown-button" href="#!" data-activates="member-dropdown">Members<i class="material-icons right">arrow_drop_down</i></a></li>
 					<li><a href="/staff">Staff</a></li>
 				</ul>
 				<a href="/" id="cc-logo-circle" class="brand-logo center circle cap-red hide-on-med-and-down">

@@ -10,7 +10,7 @@
 			<div class="row">
 				<div class="col s12 m6">
 					<ul class="collection with-header black-text">
-						<li class="collection-header cap-red-text"><h5>Battery</h5>
+						<li class="collection-header cap-red-text"><h5>Battery</h5></li>
 						<li class="collection-item">JJ Frederico<span class="secondary-content">Snare</span></li>
 						<li class="collection-item">Danny Groh<span class="secondary-content">Snare</span></li>
 						<li class="collection-item">Colton Jones<span class="secondary-content">Snare</span></li>
@@ -36,7 +36,7 @@
 				</div>
 				<div class="col s12 m6">
 					<ul class="collection with-header black-text">
-						<li class="collection-header cap-red-text"><h5>Front Ensemble</h5>
+						<li class="collection-header cap-red-text"><h5>Front Ensemble</h5></li>
 						<li class="collection-item">Stew LeVan<span class="secondary-content">Marimba</span></li>
 						<li class="collection-item">Kait Long<span class="secondary-content">Marimba</span></li>
 						<li class="collection-item">Justin Lunney<span class="secondary-content">Marimba</span></li>
