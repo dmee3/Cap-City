@@ -193,7 +193,7 @@ class PaymentController extends Controller
 			}
 
 			$totalPaid += $m->paid;
-			$totalRemaining += $m->member->dues;
+			$totalRemaining += $m->member->dues - $m->paid;
 		}
 
 		$sections = [];
