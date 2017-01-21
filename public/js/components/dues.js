@@ -8,12 +8,16 @@ Vue.component('dues-list', {
 			currId: '',
 			currPayments: [],
 			currPaid: 0,
-			currRemaining: 0
+			currRemaining: 0,
+			totalPaid: 0,
+			totalRemaining: 0
 		};
 	},
 	created: function() {
 		$.getJSON('/api/admin/' + this.name.toLowerCase() + '-dues-payments', function(response) {
-			this.sections = response;
+			this.sections = response.sections;
+			this.totalPaid = response.totalPaid;
+			this.totalRemaining = response.totalRemaining;
 		}.bind(this));
 	},
 	methods: {

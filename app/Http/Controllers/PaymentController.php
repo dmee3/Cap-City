@@ -170,6 +170,8 @@ class PaymentController extends Controller
 	 */
 	private function getFormattedMembers($members, $sectionNames) {
 
+		$totalRemaining = 0;
+		$totalPaid = 0;
 		$today = \Carbon\Carbon::today();
 		$total_due = DB::table('pay_dates')->whereDate('due_date', '<', $today)->sum('due');
 
@@ -189,6 +191,9 @@ class PaymentController extends Controller
 			if ($m->paid >= $total_due) {
 				$m->pay_color = "green";
 			}
+
+			$totalPaid += $m->paid;
+			$totalRemaining += $m->member->dues;
 		}
 
 		$sections = [];
@@ -199,6 +204,6 @@ class PaymentController extends Controller
 			$sections[$s]['name'] = $s;
 		}
 
-		return $sections;
+		return ['sections' => $sections, 'totalPaid' => $totalPaid, 'totalRemaining' => $totalRemaining];
 	}
 }

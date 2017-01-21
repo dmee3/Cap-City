@@ -58,6 +58,9 @@
 	<template id="section-template">
 		<div class="col s12 m6">
 			<h4 class="cap-blue-text">@{{ name }}</h4>
+			<br>
+			<p>$@{{ totalPaid }} Paid</p>
+			<p>$@{{ totalRemaining }} Remaining</p>
 			<div class="card" v-for="s in sections">
 				<div class="card-content">
 					<div class="row">
