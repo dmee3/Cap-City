@@ -71,7 +71,7 @@
 					</div>
 				</div>
 			</div>
-			<payments-list :section="name" :name="currName" :id="currId" :payments="currPayments"></payments-list>
+			<payments-list :section="name" :name="currName" :id="currId" :payments="currPayments" :paid="currPaid" :remaining="currRemaining"></payments-list>
 		</div>
 	</template>
 
@@ -87,6 +87,12 @@
 						<div class="collapsible-body"><p>@{{ p.info }}</p></div>
 					</li>
 				</ul>
+				<div class="col s6 center">
+					<p>$@{{ paid }} Paid</p>
+				</div>
+				<div class="col s6 center">
+					<p>$@{{ remaining }} Remaining</p>
+				</div>
 			</div>
 			<div class="modal-footer">
 				<a href="#" class=" modal-action modal-close waves-effect waves-red btn-flat">Close</a>
