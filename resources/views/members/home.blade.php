@@ -111,6 +111,21 @@
 						</div>
 					</div>
 				</a>
+				<div class="card cap-red white-text">
+					<div class="card-content">
+						<div class="row">
+							<div class="col s12">
+								<h4>Documents</h4>
+							</div>
+						</div>
+						<div class="row">
+							<ul class="collection">
+								<li class="collection-item"><a target="_blank" href="/pdf/Blank2017MemberContract.pdf">Blank Contract</a></li>
+								<li class="collection-item"><a target="_blank" href="/pdf/FinalsExcuseLetter.pdf">Finals Excuse Letter</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<div class="col s12 m10 offset-m1 l4">
