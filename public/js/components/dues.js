@@ -9,6 +9,7 @@ Vue.component('dues-list', {
 			currPayments: [],
 			currPaid: 0,
 			currRemaining: 0,
+			paymentPlan: '',
 			totalPaid: 0,
 			totalRemaining: 0
 		};
@@ -41,6 +42,7 @@ Vue.component('dues-list', {
 			}
 			this.currPaid = m.paid;
 			this.currRemaining = m.member.dues - this.currPaid;
+			this.paymentPlan = m.member.payment_plan;
 
 			$('#' + this.name + '-payments-modal').openModal();
 			$('.collapsible').collapsible();
@@ -50,7 +52,7 @@ Vue.component('dues-list', {
 
 Vue.component('payments-list', {
 	template: '#payments-template',
-	props: ['section', 'name', 'id', 'payments', 'paid', 'remaining'],
+	props: ['section', 'name', 'id', 'payments', 'paid', 'remaining', 'plan'],
 	methods: {
 		newPaymentModal: function() {
 

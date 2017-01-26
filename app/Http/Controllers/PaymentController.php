@@ -206,4 +206,26 @@ class PaymentController extends Controller
 
 		return ['sections' => $sections, 'totalPaid' => $totalPaid, 'totalRemaining' => $totalRemaining];
 	}
+
+    /**
+     * Update a payment plan (for admins only).
+     *
+	 * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+	public function setPaymentPlan(Request $request) {
+
+		$this->validate($request, [
+			'user_id' => 'required',
+			'payment_plan' => 'required'
+		]);
+
+		$user = User::find($request->input('user_id'));
+		$member = $user->member;
+		$member->payment_plan = $request->input('payment_plan');
+		$member->save();
+
+		$request->session()->flash('success', 'Payment plan updated!');
+		return view('admin.dues');
+	}
 }

@@ -23,7 +23,7 @@ class Member extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'dues', 'section', 'subsection'
+        'user_id', 'dues', 'section', 'subsection', 'payment_plan'
     ];
 
 	public function user() { return $this->belongsTo('App\User'); }

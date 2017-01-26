@@ -74,7 +74,7 @@
 					</div>
 				</div>
 			</div>
-			<payments-list :section="name" :name="currName" :id="currId" :payments="currPayments" :paid="currPaid" :remaining="currRemaining"></payments-list>
+			<payments-list :section="name" :name="currName" :id="currId" :payments="currPayments" :paid="currPaid" :remaining="currRemaining" :plan="paymentPlan"></payments-list>
 		</div>
 	</template>
 
@@ -90,12 +90,30 @@
 						<div class="collapsible-body"><p>@{{ p.info }}</p></div>
 					</li>
 				</ul>
-				<div class="col s6 center">
-					<p>$@{{ paid }} Paid</p>
+				<div class="col s12 m6">
+					<div class="card cap-white cap-green-text">
+						<div class="card-content center">
+							<p>$@{{ paid }} Paid</p>
+						</div>
+					</div>
 				</div>
-				<div class="col s6 center">
-					<p>$@{{ remaining }} Remaining</p>
+				<div class="col s12 m6">
+					<div class="card cap-white cap-red-text">
+						<div class="card-content center">
+							<p>$@{{ remaining }} Remaining</p>
+						</div>
+					</div>
 				</div>
+				{!! Form::open(['url' => '/admin/set-payment-plan', 'class' => 'col s12']) !!}
+					<h5>Payment Plan</h5>
+					<input type="hidden" name="user_id" v-bind:value="id">
+					<div class="input-field">
+						<textarea name="payment_plan" class="materialize-textarea">@{{ plan }}</textarea>
+					</div>
+					<div class="center">
+						<input type="submit" class="btn cap-green" value="UPDATE PLAN">
+					</div>
+				{!! Form::close() !!}
 			</div>
 			<div class="modal-footer">
 				<a href="#" class=" modal-action modal-close waves-effect waves-red btn-flat">Close</a>
