@@ -131,7 +131,7 @@
 				</div>
 				<div class="row black-text">
 					<ul class="collection">
-								<li v-for="p in payments" class="collection-item">@{{ p.due_date }}<span class="cap-grey-text"> - $@{{ p.due }}</span><span class="secondary-content">$@{{ p.total_due }}</span></li>
+						<li v-for="p in payments" class="collection-item">@{{ p.due_date }}<span class="cap-grey-text"> - $@{{ p.due }}</span><span class="secondary-content">$@{{ p.total_due }}</span></li>
 					</ul>
 					<p class="white-text center">*Last payment varies based on membership status</p>
 				</div>

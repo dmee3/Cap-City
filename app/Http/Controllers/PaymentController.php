@@ -226,6 +226,6 @@ class PaymentController extends Controller
 		$member->save();
 
 		$request->session()->flash('success', 'Payment plan updated!');
-		return view('admin.dues');
+		return redirect('/admin/dues');
 	}
 }
