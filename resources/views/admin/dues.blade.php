@@ -59,8 +59,12 @@
 		<div class="col s12 m6">
 			<h4 class="cap-blue-text">@{{ name }}</h4>
 			<br>
-			<p>$@{{ totalPaid }} Paid</p>
-			<p>$@{{ totalRemaining }} Remaining</p>
+			<div class="card cap-white cap-grey-text">
+				<div class="card-content">
+					<h5>Paid:<span class="right cap-green-text">$@{{ totalPaid }}</span></h5>
+					<h5>Left:<span class="right cap-green-text">$@{{ totalRemaining }}</span></h5>
+				</div>
+			</div>
 			<div class="card" v-for="s in sections">
 				<div class="card-content">
 					<div class="row">
