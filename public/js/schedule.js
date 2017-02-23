@@ -15,16 +15,16 @@ var sched = new Vue({
 				url: 'http://wgi.org/event-details/02182017-PercWinds-Dayton-Regional.html'
 			},
 			{
-				name: 'OIPA Licking Valley',
-				date: 'March 4th, 2017',
+				name: 'OIPA New Philadelphia',
+				date: 'March 18th, 2017',
 				type: 'oipa',
-				url: 'http://ohiocircuit.com/licking-valley-high-school/'
+				url: 'http://ohiocircuit.com/new-philadelphia-high-school/'
 			},
 			{
-				name: 'OIPA Worthington Kilbourne',
-				date: 'March 5th, 2017',
+				name: 'OIPA Firestone',
+				date: 'March 19th, 2017',
 				type: 'oipa',
-				url: 'http://ohiocircuit.com/worthington-kilbourne-high-school/'
+				url: 'http://ohiocircuit.com/avon-high-school-saturday/'
 			},
 			{
 				name: 'WGI Mid-East Power Regional',
