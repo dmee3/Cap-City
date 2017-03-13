@@ -42,13 +42,9 @@
 						<div class="card-content">
 							<h5 class="thin">Payments</h5>
 							<div class="row">
-								<div class="col s6 center">
+								<div class="col s12 center">
 									<h3>${{ $pay['week'] }}</h3>
 									<p>Last Week</p>
-								</div>
-								<div class="col s6 center">
-									<h3>{{ date('n/j', strtotime($nextPayment->due_date)) }}</h3>
-									<p>Next Pay Date</p>
 								</div>
 							</div>
 						</div>
