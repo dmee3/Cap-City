@@ -54,6 +54,12 @@
 						<li class="collection-item">Joe Lansinger<span class="secondary-content">Electronics</span></li>
 					</ul>
 				</div>
+				<div class="col s12 m6">
+					<ul class="collection with-header black-text">
+						<li class="collection-header cap-red-text"><h5>Visual</h5></li>
+						<li class="collection-item">Gail Olsen</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
