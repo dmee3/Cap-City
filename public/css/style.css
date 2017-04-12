@@ -156,6 +156,19 @@ nav li:hover {
 }
 
 /*
+ * Misc
+ */
+
+/* Custom large avatar */
+.collection-item.avatar {
+	padding-left: 90px!important;
+}
+.avatar-large .circle {
+	width: 64px!important;
+	height: 64px!important;
+}
+
+/*
  * Custom color classes
  */
 .cap-red { background-color: #cc2f44 !important; }
