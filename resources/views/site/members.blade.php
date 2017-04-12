@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="section cap-blue" id="members">
+	<div class="section cap-blue" id="members" v-cloak>
 		<div class="container cap-white-text">
 			<div class="row">
 				<h2>Members</h2>

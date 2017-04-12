@@ -6,7 +6,7 @@
 
 @section('content')
 
-	<div id="staff">
+	<div id="staff" v-cloak>
 		<div class="section cap-blue">
 			<div class="container">
 				<div class="row">
