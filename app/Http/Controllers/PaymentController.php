@@ -188,7 +188,7 @@ class PaymentController extends Controller
 			}
 
 			$m->pay_color = "red";
-			if ($m->paid >= $total_due) {
+			if ($m->paid >= $total_due || $m->paid >= $m->member->dues) {
 				$m->pay_color = "green";
 			}
 
